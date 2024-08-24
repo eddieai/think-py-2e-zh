@@ -1,0 +1,924 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>第三章 函数 · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 5.1.4">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, user-scalable=yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="chapter4.html" />
+    
+    
+    <link rel="prev" href="chapter2.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="chapter1.html">
+            
+                <a href="chapter1.html">
+            
+                    
+                    第一章 编程之路
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="chapter2.html">
+            
+                <a href="chapter2.html">
+            
+                    
+                    第二章 变量，表达式，语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="chapter3.html">
+            
+                <a href="chapter3.html">
+            
+                    
+                    第三章 函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="chapter4.html">
+            
+                <a href="chapter4.html">
+            
+                    
+                    第四章 案例学习：交互设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="chapter5.html">
+            
+                <a href="chapter5.html">
+            
+                    
+                    第五章 条件循环
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="chapter6.html">
+            
+                <a href="chapter6.html">
+            
+                    
+                    第六章 有返回值的函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="chapter7.html">
+            
+                <a href="chapter7.html">
+            
+                    
+                    第七章 迭代
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="chapter8.html">
+            
+                <a href="chapter8.html">
+            
+                    
+                    第八章 字符串
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="chapter9.html">
+            
+                <a href="chapter9.html">
+            
+                    
+                    第九章 案例学习：单词游戏
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="chapter10.html">
+            
+                <a href="chapter10.html">
+            
+                    
+                    第十章 列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="chapter11.html">
+            
+                <a href="chapter11.html">
+            
+                    
+                    第十一章 字典
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="chapter12.html">
+            
+                <a href="chapter12.html">
+            
+                    
+                    第十二章 元组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="chapter13.html">
+            
+                <a href="chapter13.html">
+            
+                    
+                    第十三章 案例学习：数据结构的选择
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="chapter14.html">
+            
+                <a href="chapter14.html">
+            
+                    
+                    第十四章 文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="chapter15.html">
+            
+                <a href="chapter15.html">
+            
+                    
+                    第十五章 类和对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="chapter16.html">
+            
+                <a href="chapter16.html">
+            
+                    
+                    第十六章 类和函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="chapter17.html">
+            
+                <a href="chapter17.html">
+            
+                    
+                    第十七章 类和方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="chapter18.html">
+            
+                <a href="chapter18.html">
+            
+                    
+                    第十八章 继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="chapter19.html">
+            
+                <a href="chapter19.html">
+            
+                    
+                    第十九章 更多功能
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >第三章 函数</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="第三章--函数">第三章  函数</h1>
+<p>在编程的语境下，“函数”这个词的意思是对一系列语句的组合，这些语句共同完成一种运算。定义函数的时候，你要给这个函数指定一个名字，另外还好写出这些进行运算的语句。定义完成后，就可以通过函数名来“调用”函数。</p>
+<h2 id="31--函数调用">3.1  函数调用</h2>
+<p>此前我们已经见识过函数调用的一个例子了：</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">type</span>(<span class="hljs-number">42</span>)
+&lt;<span class="hljs-keyword">class</span> <span class="hljs-string">'int'</span>&gt;
+</code></pre>
+<p>这个函数的名字就是 tpye，括号里面的表达式叫做函数的参数。这个函数的结果是返回参数的类型。</p>
+<p>一般来说，函数都要“传入”一个参数，“返回”一个结果。结果也被叫做返回值。Python 提供了一些转换数值类型的函数。比如 int 这个函数就可以把值转换成整形，但不是什么都能转的，遇到不能转换的就会报错了，如下所示：</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">int</span>(<span class="hljs-string">'32'</span>)  
+<span class="hljs-number">32</span> 
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">int</span>(<span class="hljs-string">'Hello'</span>) 
+ValueError: invalid literal <span class="hljs-keyword">for</span> <span class="hljs-built_in">int</span>(): Hello
+</code></pre>
+<p>int 这个函数能把浮点数转成整形，但不是很完美，小数部分就都给砍掉了。</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">int</span>(<span class="hljs-number">3.99999</span>)  
+<span class="hljs-number">3</span> 
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">int</span>(-<span class="hljs-number">2.3</span>) 
+-<span class="hljs-number">2</span>
+</code></pre>
+<p>float 能把整形和字符串转变成浮点数：</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">float</span>(<span class="hljs-number">32</span>) 
+<span class="hljs-number">32.0</span> 
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">float</span>(<span class="hljs-string">'3.14159'</span>) 
+<span class="hljs-number">3.14159</span>
+</code></pre>
+<p>最后来看下，str 可以把参数转变成字符串：</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">str</span>(<span class="hljs-number">32</span>)  
+<span class="hljs-string">'32'</span>  
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">str</span>(<span class="hljs-number">3.14159</span>) 
+<span class="hljs-string">'3.14159'</span>
+</code></pre>
+<h2 id="32--数学函数">3.2  数学函数</h2>
+<p>Python 内置了一个数学模块，这一模块提供了绝大部分常用的数学函数。模块就是一系列相关函数的集合成的文件。</p>
+<p>在使用模块中的函数之前，必须先要导入这个模块，使用导入语句：</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">import</span> math
+</code></pre>
+<p>这个语句建立了一个模块对象，名字叫做 math。如果你让这个模块对象显示一下，你就会得到与之相关的信息了：</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>math  
+&lt;module <span class="hljs-string">'math'</span> (built-<span class="hljs-keyword">in</span>)&gt;
+</code></pre>
+<p>模块对象包含了一些已经定义好的函数和变量。指定模块名和函数名，要用点（也就是英文的句号）来连接模块名和函数名，就可以调用指定的函数了。</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>ratio = signal_power / noise_power 
+<span class="hljs-meta">&gt;&gt;&gt; </span>decibels = <span class="hljs-number">10</span> * math.log10(ratio)  
+<span class="hljs-meta">&gt;&gt;&gt; </span>radians = <span class="hljs-number">0.7</span> 
+<span class="hljs-meta">&gt;&gt;&gt; </span>height = math.sin(radians)
+</code></pre>
+<p>第一个例子用了数学的 log10 的函数，来计算信噪比的分贝值（假设信号强度和噪音强度都已知了）。数学模块同时也提供了 log，用自然底数 e 取对数的函数。</p>
+<p>第二个例子是对弧度值计算正弦值。通过变量名你应该能推测出正弦以及其他的三角函数（比如余弦、正切等等）都要用弧度值作为参数。所以要把角度的值从度转换成弧度，方法就是除以 180 然后再乘以圆周率π：</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>degrees = <span class="hljs-number">45</span> 
+<span class="hljs-meta">&gt;&gt;&gt; </span>radians = degrees / <span class="hljs-number">180.0</span> * math.pi 
+<span class="hljs-meta">&gt;&gt;&gt; </span>math.sin(radians) 
+<span class="hljs-number">0.707106781187</span>
+</code></pre>
+<p>math.pi 这个表达式从数学模块中得到π的一个大概精确到 15 位的近似值，存成一个浮点数。</p>
+<p>了解了三角函数之后，你可以用试着把 2 的平方根除以二，然后对比一下这个结果和上一个结果：</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>math.sqrt(<span class="hljs-number">2</span>) / <span class="hljs-number">2.0</span> 
+<span class="hljs-number">0.707106781187</span>
+</code></pre>
+<blockquote>
+<p>译者注：画一个三角形就知道了，45 度角两直角边是单位 1，斜边必然是 2 的平方根了，对应的正弦余弦也都是这个值了。大家应该能理解吧？</p>
+</blockquote>
+<h2 id="33--组合">3.3  组合</h2>
+<p>目前为止，我们已经见识了一个程序所需要的大部分元素了：变量、表达式、语句。不过咱们都是一个个单独看到的，还没有把它们结合起来试试。</p>
+<p>一门编程语言最有用的功能莫过于能够用一个个小模块来拼接创作。例如函数的参数可以是任何一种表达式，包括代数运算符：</p>
+<pre><code class="lang-py">x = math.sin(degrees / <span class="hljs-number">360.0</span> * <span class="hljs-number">2</span> * math.pi) ß
+</code></pre>
+<p>再或者函数的调用本身也可以作为参数：</p>
+<pre><code class="lang-py">x = math.exp(math.log(x+<span class="hljs-number">1</span>))
+</code></pre>
+<p>你可以在任何地方放一个值，放任何一个表达式，只有一个例外：一个声明语句的左边必须是变量名。任何其他的表达式放到等号左边都会导致语法错误（当然也有例外，等会再给介绍）。</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>minutes = hours * <span class="hljs-number">60</span>                 <span class="hljs-comment"># right  </span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>hours * <span class="hljs-number">60</span> = minutes                 <span class="hljs-comment"># wrong! </span>
+SyntaxError: can<span class="hljs-string">'t assign to operator
+</span></code></pre>
+<blockquote>
+<p>译者注：上述例子里面把表达式复制为变量是不行的，所说的例外估计是指尤达大师命名法，这个后面看到再说。</p>
+</blockquote>
+<h2 id="34--自定义函数">3.4  自定义函数</h2>
+<p>目前我们学到了一些 Python 自带的函数，自己定义新的函数也是可以的。函数定义要指定这个新函数的名字，还需要一系列语句放到这个函数里面，当调用这个函数的时候，就会运行这些语句了。</p>
+<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">print_lyrics</span>():
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">"I'm a lumberjack, and I'm okay."</span>)
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">"I sleep all night and I work all day."</span>)
+</code></pre>
+<p>这里的 def 就是一个关键词，意思是这是在定义一个函数。函数的名字就是 print_lyrics，函数的命名规则和变量命名规则基本差不多，都是字幕梳子或者下划线，但是不能用数字打头。另外也不能用关键词做函数名，还要注意尽量避免函数名和变量名发生重复。</p>
+<p>函数名后面的括号是空的，意思是这个函数不需要参数。</p>
+<p>函数定义的第一行叫做头部，剩下的叫做函数体。函数头部的末尾必须有一个冒号，函数体必须是相对函数头部有缩进的，距离行首相对于函数头要有四个空格的距离。函数体可以有任意长度的语句。</p>
+<p>（译者注：缩进是 Python 最强制的要求，本书的翻译用的 MarkDown 在生成的时候可能未必能够完美缩进，所以大家多注意一下自己调整哈，这个超级重要！）</p>
+<p>在打印语句中，要打印的字符串需要用双引号括着。单引号和双引号效果一样，除非是字符串中已经出现了单引号，大家一般都是用单引号的。</p>
+<p>所有的引号都必须是键盘上直接是引号的那个"键，无论是单引号还是双引号。就是回车键左边那个。“Curly quotes”这种引号，在 Python 里面是非法的。</p>
+<p>如果你在交互模式下面定义函数，解释器会显示三个小点来提醒你定义还没有完成：</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">def</span> <span class="hljs-title function_">print_lyrics</span>(): 
+<span class="hljs-meta">... </span>    
+<span class="hljs-built_in">print</span>(<span class="hljs-string">"I'm a lumberjack, and I'm okay."</span>) ...     
+<span class="hljs-built_in">print</span>(<span class="hljs-string">"I sleep all night and I work all day."</span>) ...
+</code></pre>
+<p>在函数定义完毕的结尾，必须输入一行空白行。定义函数会创建一个函数类的对象，有 type 函数。</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">print</span>(print_lyrics) 
+&lt;function print_lyrics at <span class="hljs-number">0xb7e99e9c</span>&gt; 
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">type</span>(print_lyrics) 
+&lt;<span class="hljs-keyword">class</span> <span class="hljs-string">'function'</span>&gt;
+</code></pre>
+<p>调用新函数的语法和调用内置函数是一样的：</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>print_lyrics() 
+I<span class="hljs-string">'m a lumberjack, and I'</span>m okay. I sleep <span class="hljs-built_in">all</span> night <span class="hljs-keyword">and</span> I work <span class="hljs-built_in">all</span> day.
+</code></pre>
+<p>一旦你定义了一个函数，就可以在其它函数里面来调用这个函数。比如咱们重复一下刚刚讨论的，写一个叫做重 repeat_lyrics 的函数。</p>
+<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">repeat_lyrics</span>():
+    print_lyrics()
+</code></pre>
+<p>然后调用一下这个函数：</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>repeat_lyrics() 
+I<span class="hljs-string">'m a lumberjack, and I'</span>m okay. I sleep <span class="hljs-built_in">all</span> night <span class="hljs-keyword">and</span> I work <span class="hljs-built_in">all</span> day. I<span class="hljs-string">'m a lumberjack, and I'</span>m okay. I sleep <span class="hljs-built_in">all</span> night <span class="hljs-keyword">and</span> I work <span class="hljs-built_in">all</span> day.
+</code></pre>
+<p>当然了，实际这首歌可不是这样的哈。</p>
+<h2 id="35--定义并使用">3.5  定义并使用</h2>
+<p>把前面这些小块的代码来整合一下，整体上程序看着大概是这样的：</p>
+<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">print_lyrics</span>():     
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">"I'm a lumberjack, and I'm okay."</span>)     
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">"I sleep all night and I work all day."</span>)  
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">repeat_lyrics</span>():     
+    print_lyrics()  
+repeat_lyrics()
+</code></pre>
+<p>这个程序包含两个函数的定义：print_lyrics 以及 repeat_lyrics，函数定义的执行就和其他语句一样，但是效果是创建函数对象。函数定义中的语句直到函数被调用的时候才会运行，函数的定义本身不会有任何输出。</p>
+<p>如你所愿了，你可以建立一个函数，然后运行一下试试了。换种说法就是，在调用之前一定要先把函数定义好。</p>
+<p>作为练习，把这个程序的最后一行放到顶部，这样函数调用就在函数定义之前了。运行一下看看出错的信息是什么。</p>
+<p>然后再把函数调用放到底部，把 print_lyrics 这个函数的定义放到 repeat_lyrics 这个函数的后面。再看看这次运行会出现什么样子？</p>
+<h2 id="36--运行流程">3.6  运行流程</h2>
+<p>为了确保一个函数在首次被调用之前已经定义，你必须要之道语句运行的顺序，也就是所谓『运行流程』。</p>
+<p>一个 Python 程序都是从第一个语句开始运行的。从首至尾，每次运行一个语句。</p>
+<p>函数的定义并不会改变程序的运行流程，但要注意，函数体内部的语句只有在函数被调用的时候才会运行。</p>
+<p>函数调用就像是运行流程有了绕道的行为。没有直接去执行下一个语句，运行流跳入到函数体内，运行里面的语句，然后再回来从离开的地方继续执行。</p>
+<p>这么解释很简明易懂了，只要你记住一个函数可以调用另一个就行。在一个函数的中间，程序有可能必须运行一下其他函数中的语句。所以运行新的函数的时候，程序可能也必须运行其他的函数！</p>
+<p>（译者注：看着很绕嘴，其实蛮简单的，就是跳出跳入互相调用而已。）</p>
+<p>幸运的是，Python 很善于追踪应该执行的位置，所以每次一个函数执行完毕了，程序都会回到当时跳出的位置，然后继续运行。等执行到了程序的末尾，就终止了。</p>
+<p>总的来说，你阅读一个程序的时候，并不一定总是要从头到尾来读的。有时候你要按照运行流程来读才更好理解。</p>
+<h2 id="37--形式参数和实际参数">3.7  形式参数和实际参数</h2>
+<p>（译者注：这里提到的形参和实参实际上是传值方式的区别，这个在最基本的编程入门课程中老师应该都比较强调的。实际参数就是调用函数时候传给他的那个参数；而形式参数可以理解为函数内部定义用的参数。老外对这个的思辩也很多。这里我先不说太多，翻译着再看。
+大家可以去网上多搜索一下，比如在<a href="http://stackoverflow.com/questions/1788923/parameter-vs-argument" target="_blank">StackOverflow</a>和<a href="https://msdn.microsoft.com/en-us/library/9kewt1b3.aspx" target="_blank">MSDN</a>）</p>
+<p>我们已经看到了一些函数了，他们都需要实际参数。比如当你调用数学的正弦函数的时候你就需要给它一个数值作为实际参数。有的函数需要一个以上的实际参数，比如幂指数函数需要两个，一个是底数，一个是幂次。</p>
+<p>在函数里面，实际参数会被赋值给形式参数。下面就是一个使用单个实际参数的函数的定义：</p>
+<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">print_twice</span>(<span class="hljs-params">bruce</span>):
+    <span class="hljs-built_in">print</span>(bruce)     
+    <span class="hljs-built_in">print</span>(bruce)
+</code></pre>
+<p>这个函数把传来的实际参数的值赋给了一个名字叫做 burce 的形式参数。当函数被调用的时候，就会打印出形式参数的值两次（无论是什么内容）。任何能打印的值都适用于这个函数。</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>print_twice(<span class="hljs-string">'Spam'</span>)  
+Spam 
+Spam 
+<span class="hljs-meta">&gt;&gt;&gt; </span>print_twice(<span class="hljs-number">42</span>) 
+<span class="hljs-number">42</span> 
+<span class="hljs-number">42</span> 
+<span class="hljs-meta">&gt;&gt;&gt; </span>print_twice(math.pi) 
+<span class="hljs-number">3.14159265359</span> 
+<span class="hljs-number">3.14159265359</span>
+</code></pre>
+<p>适用于 Python 内置函数的组合规则对自定义的函数也是适用的，所以我们可以把表达式作为实际参数：</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>print_twice(<span class="hljs-string">'Spam '</span>*<span class="hljs-number">4</span>) 
+Spam Spam Spam Spam 
+Spam Spam Spam Spam 
+<span class="hljs-meta">&gt;&gt;&gt; </span>print_twice(math.cos(math.pi)) 
+-<span class="hljs-number">1.0</span> 
+-<span class="hljs-number">1.0</span>
+</code></pre>
+<p>实际参数在函数被调用之前要先被运算一下，所以上面例子中作为实际参数的两个表达式都是在 print_twice 函数调用之前仅计算了一次。</p>
+<p>当然了，也可以用变量做实际参数了：</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>michael = <span class="hljs-string">'Eric, the half a bee.'</span> 
+<span class="hljs-meta">&gt;&gt;&gt; </span>print_twice(michael) 
+Eric, the half a bee. 
+Eric, the half a bee.
+</code></pre>
+<p>咱们传递给函数的这个实际参数是一个变量，这个变量名 michael 和函数内部的形式参数 bruce 没有任何关系。在程序主体内部参数传过去就行了，参数名字对于函数内部没有作用；比如在这个 print_twice 函数里面，任何传来的值，在这个 print_twice 函数体内，都被叫做 bruce。</p>
+<p>（译者注：这里要跟大家解释一下，传递参数的时候用的是实际参数，是把这个实际参数的值交给调用的函数，函数内部接收这个值，可以命名成任意其他名字的形式参数，差不多就这么个意思了。）</p>
+<h2 id="38--函数内部变量和形参都是局部的">3.8  函数内部变量和形参都是局部的</h2>
+<p>在函数内部建立一个变量，这个变量是仅在函数体内部才存在。例如：</p>
+<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">cat_twice</span>(<span class="hljs-params">part1, part2</span>):     
+    cat = part1 + part2     
+    print_twice(cat)
+</code></pre>
+<p>这个函数得到两个实参，把它们连接起来，然后调用 print_twice 函数来输出结果两次。</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>line1 = <span class="hljs-string">'Bing tiddle '</span> 
+<span class="hljs-meta">&gt;&gt;&gt; </span>line2 = <span class="hljs-string">'tiddle bang.'</span> 
+<span class="hljs-meta">&gt;&gt;&gt; </span>cat_twice(line1, line2) 
+Bing tiddle tiddle bang. 
+Bing tiddle tiddle bang.
+</code></pre>
+<p>当 cat_twice 运行完毕了，这个名字叫做 cat 的变量就销毁了。咱们再尝试着打印它一下，就会得到异常：</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">print</span>(cat) 
+NameError: name <span class="hljs-string">'cat'</span> <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> defined
+</code></pre>
+<p>形式参数也是局部起作用的。例如在 print_twice 这个函数之外，是不存在 bruce 这个变量的。</p>
+<p>（译者注：当然你可以在函数外定义一个同名变量叫做 bruce，但这两个没有关系，大家可以动手自己试试，这也是作者所鼓励的一种探索思维。）</p>
+<h2 id="39--栈图">3.9  栈图</h2>
+<p>要追踪一个变量能在哪些位置使用，咱们就可以画个图表来实现，这种图表叫做栈图。栈图和我们之前提到的状态图有些相似，也会表征每个变量的值，不同的是栈图还会标识出每个变量所属的函数。</p>
+<p>每个函数都用一个框架来表示。框架的边上要标明函数的名字，框内填写函数内部的形参和变量。上文中样例代码的栈图如下图 3.1 所示。</p>
+<p><img src="http://7xnq2o.com1.z0.glb.clouddn.com/ThinkPythonfigure3.1.png" alt="Figure 3.1: Stack diagram."></img>
+图 3.1 栈图</p>
+<p>一个栈中的这些框也表示了函数调用的关系等等。在上面这个例子中，print<em>twice 被 cat<em>twice 调用了两次，而 cat<em>twice 被 <em>_main</em></em> 这个函数调用。__main</em></em> 这个函数很特殊，属于最外层框架，也被叫做主函数。当你在所有函数之外建立一个变量的时候，这个变量就属于主函数所有。</p>
+<p>每个形式参数都保存了所对应的实际参数的值。因此 part1 的值和 line1 一样，part2 的值就和 line2 一样，同理可知 bruce 的值就和 cat 一样了。</p>
+<p>如果函数调用的时候出错了，Python 会打印出这个出错函数的名字，调用这个出错函数的函数名，以及调用这个调用了出错函数的函数的函数名，一直追溯到主函数。（译者注：好绕口哈。。。就是会溯源回去啦。）</p>
+<p>例如，如果你想在 print_twice 这个函数中读取 cat 的值，就会得到一个变量名错误：</p>
+<pre><code class="lang-py">Traceback (innermost last):  
+File <span class="hljs-string">"test.py"</span>, line <span class="hljs-number">13</span>, <span class="hljs-keyword">in</span> __main__  
+cat_twice(line1, line2)   
+File <span class="hljs-string">"test.py"</span>, line <span class="hljs-number">5</span>, <span class="hljs-keyword">in</span> cat_twice     
+print_twice(cat)   
+File <span class="hljs-string">"test.py"</span>, line <span class="hljs-number">9</span>, <span class="hljs-keyword">in</span> print_twice     
+<span class="hljs-built_in">print</span>(cat) 
+NameError: name <span class="hljs-string">'cat'</span> <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> defined
+</code></pre>
+<p>这个一系列的函数列表，就是一个追溯了。这回告诉你哪个程序文件出了错误，哪一行出了错误，以及当时哪些函数在运行。还会告诉你引起错误的代码所在行号。（译者注：这个简直太棒了，大家一定要留心这个功能以及出错提示，以后要用来解决很多 bug 呢。）</p>
+<p>追溯中对函数顺序的排列是同栈图的方框顺序一样的。当前运行的函数会放在最底部。</p>
+<h2 id="310--有返回值的函数-和-无返回值的函数">3.10  有返回值的函数 和 无返回值的函数</h2>
+<p>咱们用过的一些函数，比如数学的函数，都会返回各种结果；也没别的好名字，就叫他们有返回值函数。其他的函数，比如 print_twice，都是进行一些操作，但不返回值。那就叫做无返回值函数好了。</p>
+<p>当你调用一个有返回值的函数的时候，一般总是要利用一下结果的；比如，你可能需要把结果赋值给某个变量，然后在表达式里面来使用一下：</p>
+<pre><code class="lang-py">x = math.cos(radians) 
+golden = (math.sqrt(<span class="hljs-number">5</span>) + <span class="hljs-number">1</span>) / <span class="hljs-number">2</span>
+</code></pre>
+<p>当你在交互模式调用一个函数的时候，Python 会显示结果：</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>math.sqrt(<span class="hljs-number">5</span>) 
+<span class="hljs-number">2.2360679774997898</span> 
+<span class="hljs-meta">&gt;&gt;&gt; </span>math.sqrt(<span class="hljs-number">5</span>)
+<span class="hljs-number">2.2360679774997898</span>
+</code></pre>
+<p>如果是脚本模式，你运行一个有返回值的函数，但没有利用这个返回值，这个返回值就会永远丢失了！（译者注：只要有返回值就一定要利用！）</p>
+<pre><code class="lang-py">math.sqrt(<span class="hljs-number">5</span>)
+</code></pre>
+<p>这个脚本计算了 5 的平方根，但没存储下来，也没有显示出来，所以就根本没用了。</p>
+<p>无返回值的函数要么就是屏幕上显示出一些内容，要么就有其他的功能，但就是没有返回值。如果你把这种函数的结果返回给一个变量，就会的到特殊的值：空。</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>result = print_twice(<span class="hljs-string">'Bing'</span>)  
+Bing Bing 
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">print</span>(result) 
+<span class="hljs-literal">None</span>
+</code></pre>
+<p>这种 None 是空值的意思，和字符串'None'是不一样的。是一种特殊的值，并且有自己的类型。（译者注，就相当于 null 了。）</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">print</span>(<span class="hljs-built_in">type</span>(<span class="hljs-literal">None</span>)) 
+&lt;<span class="hljs-keyword">class</span> <span class="hljs-string">'NoneType'</span>&gt;
+</code></pre>
+<p>我们目前为止写的函数还都是无返回值的。接下来的新的章节里面，咱们就要开始写一些有返回值的函数了。</p>
+<h2 id="311--为啥要用函数？">3.11  为啥要用函数？</h2>
+<p>为什么要费这么多力气来把程序划分成一个个函数呢？这么麻烦值得么？原因如下：</p>
+<ul>
+<li><p>创建一个新的函数，你就可以把一组语句用一个名字来命名，这样你的程序读起来就清晰多了，后期维护调试也方便。</p>
+</li>
+<li><p>函数的出现能够避免代码冗余，程序内的一些重复的内容就会简化了，变得更小巧。而且在后期进行修改的时候，你只要改函数中的一处地方就可以了，很方便。</p>
+</li>
+<li><p>把长的程序切分成一个个函数，你就可以一步步来 debug 调试，每次只应对一小部分就可以，然后把它们组合起来就可以用了。</p>
+</li>
+<li><p>精细设计的函数会对很多程序都有用处。一旦你写好了并且除了错，这种函数代码可以再利用。</p>
+</li>
+</ul>
+<h2 id="312--调试">3.12  调试</h2>
+<p>给程序调试是你应当掌握的最关键技能之一了。尽管调试的过程会有挫败感，也依然是最满足智力，最有挑战性，也是编程过程中最有趣的一个项目了。</p>
+<p>某种程度上，调试像是侦探工作一样。你面对着很多线索，必须推断出导致当前结果的整个过程和事件。</p>
+<p>调试也有点像一门实验科学。一旦你有了一个关于所出现的错误的想法，你就修改一下程序再试试看。如果你的假设是正确的，你就能够预料到修改导致的结果，这样在编程的水平上，你就上了一层台阶了，距离让程序工作起来也更近了。</p>
+<p>如果你的推测是错误的，你必须提出新的来。就像夏洛克.福尔摩斯之处的那样，『当你剔除了所有那些不可能，剩下的无论多么荒谬，都必然是真相。』（引自柯南道尔的小说《福尔摩斯探案：四签名》）</p>
+<p>对于一些人来说，编程和调试是一回事。也就是说，编程就是对一个程序逐渐进行调试，一直到程序按照设想工作为止。这种思想意味着你要从一段能工作的程序来起步，一点点做小修改和调试。</p>
+<p>例如，Linux 是一个有上百万行代码的操作系统，但最早它起源于 Linus Torvalsd 的一段小代码。这个小程序是作者用来探索 Intel 的 80386 芯片的。根据 Larry Greenfield 回忆，『Linus 早起的项目就是很小的一个程序，这个程序能够在输出 AAAA 和 BBBB 之间进行转换。这后来就发展除了 Linux 了。』（引用自 Linux 用户参考手册 beta1 版）</p>
+<h2 id="313--glossary-术语列表">3.13  Glossary 术语列表</h2>
+<p>function:
+A named sequence of statements that performs some useful operation. Functions may or may not take arguments and may or may not produce a result.</p>
+<blockquote>
+<p>函数：一系列有序语句的组合，有自己的名字，并且用在某些特定用途。可以要求输入参数，也可以没有参数，可以返回值，也可以没有返回值。</p>
+</blockquote>
+<p>function definition:
+A statement that creates a new function, specifying its name, parameters, and the statements it contains.</p>
+<blockquote>
+<p>函数定义：创建新函数的语句，确定函数的名字，形式参数，以及函数内部的语句。</p>
+</blockquote>
+<p>function object:
+A value created by a function definition. The name of the function is a variable that refers to a function object.</p>
+<blockquote>
+<p>函数对象：由函数定义所创建的值，函数名字指代了这一函数对象。</p>
+</blockquote>
+<p>header:
+The first line of a function definition.</p>
+<blockquote>
+<p>函数头：函数定义的第一行。</p>
+</blockquote>
+<p>body:
+The sequence of statements inside a function definition.</p>
+<blockquote>
+<p>函数体：函数定义内部的一系列有序语句。</p>
+</blockquote>
+<p>parameter:
+A name used inside a function to refer to the value passed as an argument.</p>
+<blockquote>
+<p>形式参数：用来在函数内部接收实际参数传来的值，并被函数在函数内部使用。</p>
+</blockquote>
+<p>function call:
+A statement that runs a function. It consists of the function name followed by an argument list in parentheses.</p>
+<blockquote>
+<p>函数调用：运行某个函数的语句。包括了函数的名字以及括号，括号内放函数需要的实际参数。</p>
+</blockquote>
+<p>argument:
+A value provided to a function when the function is called. This value is assigned to the corresponding parameter in the function.</p>
+<blockquote>
+<p>实际参数：当函数被调用的时候，提供给函数的值。这个值会被函数接收，赋给函数内部的形式参数。</p>
+</blockquote>
+<p>local variable:
+A variable defined inside a function. A local variable can only be used inside its function.</p>
+<blockquote>
+<p>局部变量：函数体内定义的变量。局部变量只在函数内部有效。</p>
+</blockquote>
+<p>return value:
+The result of a function. If a function call is used as an expression, the return value is the value of the expression.</p>
+<blockquote>
+<p>返回值：函数返回的结果。如果一个函数调用被用作了表达式，这个返回值就是这个表达式所代表的值。</p>
+</blockquote>
+<p>fruitful function:
+A function that returns a value.</p>
+<blockquote>
+<p>有返回值函数：返回一个值作为返回值的函数。</p>
+</blockquote>
+<p>void function:
+A function that always returns None.</p>
+<blockquote>
+<p>无返回值函数：不返回值，只返回一个空 None 的函数。</p>
+</blockquote>
+<p>None:
+A special value returned by void functions.</p>
+<blockquote>
+<p>空值：无返回值函数所返回的一种特殊的值。</p>
+</blockquote>
+<p>module:
+A file that contains a collection of related functions and other definitions.</p>
+<blockquote>
+<p>模块：包含一系列相关函数以及其他一些定义的文件。</p>
+</blockquote>
+<p>import statement:
+A statement that reads a module file and creates a module object.</p>
+<blockquote>
+<p>导入语句：读取模块并且创建一个模块对象的语句。</p>
+</blockquote>
+<p>module object:
+A value created by an import statement that provides access to the values defined in a module.</p>
+<blockquote>
+<p>模块对象：导入语句创建的一个值，允许访问模块所定义的值。</p>
+</blockquote>
+<p>dot notation:
+The syntax for calling a function in another module by specifying the module name followed by a dot (period) and the function name.</p>
+<blockquote>
+<p>点符号：调用某一个模块的某一函数的语法形式，就是模块名后加一个点，也就是英文的句号，再加函数名。</p>
+</blockquote>
+<p>composition:
+Using an expression as part of a larger expression, or a statement as part of a larger statement.</p>
+<blockquote>
+<p>组合：把表达式作为更大的表达式的一部分，或者把语句作为更大语句的一部分。</p>
+</blockquote>
+<p>flow of execution:
+The order statements run in.</p>
+<blockquote>
+<p>运行流程：语句运行的先后次序。</p>
+</blockquote>
+<p>stack diagram:
+A graphical representation of a stack of functions, their variables, and the values they refer to.</p>
+<blockquote>
+<p>栈图：对函数关系、变量内容及结构的图形化表示。</p>
+</blockquote>
+<p>frame:
+A box in a stack diagram that represents a function call. It contains the local variables and parameters of the function.</p>
+<blockquote>
+<p>框架：栈图中的方框，表示了一次函数调用。包括函数的局部变量和形式参数。</p>
+</blockquote>
+<p>traceback:
+A list of the functions that are executing, printed when an exception occurs.</p>
+<blockquote>
+<p>追踪：对运行中函数的列表，当有异常的时候就会输出。</p>
+</blockquote>
+<h2 id="314--练习">3.14  练习</h2>
+<h3 id="练习-1">练习 1</h3>
+<p>写一个名叫 right_justify 的函数，形式参数是名为 s 的字符串，将字符串打印，前面流出足够的空格，让字符串最后一个字幕在第 70 列显示。</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>right_justify(<span class="hljs-string">'monty'</span>)                                                                  monty
+</code></pre>
+<p>提示：使用字符拼接和重复来实现。另外 Python 还提供了内置的名字叫做 len 的函数，可以返回一个字符串的长度，比如 len('monty')的值就是 5 了。</p>
+<h3 id="练习-2">练习 2</h3>
+<p>你可以把一个函数对象作为一个值赋给一个变量或者作为一个实际参数来传递给其他函数。比如，do_twice 就是一个把其他函数对象当做参数的函数，它的功能是调用对象函数两次：</p>
+<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">do_twice</span>(<span class="hljs-params">f</span>):     
+    f()     
+    f()
+</code></pre>
+<p>下面是另一个例子，这里用了 do_twice 来调用一个名叫 print_spam 的函数两次。</p>
+<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">print_spam</span>():     
+<span class="hljs-built_in">print</span>(<span class="hljs-string">'spam'</span>)  
+do_twice(print_spam)
+</code></pre>
+<p>1.把上面的例子写成脚本然后试一下。</p>
+<p>2.修改一下 do_twice 这个函数，让它接收两个实际参数，一个是函数对象，一个是值，调用对象函数两次，并且赋这个值给对象函数作为实际参数。</p>
+<p>3.把 print_twice 这个函数的定义复制到你的脚本里面，去本章开头找一下这个例子哈。</p>
+<p>4.用修改过的这个 do_twice 来调用 print_twice 两次，用字符串『spam』传递过去作为实际参数。</p>
+<p>5.定义一个新的函数，名字叫做 do_four，使用一个函数对象和一个值作为实际参数，调用这个对象函数四次，传递这个值作过去为对象函数的一个形式参数。这个函数体内只要有两个语句就够了，而不是四个。</p>
+<p><a href="http://thinkpython2.com/code/do_four.py" target="_blank">样例代码</a>：</p>
+<h3 id="3--练习三">3  练习三</h3>
+<p>注意：这个练习应该只用咱们目前学习过的语句和其他功能来实现。</p>
+<p>1.写一个函数，输出如下：</p>
+<p><img src="http://7xnq2o.com1.z0.glb.clouddn.com/ThinkPythonExcise3.14.png" alt=""></img></p>
+<p>提示：要一次打印超过一行，可以用逗号分隔一下就能换行了。如下所示：</p>
+<pre><code class="lang-py"><span class="hljs-built_in">print</span>(<span class="hljs-string">'+'</span>, <span class="hljs-string">'-'</span>)
+</code></pre>
+<p>默认情况下，print 会打印到下一行，你可以手动覆盖掉这个行为，在末尾输出一个空格就可以了：</p>
+<pre><code class="lang-py"><span class="hljs-built_in">print</span>(<span class="hljs-string">'+'</span>, end=<span class="hljs-string">' '</span>) 
+<span class="hljs-built_in">print</span>(<span class="hljs-string">'-'</span>)
+</code></pre>
+<p>上面的语句输出结果就是：'+ -'。</p>
+<p>没有参数的 print 语句会把当前的行结束，去下一行。</p>
+<p>2.写一个四行四列的小网格绘制的程序。</p>
+<p><a href="http://thinkpython2.com/code/grid.py" target="_blank">样例</a></p>
+<p>此练习基于 Oualline 的书《实践 C 语言编程》第三版，O'Reilly 出版社，1997 年版</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="chapter2.html" class="navigation navigation-prev " aria-label="Previous page: 第二章 变量，表达式，语句">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="chapter4.html" class="navigation navigation-next " aria-label="Next page: 第四章 案例学习：交互设计">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"第三章 函数","level":"1.4","depth":1,"next":{"title":"第四章 案例学习：交互设计","level":"1.5","depth":1,"path":"chapter4.md","ref":"chapter4.md","articles":[]},"previous":{"title":"第二章 变量，表达式，语句","level":"1.3","depth":1,"path":"chapter2.md","ref":"chapter2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter3.md","mtime":"2024-08-23T09:01:53.769Z","type":"markdown"},"gitbook":{"version":"5.1.4","time":"2024-08-23T09:11:00.343Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

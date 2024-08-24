@@ -1,0 +1,741 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>第七章 迭代 · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 5.1.4">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, user-scalable=yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="chapter8.html" />
+    
+    
+    <link rel="prev" href="chapter6.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="chapter1.html">
+            
+                <a href="chapter1.html">
+            
+                    
+                    第一章 编程之路
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="chapter2.html">
+            
+                <a href="chapter2.html">
+            
+                    
+                    第二章 变量，表达式，语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="chapter3.html">
+            
+                <a href="chapter3.html">
+            
+                    
+                    第三章 函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="chapter4.html">
+            
+                <a href="chapter4.html">
+            
+                    
+                    第四章 案例学习：交互设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="chapter5.html">
+            
+                <a href="chapter5.html">
+            
+                    
+                    第五章 条件循环
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="chapter6.html">
+            
+                <a href="chapter6.html">
+            
+                    
+                    第六章 有返回值的函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.8" data-path="chapter7.html">
+            
+                <a href="chapter7.html">
+            
+                    
+                    第七章 迭代
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="chapter8.html">
+            
+                <a href="chapter8.html">
+            
+                    
+                    第八章 字符串
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="chapter9.html">
+            
+                <a href="chapter9.html">
+            
+                    
+                    第九章 案例学习：单词游戏
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="chapter10.html">
+            
+                <a href="chapter10.html">
+            
+                    
+                    第十章 列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="chapter11.html">
+            
+                <a href="chapter11.html">
+            
+                    
+                    第十一章 字典
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="chapter12.html">
+            
+                <a href="chapter12.html">
+            
+                    
+                    第十二章 元组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="chapter13.html">
+            
+                <a href="chapter13.html">
+            
+                    
+                    第十三章 案例学习：数据结构的选择
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="chapter14.html">
+            
+                <a href="chapter14.html">
+            
+                    
+                    第十四章 文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="chapter15.html">
+            
+                <a href="chapter15.html">
+            
+                    
+                    第十五章 类和对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="chapter16.html">
+            
+                <a href="chapter16.html">
+            
+                    
+                    第十六章 类和函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="chapter17.html">
+            
+                <a href="chapter17.html">
+            
+                    
+                    第十七章 类和方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="chapter18.html">
+            
+                <a href="chapter18.html">
+            
+                    
+                    第十八章 继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="chapter19.html">
+            
+                <a href="chapter19.html">
+            
+                    
+                    第十九章 更多功能
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >第七章 迭代</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="第七章-迭代">第七章 迭代</h1>
+<p>这一章我们讲迭代，简单说就是指重复去运行一部分代码。在 5.8 的时候我们接触了一种迭代——递归。在 4.2 我们还学了另外一种迭代——for 循环。在本章，我们会见到新的迭代方式：whie 语句。但我要先再稍微讲一下变量赋值。</p>
+<h2 id="71--再赋值">7.1  再赋值</h2>
+<p>你可能已经发现了，对同一个变量可以多次进行赋值。一次新的赋值使得已有的变量获得新的值（也就不再有旧的值了。）</p>
+<blockquote>
+<p>（译者注：这个其实中文很好理解，英文当中词汇逻辑关系比较紧密，但灵活程度不如中文高啊。）</p>
+</blockquote>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>x = <span class="hljs-number">5</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>x
+<span class="hljs-number">5</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>x = <span class="hljs-number">7</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>x
+<span class="hljs-number">7</span>
+</code></pre>
+<p>第一次显示 x 的值，是 5，第二次，就是 7 了。</p>
+<p>图 7.1 表示了再赋值的操作在状态图中的样子。</p>
+<p>这里我就要强调一下大家常发生的误解。因为 Python 使用单等号（=）来赋值，所以有的人会以为像 a=b 这样的语句就如同数学上的表达一样来表达两者相等，这种想法是错误的！</p>
+<p>首先，数学上的等号所表示的相等是一个对称的关系，而 Python 中等号的赋值操作是不对称的。比如，在数学上，如果 a=7，那么 7=a。而在 Python，a=7 这个是合乎语法的，而 7=a 是错误的。</p>
+<p>（译者注：这里就是说 Python 中等号是一种单向的运算，就是把等号右边的值赋给等号左边的变量，而 Python 中其实也有数学上相等判断的表达式，就是双等号（==），这个是有对称性的，就是说 a==b，那么 b==a，或者 a==3，3==a 也可以。）</p>
+<p>另外在数学上，一个相等关系要么是真，要么是假。比如 a=b，那么 a 就会永远等于 b。在 Python 里面，赋值语句可以让两个变量相等，但可以不始终都相等，如下所示：</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>a = <span class="hljs-number">5</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>b = a    <span class="hljs-comment"># a and b are now equal a 和 b 相等了</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>a = <span class="hljs-number">3</span>    <span class="hljs-comment"># a and b are no longer equal 现在 a 和 b 就不相等了</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>b
+<span class="hljs-number">5</span>
+</code></pre>
+<p>第三行改变了 a 的值，但没有改变 b 的值，所以它们就不再相等了。</p>
+<p>对变量进行再赋值总是很有用的，但你用的时候要做好备注和提示。如果变量的值频繁变化，就可能让代码难以阅读和调试。</p>
+<hr></hr>
+<p><img src="http://7xnq2o.com1.z0.glb.clouddn.com/ThinkPython7.1jpg.jpg" alt="Figure 7.1: State diagram."></img>
+Figure 7.1: State diagram.</p>
+<hr></hr>
+<h2 id="72--更新变量">7.2  更新变量</h2>
+<p>最常见的一种再赋值就是对变量进行更新，这种情况下新的值是在旧值基础上进行修改得到的。</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>x = x + <span class="hljs-number">1</span>
+</code></pre>
+<p>上面的语句的意思是：获取 x 当前的值，在此基础上加 1，然后把结果作为新值赋给 x。如果你对不存在的变量进行更新，你就会得到错误了，因为 Python 要先进行等号右边的运算，然后才能赋值给 x。</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>x = x + <span class="hljs-number">1</span>
+NameError: name <span class="hljs-string">'x'</span> <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> defined
+</code></pre>
+<p>在你更新一个变量之前，你要先初始化一下，一般就是简单赋值一下就可以了：</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>x = <span class="hljs-number">0</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>x = x + <span class="hljs-number">1</span>
+</code></pre>
+<p>对一个变量每次加 1 也可以叫做一种递增，每次减去 1 就可以叫做递减了。</p>
+<h2 id="73--循环：while-语句">7.3  循环：While 语句</h2>
+<p>计算机经常被用来自动执行一些重复的任务。重复同样的或者相似的任务，而不出错，这是计算机特别擅长的事情，咱们人就做不到了。在一个计算机程序里面，重复操作也被叫做迭代。</p>
+<p>我们已经见过两种使用了递归来进行迭代的函数：倒计时函数 countdown，以及 n 次输出函数 print_n。Python 还提供了一些功能来简化迭代，因为迭代用的很普遍。其中一个就是我们在 4.2 中见到的 for 循环语句。往后我们还要复习一下它。另外一个就是 while 循环语句。下面就是一个使用了 while 循环语句来实现的倒计时函数 countdown：</p>
+<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">countdown</span>(<span class="hljs-params">n</span>):
+    <span class="hljs-keyword">while</span> n &gt; <span class="hljs-number">0</span>:
+        <span class="hljs-built_in">print</span>(n)
+        n = n - <span class="hljs-number">1</span>
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">'Blastoff!'</span>)
+</code></pre>
+<p>while 循环语句读起来很容易，几乎就像是英语一样简单。这个函数的意思是：当 n 大于 0，就输出 n 的值，然后对 n 减 1，到 n 等于 0 的时候，就输出单词『Blastoff』。</p>
+<p>更正式一点，下面是一个 while 循环语句的执行流程：</p>
+<ol>
+<li><p>判断循环条件的真假。</p>
+</li>
+<li><p>如果是假的，退出 while 语句，继续运行后面的语句。</p>
+</li>
+<li><p>如果条件为真，执行循环体，然后再调回到第一步。</p>
+</li>
+</ol>
+<p>这种类型的运行流程叫做循环，因为第三步会循环到第一步。循环体内要改变一个或者更多变量的值，这样循环条件最终才能变成假，然后循环才能终止。</p>
+<p>否则的话，条件不能为假，循环不能停止，这就叫做无限循环。计算机科学家有一个笑话，就是看到洗发液的说明：起泡，冲洗，重复；这就是一个无限循环。</p>
+<p>在倒计时函数 countdown 里面，咱们能够保证有办法让循环终止：只要 n 小于等于 0 了，循环就不进行了。否则的话，n 每次就会通过循环来递减，最终还是能到 0 的。</p>
+<p>其他一些循环就不那么好描述了。比如：</p>
+<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">sequence</span>(<span class="hljs-params">n</span>):
+    <span class="hljs-keyword">while</span> n != <span class="hljs-number">1</span>:
+        <span class="hljs-built_in">print</span>(n)
+        <span class="hljs-keyword">if</span> n % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>:            <span class="hljs-comment"># n is even</span>
+            n = n / <span class="hljs-number">2</span>
+        <span class="hljs-keyword">else</span>:                    <span class="hljs-comment"># n is odd</span>
+            n = n*<span class="hljs-number">3</span> + <span class="hljs-number">1</span>
+</code></pre>
+<p>这个循环的判断条件是 n 不等于 1，所以循环一直进行，直到 n 等于 1 了，条件为假，就不再循环了。</p>
+<p>每次循环的时候，程序都输出 n 的值，然后检查一下是偶数还是奇数。如果是偶数，就把 n 除以 2。如果是奇数，就把 n 替换为 n 乘以 3 再加 1 的值。比如让这个函数用 3 做参数，也就是 sequence(3)，得到的 n 的值就依次为：3, 10, 5, 16, 8, 4, 2, 1.</p>
+<p>有时候 n 在增加，有时候 n 在降低，所以没有明显证据表明 n 最终会到 1 而程序停止。对于一些特定的 n 值，我们能够确保循环的终止。例如如果起始值是一个 2 的倍数，n 每次循环过后依然是偶数，直到到达 1 位置。之前的例子都最终得到了一个数列，从 16 开始的就是了。</p>
+<p>真正的难题是，我们能否证明这个程序对任意正数的 n 值都能终止循环。目前为止，没有人能够证明或者否定这个命题。</p>
+<p>参考<a href="http://en.wikipedia.org/wiki/Collatz_conjecture" target="_blank">维基百科</a>
+做一个练习，把 5.8 里面的那个 n 次打印函数 print_n 用迭代的方法来实现。</p>
+<h2 id="74--中断">7.4  中断</h2>
+<p>有时候你不知道啥时候终止循环，可能正好在中间循环体的时候要终止了。这时候你就可以用 break 语句来跳出循环。
+比如，假设你要让用户输入一些内容，当他们输入 done 的时候结束。你就可以用如下的方法实现：</p>
+<pre><code class="lang-py"><span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:
+    line = <span class="hljs-built_in">input</span>(<span class="hljs-string">'&gt; '</span>)
+    <span class="hljs-keyword">if</span> line == <span class="hljs-string">'done'</span>:
+        <span class="hljs-keyword">break</span>
+        <span class="hljs-built_in">print</span>(line)
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">'Done!'</span>)
+</code></pre>
+<p>循环条件就是 true，意味条件总是真的，所以循环就一直进行，一直到触发了 break 语句才跳出。</p>
+<p>每次循环的时候，程序都会有一个大于号&gt;来提示用户。如果用输入了 done，break 语句就会让程序跳出循环。否则的话程序会重复用户输入的内容，然后回到循环的头部。下面就是一个简单的运行例子：</p>
+<pre><code class="lang-py">&gt;&gt;&gt;<span class="hljs-keyword">not</span> done
+&gt;&gt;&gt;<span class="hljs-keyword">not</span> done
+&gt;&gt;&gt;done
+Done!
+</code></pre>
+<p>这种 while 循环的写法很常见，因为这样你可以在循环的任何一个部位对条件进行检测，而不仅仅是循环的头部，你可以确定地表达循环停止的条件（在这种情况下就停止了），而不是消极地暗示『程序会一直运行，直到某种情况』。</p>
+<h2 id="75--平方根">7.5  平方根</h2>
+<p>循环经常被用于进行数值运算的程序中，这种程序往往是有一个近似值作为初始值，然后逐渐迭代去改进以接近真实值。</p>
+<p>比如，可以用牛顿法来计算平方根。加入你要知道一个数 a 的平方根。如果你用任意一个估计值 x 来开始，你可以用下面的公式获得一个更接近的值：</p>
+<p>$$y = \frac{x + \frac{a}{x}}{2}$$</p>
+<p>比如，如果 a 是 3，x 设为 3：</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>a = <span class="hljs-number">4</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>x = <span class="hljs-number">3</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>y = (x + a/x) / <span class="hljs-number">2</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>y
+<span class="hljs-number">2.16666666667</span>
+</code></pre>
+<p>得到的结果比初始值 3 更接近真实值（4 的平方根是 2）。如果我们用这个结果做新的估计值来重复这个操作，结果就更加接近了：</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>x = y
+<span class="hljs-meta">&gt;&gt;&gt; </span>y = (x + a/x) / <span class="hljs-number">2</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>y 
+<span class="hljs-number">2.00641025641</span>
+</code></pre>
+<p>这样进行一些次重复之后，估计值就几乎很准确了：</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>x = y
+<span class="hljs-meta">&gt;&gt;&gt; </span>y = (x + a/x) / <span class="hljs-number">2</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>y <span class="hljs-number">2.00001024003</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>x = y
+<span class="hljs-meta">&gt;&gt;&gt; </span>y = (x + a/x) / <span class="hljs-number">2</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>y
+<span class="hljs-number">2.00000000003</span>
+</code></pre>
+<p>一般情况下，我们不能提前知道到达正确结果需要多长时间，但是当估计值不再有明显变化的时候我们就知道了：</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>x = y
+<span class="hljs-meta">&gt;&gt;&gt; </span>y = (x + a/x) / <span class="hljs-number">2</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>y
+<span class="hljs-number">2.0</span>
+</code></pre>
+<p>当 y 和 x 相等的时候，我们就可以停止了。下面这个循环中，用一个初始值 x 来开始循环，然后进行改进，一直到 x 的值不再变化为止：</p>
+<pre><code class="lang-py"><span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:
+    <span class="hljs-built_in">print</span>(x)
+    y = (x + a/x) / <span class="hljs-number">2</span>
+    <span class="hljs-keyword">if</span> y == x:
+        <span class="hljs-keyword">break</span>
+    x = y
+</code></pre>
+<p>对大多数值来说，这个循环都挺管用的，但一般来说用浮点数来测试等式是很危险的。浮点数的值只能是近似正确：大多数的有理数，比如 1/3，以及无理数，比如根号 2，都不能用浮点数来准确表达的。</p>
+<p>相比之下，与其对比 x 和 y 是否精确相等，倒不如以下方法更安全：用内置的绝对值函数来计算一下差值的绝对值，也叫做数量级。</p>
+<pre><code class="lang-py"><span class="hljs-keyword">if</span> <span class="hljs-built_in">abs</span>(y-x) &lt; epsilon:
+    <span class="hljs-keyword">break</span>
+</code></pre>
+<p>这里可以让 epsilon 的值为 like 0.0000001，差值比这个小就说明已经足够接近了。</p>
+<h2 id="76--算法">7.6  算法</h2>
+<p>牛顿法是算法的一个例子：通过一系列机械的步骤来解决一类问题（在本章中是用来计算平方根）。</p>
+<p>要理解算法是什么，先从一些不是算法的内容来开始也许会有所帮助。当你学个位数字乘法的时候，你可能要背下来整个乘法表。实际上你记住了 100 个特定的算式。这种知识就不是算法。</p>
+<p>但如果你很『懒』，你就可能会有一些小技巧。比如找到一个 n 与 9 的成绩，你可以把 n-1 写成第一位，10-n 携程第二位。这个技巧是应对任何个位数字乘以 9 的算式。这就是一个算法了！</p>
+<p>类似地，你学过的进位的加法，借位的减法，以及长除法，都是算法。这些算法的一个共同特点就是不需要任何智力就能进行。它们都是机械的过程，每一步都跟随上一步，遵循着很简单的一套规则。</p>
+<p>执行算法是很无聊的，但设计算法很有趣，是智力上的一种挑战，也是计算机科学的核心部分。</p>
+<p>有的事情人们平时做起来很简单，甚至都不用思考，这些事情往往最难用算法来表达。比如理解自然语言就是个例子。我们都能理解自然语言，但目前为止还没有人能解释我们到底是怎么做到的，至少没有人把这个过程归纳出算法的形式。</p>
+<h2 id="77--调试">7.7  调试</h2>
+<p>现在你已经开始写一些比较大的程序了，你可能发现自己比原来花更多时间来调试了。代码越多，也就意味着出错的可能也越大了，bug 也有了更多的藏身之处了。</p>
+<p>『对折调试』是一种节省调试时间的方法。比如，如果你的程序有 100 行，你检查一遍就要大概 100 步了。而对折方法就是把程序分成两半。看程序中间位置，或者靠近中间位置的，检查一些中间值。在这些位置添加一些 print 语句（或者其他能够能起到验证效果的东西），然后运行程序。</p>
+<p>如果中间点检查出错了，那必然是程序的前半部分有问题。如果中间点没调试，那问题就是在后半段了。</p>
+<p>每次你都这样检查，你就让你要检查的代码数量减半了。一般六步之后（远小于 100 次了），理论上你就差不多已经到代码的末尾一两行了。</p>
+<p>在实际操作当中，程序中间位置并不是总那么明确，也未必就很容易去检查。所以不用数行数来找确定的中间点。相反的，只要考虑一下程序中哪些地方容易调试，然后哪些地方进行检验比较容易就行了。然后你就在你考虑好的位置检验一下看看 bug 是在那个位置之前还是之后。</p>
+<h2 id="78--glossary-术语列表">7.8  Glossary 术语列表</h2>
+<p>reassignment:
+Assigning a new value to a variable that already exists.</p>
+<blockquote>
+<p>再赋值：对一个已经存在的有值变量赋予一个新的值。</p>
+</blockquote>
+<p>update:
+An assignment where the new value of the variable depends on the old.</p>
+<blockquote>
+<p>更新：根据一个变量的旧值，进行一定的修改，再赋值给这个变量。</p>
+</blockquote>
+<p>initialization:
+An assignment that gives an initial value to a variable that will be updated.</p>
+<blockquote>
+<p>初始化：给一个变量初始值，以便于后续进行更新。</p>
+</blockquote>
+<p>increment:
+An update that increases the value of a variable (often by one).</p>
+<blockquote>
+<p>递增：每次给一个变量增加一定的值（一般是加 1）</p>
+</blockquote>
+<p>decrement:
+An update that decreases the value of a variable.</p>
+<blockquote>
+<p>递减：每次给一个变量减去一定的值。</p>
+</blockquote>
+<p>iteration:
+Repeated execution of a set of statements using either a recursive function call or a loop.</p>
+<blockquote>
+<p>迭代：重复执行一系列语句，使用递归函数调用的方式，或者循环的方式。</p>
+</blockquote>
+<p>infinite loop:
+A loop in which the terminating condition is never satisfied.</p>
+<blockquote>
+<p>无限循环：终止条件永远无法满足的循环。</p>
+</blockquote>
+<p>algorithm:
+A general process for solving a category of problems.</p>
+<blockquote>
+<p>算法：解决某一类问题的一系列通用的步骤。</p>
+</blockquote>
+<h2 id="79--练习">7.9  练习</h2>
+<h3 id="练习-1">练习 1</h3>
+<p>从 7.5 复制一个循环，然后改写成名字叫做 mysqrt 的函数，该函数用一个 a 作为参数，选择一个适当的起始值 x，然后返回 a 的平方根的近似值。</p>
+<p>测试这个函数，写一个叫做 test_suqare_root 的函数来输出以下这样的表格：
+<img src="http://7xnq2o.com1.z0.glb.clouddn.com/ThinkPython%E5%B9%B3%E6%96%B9%E6%A0%B9.jpg" alt=""></img></p>
+<p>第一列是数 a；第二列是咱们自己写的函数 mysqrt 计算出来的平方根，第三行是用 Python 内置的 math.sqrt 函数计算的平方根，最后一行是这两者的差值的绝对值。</p>
+<h3 id="练习-2">练习 2</h3>
+<p>Python 的内置函数 eval 接收字符串作为参数，然后用 Python 的解释器来运行。例如：</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">eval</span>(<span class="hljs-string">'1 + 2 * 3'</span>)
+<span class="hljs-number">7</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">import</span> math
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">eval</span>(<span class="hljs-string">'math.sqrt(5)'</span>)
+<span class="hljs-number">2.2360679774997898</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">eval</span>(<span class="hljs-string">'type(math.pi)'</span>)
+&lt;<span class="hljs-keyword">class</span> <span class="hljs-string">'float'</span>&gt;
+</code></pre>
+<p>写一个叫做 eval_loop 的函数，交互地提醒用户，获取输入，然后用 eval 对输入进行运算，把结果打印出来。</p>
+<p>这个程序要一直运行，直到用户输入『done』才停止，然后输出最后一次计算的表达式的值。</p>
+<h2 id="练习-3">练习 3</h2>
+<p>传奇的数学家拉马努金发现了一个无穷级数（1914 年的论文），能够用来计算圆周率倒数的近似值：</p>
+<p><img src="http://7xnq2o.com1.z0.glb.clouddn.com/ThinkPython7.e3.jpg" alt=""></img></p>
+<p>（译者注：这位拉马努金是一位非常杰出的数学家，自学成才，以数论为主要研究内容，可惜 33 岁的时候就英年早逝。他被哈代誉为超越希尔伯特的天才。）</p>
+<p>写一个名叫 estimate_pi 的函数，用上面这个方程来计算并返回一个圆周率π的近似值。要使用一个 while 循环来计算出总和的每一位，最后一位要小于 10 的-15 次方。你可以对比一下计算结果和 Python 内置的 math.pi。</p>
+<blockquote>
+<p><a href="http://thinkpython2.com/code/pi.py" target="_blank">样例代码</a></p>
+</blockquote>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="chapter6.html" class="navigation navigation-prev " aria-label="Previous page: 第六章 有返回值的函数">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="chapter8.html" class="navigation navigation-next " aria-label="Next page: 第八章 字符串">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"第七章 迭代","level":"1.8","depth":1,"next":{"title":"第八章 字符串","level":"1.9","depth":1,"path":"chapter8.md","ref":"chapter8.md","articles":[]},"previous":{"title":"第六章 有返回值的函数","level":"1.7","depth":1,"path":"chapter6.md","ref":"chapter6.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter7.md","mtime":"2024-08-23T09:01:53.771Z","type":"markdown"},"gitbook":{"version":"5.1.4","time":"2024-08-23T09:11:00.343Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

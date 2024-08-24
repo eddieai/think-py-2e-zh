@@ -1,0 +1,829 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>第十七章 类和方法 · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 5.1.4">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, user-scalable=yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="chapter18.html" />
+    
+    
+    <link rel="prev" href="chapter16.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="chapter1.html">
+            
+                <a href="chapter1.html">
+            
+                    
+                    第一章 编程之路
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="chapter2.html">
+            
+                <a href="chapter2.html">
+            
+                    
+                    第二章 变量，表达式，语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="chapter3.html">
+            
+                <a href="chapter3.html">
+            
+                    
+                    第三章 函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="chapter4.html">
+            
+                <a href="chapter4.html">
+            
+                    
+                    第四章 案例学习：交互设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="chapter5.html">
+            
+                <a href="chapter5.html">
+            
+                    
+                    第五章 条件循环
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="chapter6.html">
+            
+                <a href="chapter6.html">
+            
+                    
+                    第六章 有返回值的函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="chapter7.html">
+            
+                <a href="chapter7.html">
+            
+                    
+                    第七章 迭代
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="chapter8.html">
+            
+                <a href="chapter8.html">
+            
+                    
+                    第八章 字符串
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="chapter9.html">
+            
+                <a href="chapter9.html">
+            
+                    
+                    第九章 案例学习：单词游戏
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="chapter10.html">
+            
+                <a href="chapter10.html">
+            
+                    
+                    第十章 列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="chapter11.html">
+            
+                <a href="chapter11.html">
+            
+                    
+                    第十一章 字典
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="chapter12.html">
+            
+                <a href="chapter12.html">
+            
+                    
+                    第十二章 元组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="chapter13.html">
+            
+                <a href="chapter13.html">
+            
+                    
+                    第十三章 案例学习：数据结构的选择
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="chapter14.html">
+            
+                <a href="chapter14.html">
+            
+                    
+                    第十四章 文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="chapter15.html">
+            
+                <a href="chapter15.html">
+            
+                    
+                    第十五章 类和对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="chapter16.html">
+            
+                <a href="chapter16.html">
+            
+                    
+                    第十六章 类和函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.18" data-path="chapter17.html">
+            
+                <a href="chapter17.html">
+            
+                    
+                    第十七章 类和方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="chapter18.html">
+            
+                <a href="chapter18.html">
+            
+                    
+                    第十八章 继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="chapter19.html">
+            
+                <a href="chapter19.html">
+            
+                    
+                    第十九章 更多功能
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >第十七章 类和方法</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="第十七章-类和方法">第十七章 类和方法</h1>
+<p>前两章我们已经用到了 Python 的一些面向对象的特性了，但那写程序实际上并不算是真正面向对象的，因为它们并没能够表现出用户自定义类型与对这些类型进行运算的函数之间的关系。所以接下来的移步就是要把这些函数转换成方法，让这些关系更明确。</p>
+<p>本章的样例代码可以在 <a href="http://thinkpython2.com/code/Time2.py" target="_blank">这里下载</a>，然后练习题的样例代码可以在<a href="http://thinkpython2.com/code/Point2_soln.py" target="_blank">这里下载</a>。</p>
+<h2 id="171--面向对象的特性">17.1  面向对象的特性</h2>
+<p>Python 是一种面向对象的编程语言，这就意味着它提供了一些支持面向对象编程的功能，有以下这些特点：</p>
+<p>•    程序包含类和方法的定义。</p>
+<p>•    大多数运算都以对象运算的形式来实现。</p>
+<p>•    对象往往代表着现实世界中的事物，方法则相对应地代表着现实世界中事物之间的相互作用。</p>
+<p>例如，第 16 章中定义的 Time 类就代表了人们生活中计算一天时间的方法，然后当时咱们写的那些函数就对应着人们对时间的处理。同理，在第 15 章定义的 Point 和 Rectangle 类就对应着现实中的数学概念上的点和矩形。</p>
+<p>到此为止，我们还没有用到 Python 提供的用于面向对象编程的高级功能。这些高级功能并不是严格意义上必须使用的；它们大多是提供了一些我们已经实现的功能的一种备选的语法形式。不过在很多情况下，这种备选的模式更加简洁，也能更加准确地表述程序的结构。</p>
+<p>例如，在 Time1.py 里面，类的定义和后面的函数定义就没有啥明显的练习。测试一下就会发现，每一个后续的函数里面都至少用了一个 Time 对象作为参数。</p>
+<p>这样的观察结果就表明可以使用方法；方法是某一特定的类所附带的函数。之前我们看到过字符串、列表、字典以及元组的一些方法。在本章，咱们将要给用户自定义类型写一些方法。</p>
+<p>方法在语义上与函数是完全相同的，但在语法上有两点不同：</p>
+<p>•    方法要定义在一个类定义内部，这样能保证方法和类之间的关系明确。</p>
+<p>•    调用一个方法的语法与调用函数的语法不一样。</p>
+<p>在接下来的章节中，我们就要把之前两章写过的一些函数改写成方法。这种转换是纯机械的；你就遵守一系列步骤就可以实现了。如果你对二者之间的相互转化很熟悉了，你就可以根据情况自己选择是用函数还是用方法。</p>
+<h2 id="172--输出对象">17.2  输出对象</h2>
+<p>在 16.1，我们定义过一个名为 Time 的类，当时写过月名为 print_time 的函数：</p>
+<pre><code class="lang-py"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Time</span>:
+<span class="hljs-string">"""Represents the time of day."""</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">print_time</span>(<span class="hljs-params">time</span>):
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">'%.2d:%.2d:%.2d'</span> % (time.hour, time.minute, time.second))
+</code></pre>
+<p>要调用这个函数，就必须给传递过去一个 TIme 对象作为参数：</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>start = Time()
+<span class="hljs-meta">&gt;&gt;&gt; </span>start.hour = <span class="hljs-number">9</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>start.minute = <span class="hljs-number">45</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>start.second = <span class="hljs-number">00</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>print_time(start)
+09:<span class="hljs-number">45</span>:<span class="hljs-number">00</span>
+</code></pre>
+<p>要让 print_time 成为一个方法，只需要把函数定义内容放到类定义里面去。一定要注意缩进的变化哈。</p>
+<pre><code class="lang-py"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Time</span>:
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">print_time</span>(<span class="hljs-params">time</span>):
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">'%.2d:%.2d:%.2d'</span> % (time.hour, time.minute, time.second))
+</code></pre>
+<p>现在就有两种方法来调用 print_time 这个函数了。第一种就是用函数的语法（一般大家不这么用）：</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>Time.print_time(start)
+09:<span class="hljs-number">45</span>:<span class="hljs-number">00</span>
+</code></pre>
+<p>上面这里用到了点号，Time 是类的名字，pritn_time 是方法的名字。start 就是传过去的一个参数了。</p>
+<p>另外一种形式就是用方法的语法（这个形式更简洁很多）：</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>start.print_time()
+09:<span class="hljs-number">45</span>:<span class="hljs-number">00</span>
+</code></pre>
+<p>在上面这里也用了点号，print_time 依然还是方法名字，然后 start 是调用方法所在的对象，也叫做主语。这里就如同句子中的主语一样，方法调用的主语就是方法的归属者。</p>
+<p>在方法内部，主语被用作第一个参数，所以在上面的例子中中，start 就被赋值给了 time。</p>
+<p>按照惯例，方法的第一个参数也叫做 self，所以刚刚的 print_time 函数可以以如下这种更通用的形式来写：</p>
+<pre><code class="lang-py"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Time</span>:
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">print_time</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">'%.2d:%.2d:%.2d'</span> % (<span class="hljs-variable language_">self</span>.hour, <span class="hljs-variable language_">self</span>.minute, <span class="hljs-variable language_">self</span>.second))
+</code></pre>
+<p>The reason for this convention is an implicit metaphor:</p>
+<blockquote>
+<p>这种改写还有更深层次的意义：</p>
+</blockquote>
+<p>•    函数调用的语法里面，print_time(start)，就表明了函数是主动的。这句语句的意思就相当于说，『嘿，print_time 函数！给你这个对象，你来打印输出一下。』</p>
+<p>•    在面向对象的编程中，对象是主动的。方法的调用，比如 start.rint_time()，就像是说，『嘿，start，你打印输出一下你自己』</p>
+<p>看上去这样改了之后客气了不少，实际上不止如此，还有更多用处，只是不太明显。目前我们看到过的例子里面，这样改写还没有造成什么区别。但是有的时候，从函数转为对象，能够让函数（或者方法）更加通用，也让程序更容易维护，还便于代码的重用。</p>
+<p>做个练习吧，重写一下 time_to_int（参见 16.4），把这个函数写成一个方法。你也可以试着把 int_to_time 也携程方法，不过这可能不太行得通，因为把这个函数改成方法的话，没有对象来调用方法。</p>
+<h2 id="173--另外一个例子">17.3  另外一个例子</h2>
+<p>下面是 increment 函数（参见 16.4）被改写成的方法：</p>
+<pre><code class="lang-py"><span class="hljs-comment">#  inside class Time:</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">increment</span>(<span class="hljs-params">self, seconds</span>):
+    seconds += <span class="hljs-variable language_">self</span>.time_to_int()
+    <span class="hljs-keyword">return</span> int_to_time(seconds)
+</code></pre>
+<p>这一版本的前提是 time_to_int 已经被改写成方法了。另外也要注意到，这是一个纯函数，而不是修改器。</p>
+<blockquote>
+<p>下面是调用 increment 的示范：</p>
+</blockquote>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>start.print_time()
+09:<span class="hljs-number">45</span>:<span class="hljs-number">00</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>end = start.increment(<span class="hljs-number">1337</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>end.print_time()
+<span class="hljs-number">10</span>:07:<span class="hljs-number">17</span>
+</code></pre>
+<p>主语，start，用自己（self）赋值给第一个参数。然后参数，1337，赋值给了第二个参数，秒值 seconds。</p>
+<p>这种表述挺混乱，如果弄错了就更麻烦了。比如，如果你用两个参数调用了 increment 函数，你会得到如下的错误：</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>end = start.increment(<span class="hljs-number">1337</span>, <span class="hljs-number">460</span>)
+TypeError: increment() takes <span class="hljs-number">2</span> positional arguments but <span class="hljs-number">3</span> were given
+</code></pre>
+<p>这个错误信息刚开始看上去还挺不好理解，因为括号里面确实是只有两个参数。不过实际上主语也会把自己当做一个参数，所以总共实际上是有三个参数了。
+另外，有一种参数叫位置参数，就是没有参数的名字；这种参数就和关键字参数不同了。下面这个函数调用中：</p>
+<pre><code class="lang-Bash">sketch(parrot, cage, dead=True)
+</code></pre>
+<p>parrot 和 cage 都是位置参数，dead 是关键字参数。</p>
+<h2 id="174--更复杂点的例子">17.4  更复杂点的例子</h2>
+<p>重写 is_after（参见 16.1），这就比较有难度了，因为这个函数接收两个 Time 对象作为参数。在这个情况下，一般就把第一个参数命名为 self，第二个命名为 other：</p>
+<pre><code class="lang-py"><span class="hljs-comment">#  inside class Time:</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">is_after</span>(<span class="hljs-params">self, other</span>):
+    <span class="hljs-keyword">return</span> <span class="hljs-variable language_">self</span>.time_to_int() &gt; other.time_to_int()
+</code></pre>
+<p>要使用这个方法，就必须在一个对象后面调用，然后用另外一个对象作为参数：</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>end.is_after(start)
+<span class="hljs-literal">True</span>
+</code></pre>
+<p>这里就体现出一种语法上的好处了，因为读起来基本就根英语是一样的嗯：『end is after start?』</p>
+<h2 id="175--init-方法">17.5  init 方法</h2>
+<p>init 方法（就是对『initialization』的缩写，初始化的意思，这个方法相当于 C++中的构造函数）是一种特殊的方法，在对象被实例化的时候被调用。这个方法的全名是 <strong>init</strong>（两个下划线，然后是 init，然后还是两个下划线）。在 Time 类当中，init 方法示例如下：</p>
+<pre><code class="lang-py"><span class="hljs-comment">#  inside class Time:</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, hour=<span class="hljs-number">0</span>, minute=<span class="hljs-number">0</span>, second=<span class="hljs-number">0</span></span>):
+    <span class="hljs-variable language_">self</span>.hour = hour
+    <span class="hljs-variable language_">self</span>.minute = minute
+    <span class="hljs-variable language_">self</span>.second = second
+</code></pre>
+<p>一般情况下，init 方法里面的参数与属性变量的名字是相同的。下面这个语句</p>
+<pre><code class="lang-py">        <span class="hljs-variable language_">self</span>.hour = hour
+</code></pre>
+<p>就存储了参数 hour 的值，赋给了属性变量 hour 本身。</p>
+<p>这些参数都是可选的，所以如果你调用 Time 但不给任何参数，得到的就是默认值。</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>time = Time()
+<span class="hljs-meta">&gt;&gt;&gt; </span>time.print_time()
+<span class="hljs-number">00</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span>
+</code></pre>
+<p>如果你提供一个参数，就先覆盖 hour 的值：</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>time = Time (<span class="hljs-number">9</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>time.print_time()
+09:<span class="hljs-number">00</span>:<span class="hljs-number">00</span>
+
+提供两个参数，就先后覆盖了 hour 和 minute 的值。
+
+```py
+<span class="hljs-meta">&gt;&gt;&gt; </span>time = Time(<span class="hljs-number">9</span>, <span class="hljs-number">45</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>time.print_time()
+09:<span class="hljs-number">45</span>:<span class="hljs-number">00</span>
+</code></pre>
+<p>如果你给出三个参数，就依次覆盖掉所有三个默认值了。</p>
+<p>做一个练习，写一个 Point 类的 init 方法，接收 x 和 y 作为可选参数，然后赋值给对应的属性。</p>
+<h2 id="176--str-方法">17.6  <strong>str</strong> 方法</h2>
+<p><strong>str</strong> 是一种特殊的方法，就跟 <strong>init</strong> 差不多，str 方法是接收一个对象，返回一个代表该对象的字符串。</p>
+<p>例如，下面就是 Time 对象的一个 str 方法：</p>
+<pre><code class="lang-py"><span class="hljs-comment">#  inside class Time:</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">__str__</span>(<span class="hljs-params">self</span>):
+    <span class="hljs-keyword">return</span> <span class="hljs-string">'%.2d:%.2d:%.2d'</span> % (<span class="hljs-variable language_">self</span>.hour, <span class="hljs-variable language_">self</span>.minute, <span class="hljs-variable language_">self</span>.second)
+</code></pre>
+<p>这样当你用 print 打印输出一个对象的时候，Python 就会调用这个 str 方法：</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>time = Time(<span class="hljs-number">9</span>, <span class="hljs-number">45</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">print</span>(time) 09:<span class="hljs-number">45</span>:<span class="hljs-number">00</span>
+</code></pre>
+<p>写一个新的类的时候，总要先写出来 init 方法，这样有利于简化对象的初始化，还要写个 str 方法，这个方法在调试的时候很有用。
+做个练习，写一下 Point 这个类的 str 方法。创建一个 Point 对象，然后用 print 输出一下。</p>
+<h2 id="177--运算符重载">17.7  运算符重载</h2>
+<p>通过定义一些特定的方法，咱们就能针对自定义类型，让运算符有特定的作用。比如，如果你在 Time 类中定义了一个名字为 <strong>add</strong> 的方法，你就可以对 Time 对象使用『+』加号运算符。</p>
+<pre><code class="lang-py"><span class="hljs-comment">#  inside class Time:</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">__add__</span>(<span class="hljs-params">self, other</span>):
+    seconds = <span class="hljs-variable language_">self</span>.time_to_int() + other.time_to_int()
+    <span class="hljs-keyword">return</span> int_to_time(seconds)
+</code></pre>
+<p>使用方法如下所示：</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>start = Time(<span class="hljs-number">9</span>, <span class="hljs-number">45</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>duration = Time(<span class="hljs-number">1</span>, <span class="hljs-number">35</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">print</span>(start + duration)
+<span class="hljs-number">11</span>:<span class="hljs-number">20</span>:<span class="hljs-number">00</span>
+</code></pre>
+<p>当你针对 Time 对象使用加号运算符的时候，Python 就会调用你刚刚自定义的 add 方法。当你用 print 输出结果的时候，Python 调用的是你自定义的 str 方法。所以实际上面这个简单的例子背后可不简单。</p>
+<p>针对用户自定义类型，让运算符有相应的行为，这就叫做运算符重载。Python 当中每一个运算符都有一个对应的方法，比如 <strong>add</strong>。更多内容可以看一下 <a href="http://docs.python.org/3/reference/datamodel.html#specialnames" target="_blank">这里的文档</a>。</p>
+<p>做个练习，给 Point 类写一个加法的方法。</p>
+<h2 id="178--根据对象类型进行运算">17.8  根据对象类型进行运算</h2>
+<p>在前面的章节中，我们把两个 Time 对象进行了相加，但也许有时候需要把一个整数加到 Time 对象上面。下面这一个版本的 <strong>add</strong> 方法就能够实现检查类型，然后调用 add_time 方法或者是 increment 方法：</p>
+<pre><code class="lang-py"><span class="hljs-comment">#  inside class Time:</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">__add__</span>(<span class="hljs-params">self, other</span>):
+    <span class="hljs-keyword">if</span> <span class="hljs-built_in">isinstance</span>(other, Time):
+        <span class="hljs-keyword">return</span> <span class="hljs-variable language_">self</span>.add_time(other)
+    <span class="hljs-keyword">else</span>:
+        <span class="hljs-keyword">return</span> <span class="hljs-variable language_">self</span>.increment(other)
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">add_time</span>(<span class="hljs-params">self, other</span>):
+    seconds = <span class="hljs-variable language_">self</span>.time_to_int() + other.time_to_int()
+    <span class="hljs-keyword">return</span> int_to_time(seconds)
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">increment</span>(<span class="hljs-params">self, seconds</span>):
+    seconds += <span class="hljs-variable language_">self</span>.time_to_int()
+    <span class="hljs-keyword">return</span> int_to_time(seconds)
+</code></pre>
+<p>内置函数 isinstance 接收一个值和一个类的对象，如果该值是这个类的一个实例，就会返回真。</p>
+<p>如果拿来相加的是一个 Time 对象，<strong>add</strong> 就会调用 add_time 方法。其他情况下，程序会把参数当做一个数字，然后就调用 increment 方法。这种运算就是根据对象进行的，因为在针对不同类型参数的时候，运算符会进行不同的计算。</p>
+<p>下面的例子中，就展示了用不同类型变量来相加的效果：</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>start = Time(<span class="hljs-number">9</span>, <span class="hljs-number">45</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>duration = Time(<span class="hljs-number">1</span>, <span class="hljs-number">35</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">print</span>(start + duration)
+<span class="hljs-number">11</span>:<span class="hljs-number">20</span>:<span class="hljs-number">00</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">print</span>(start + <span class="hljs-number">1337</span>)
+<span class="hljs-number">10</span>:07:<span class="hljs-number">17</span>
+</code></pre>
+<p>然而不幸的是，这个加法运算不满足交换率。如果整数放到首位，就会得到如下所示的错误了：</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">print</span>(<span class="hljs-number">1337</span> + start)
+TypeError: unsupported operand <span class="hljs-built_in">type</span>(s) <span class="hljs-keyword">for</span> +: <span class="hljs-string">'int'</span> <span class="hljs-keyword">and</span> <span class="hljs-string">'instance'</span>
+</code></pre>
+<p>这里的问题就在于，Python 并没有让一个 Time 对象来加一个整数，而是去调用了整形的加法去把一个 Time 对象加到整数上面去，这就用系统原本的加法，而这个加法不能处理 Time 对象。有一个很聪明的方法来解决这个问题：用一个特殊的方法 <strong>radd</strong>，这个方法的意思就是『右加』。在一个 Time 对象出现在加号运算符右侧的时候，该方法就会被调用了。下面就是这个方法的定义：</p>
+<pre><code class="lang-py"><span class="hljs-comment">#  inside class Time:</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">__radd__</span>(<span class="hljs-params">self, other</span>):
+    <span class="hljs-keyword">return</span> <span class="hljs-variable language_">self</span>.__add__(other)
+</code></pre>
+<p>And here’s how it’s used:</p>
+<blockquote>
+<p>使用如下所示：</p>
+</blockquote>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">print</span>(<span class="hljs-number">1337</span> + start)
+<span class="hljs-number">10</span>:07:<span class="hljs-number">17</span>
+</code></pre>
+<p>做个练习，为 Point 类来写一个加法的方法，要求能处理 Point 对象或者一个元组：</p>
+<p>•    如果第二个运算数是一个 Point，该方法就应该返回一个新的 Point，新点的横纵坐标分别为两个点坐标相加。</p>
+<p>•    如果第二个运算数是一个元组，该方法就要把元组中第一个元素加到横坐标上，把第二个元素加到纵坐标上面，然后用计算出来的坐标返回一个新的点。</p>
+<h2 id="179--多态">17.9  多态</h2>
+<p>在必要的时候，根据类型运算还是很有用的，不过（还好）并不总需要这么做。一般你都可以把函数写成能处理不同类型参数的，这样就不用这么麻烦了。</p>
+<p>我们之前为字符串写的很多函数，也都可以用到其他序列类型上面。比如在 11.2 我们用 histogram 来统计一个单词中每个字母出现的次数。</p>
+<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">histogram</span>(<span class="hljs-params">s</span>):
+    d = <span class="hljs-built_in">dict</span>()
+    <span class="hljs-keyword">for</span> c <span class="hljs-keyword">in</span> s:
+        <span class="hljs-keyword">if</span> c <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> d:
+            d[c] = <span class="hljs-number">1</span>
+        <span class="hljs-keyword">else</span>:
+            d[c] = d[c]+<span class="hljs-number">1</span>
+    <span class="hljs-keyword">return</span> d
+</code></pre>
+<p>这个函数也可以用于列表、元组，甚至字典，只要 s 的元素是散列的，就能用做 d 当中的键。</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>t = [<span class="hljs-string">'spam'</span>, <span class="hljs-string">'egg'</span>, <span class="hljs-string">'spam'</span>, <span class="hljs-string">'spam'</span>, <span class="hljs-string">'bacon'</span>, <span class="hljs-string">'spam'</span>]
+<span class="hljs-meta">&gt;&gt;&gt; </span>histogram(t)
+{<span class="hljs-string">'bacon'</span>: <span class="hljs-number">1</span>, <span class="hljs-string">'egg'</span>: <span class="hljs-number">1</span>, <span class="hljs-string">'spam'</span>: <span class="hljs-number">4</span>}
+</code></pre>
+<p>针对不同类型都可以运行的函数，就是多态的了。多态能够有利于代码复用。比如内置的函数 sum，是用来把一个序列中所有的元素加起来，就可以适用于所有能够相加的序列元素。</p>
+<p>Time 对象有了自己的加法方法，就可以与 sum 函数来配合使用了：</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>t1 = Time(<span class="hljs-number">7</span>, <span class="hljs-number">43</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>t2 = Time(<span class="hljs-number">7</span>, <span class="hljs-number">41</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>t3 = Time(<span class="hljs-number">7</span>, <span class="hljs-number">37</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>total = <span class="hljs-built_in">sum</span>([t1, t2, t3])
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">print</span>(total)
+<span class="hljs-number">23</span>:01:<span class="hljs-number">00</span>
+</code></pre>
+<p>总的来说，如果一个函数内的所有运算都可以处理某一类型，这个函数就适用于这一类型了。</p>
+<p>最好就是无心插柳柳成荫的这种多态，这种情况下你会发现某个之前写过的函数可以用来处理一个之前没有计划到的类型。</p>
+<h2 id="1710--调试">17.10  调试</h2>
+<p>在程序运行的任意时刻都可以给对象增加属性，不过如果你有多个同类对象却又不具有相同的属性，就容易出错了。所以最好在对象实例化的时候就全部用 init 方法初始化对象的全部属性。</p>
+<p>如果你不确定一个对象是否有某个特定的属性，你可以用内置的 hasattr 函数来尝试一下（参考 15.7）。</p>
+<p>另外一种读取属性的方法是用内置函数 vars，这个函数会接收一个对象，然后返回一个字典，字典中的键值对就是属性名的字符串与对应的值。</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>p = Point(<span class="hljs-number">3</span>, <span class="hljs-number">4</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">vars</span>(p)
+{<span class="hljs-string">'y'</span>: <span class="hljs-number">4</span>, <span class="hljs-string">'x'</span>: <span class="hljs-number">3</span>}
+</code></pre>
+<p>出于调试目的，你估计也会发现下面这个函数随时用一下会带来很多便利：</p>
+<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">print_attributes</span>(<span class="hljs-params">obj</span>):
+    <span class="hljs-keyword">for</span> attr <span class="hljs-keyword">in</span> <span class="hljs-built_in">vars</span>(obj):
+        <span class="hljs-built_in">print</span>(attr, <span class="hljs-built_in">getattr</span>(obj, attr))
+</code></pre>
+<p>内置函数 getattr 会接收一个对象和一个属性名字（以字符串形式），然后返回该属性的值。</p>
+<h2 id="1711--接口和实现">17.11  接口和实现</h2>
+<p>面向对象编程设计的目的之一就是让软件更容易维护，这就意味着当系统中其他部分发生改变的时候依然能让程序运行，然后可以修改程序去符合新的需求。</p>
+<p>实现这一目标的程序设计原则就是要让接口和实现分开。对于对象来说，这就意味着一个类包含的方法要不能被属性表达方式的变化所影响。</p>
+<p>比如，在本章我们建立了一个表示一天中时间的类。该类提供的方法包括 time_to_int, is_after, 和 add_time。</p>
+<p>我们可以用几种不同方式来实现这些方法。这些实现的细节依赖于我们如何去表示时间。在本章，一个 Time 对象的属性为时分秒三个变量。</p>
+<p>还有一种替代方案，我们就可以把这些属性替换为一个单个的整形变量，表示从午夜零点到当前时间的秒的数目。这种实现方法可以让一些方法更简单，比如 is_after，但也让其他方法更难写了。</p>
+<p>当你创建一个新的类之后，你可能会发现有更好的实现方式。如果一个程序的其他部位在用你的类，这时候再来改造接口可能就要消耗很多时间，也容易遇到很多错误了。</p>
+<p>但如果你仔细地设计好接口，你在改变实现的时候就不用去折腾了，这就意味着你程序的其他部位都不需要改动了。</p>
+<h2 id="1712--glossary-术语列表">17.12  Glossary 术语列表</h2>
+<p>object-oriented language:
+A language that provides features, such as programmer-defined types and methods, that facilitate object-oriented programming.</p>
+<blockquote>
+<p>面向对象的编程语言：提供面向对象功能的语言，比如用户自定义类型和方法，有利于实现面向对象编程。</p>
+</blockquote>
+<p>object-oriented programming:
+A style of programming in which data and the operations that manipulate it are organized into classes and methods.</p>
+<blockquote>
+<p>面向对象编程：一种编程模式，数据和运算都被封装进类和方法之中。</p>
+</blockquote>
+<p>method:
+A function that is defined inside a class definition and is invoked on instances of that class.</p>
+<blockquote>
+<p>方法：类内所包含的函数就叫方法，可以在类的接口中被调用。</p>
+</blockquote>
+<p>subject:
+The object a method is invoked on.</p>
+<blockquote>
+<p>主语：调用方法的对象。</p>
+</blockquote>
+<p>positional argument:
+An argument that does not include a parameter name, so it is not a keyword argument.</p>
+<blockquote>
+<p>位置参数：一种参数，没有参数名字，不是关键字参数。</p>
+</blockquote>
+<p>operator overloading:
+Changing the behavior of an operator like + so it works with a programmer-defined type.</p>
+<blockquote>
+<p>运算符重载：像+加号这样的运算符，在处理用户自定义类型的时候改变为相应的运算。</p>
+</blockquote>
+<p>type-based dispatch:
+A programming pattern that checks the type of an operand and invokes different functions for different types.</p>
+<blockquote>
+<p>按类型处理：一种编程模式，检查运算数的类型，然后根据类型调用不同的函数来进行运算。</p>
+</blockquote>
+<p>polymorphic:
+Pertaining to a function that can work with more than one type.</p>
+<blockquote>
+<p>多态：一个函数能处理多种类型的特征，就叫做多态。</p>
+</blockquote>
+<p>information hiding:
+The principle that the interface provided by an object should not depend on its implementation, in particular the representation of its attributes.</p>
+<blockquote>
+<p>信息隐藏：一种开发原则，一个对象提供的接口应该独立于其实现，尤其是不受对象属性设置变化的影响。</p>
+</blockquote>
+<h2 id="1713--练习">17.13  练习</h2>
+<h3 id="练习-1">练习 1</h3>
+<p>从<a href="http://thinkpython2.com/code/Time2.py" target="_blank">这里</a>下载本章的代码。把 Time 中的属性改变成一个单独的整型变量，用来表示自从午夜至今的秒数。然后修改一下各个方法（以及 int_to_time 函数），让所有功能都能在新的实现下正常工作。尽量就让自己不用去更改 main 当中的测试代码。你改完之后，输出应该与之前相同。<a href="http://thinkpython2.com/code/Time2_soln.py" target="_blank">样例代码</a></p>
+<h3 id="练习-2">练习 2</h3>
+<p>这个练习是一个广为流传的寓言故事，其中包含了一个使用 Python 的时候最常见但也是最难发现的错误。写一个名为袋鼠的类的定义，要求有如下的方法：</p>
+<ol>
+<li><p>一个 <strong>init</strong> 方法，用来初始化一个名为 puntch_contents（就是袋鼠的袋子中内容的意思） 的属性，把该属性初始化为一个空列表。</p>
+</li>
+<li><p>一个名为 put_in_pouch 的方法，接收任意类型的一个对象，把这个对象放进 pouch_contents 中。</p>
+</li>
+<li><p>一个 <strong>str</strong> 方法，返回袋鼠对象的字符串表示，以及袋鼠袋子中的内容。</p>
+</li>
+</ol>
+<p>通过建立两个袋鼠对象来测试一下你的代码，把它们俩分别命名为 kanga 和 roo，然后把 roo 添加到 kanga 的袋子中。</p>
+<p>下载<a href="http://thinkpython2.com/code/BadKangaroo.py" target="_blank">这个代码</a>。里面包含了上面这个练习的一个样例代码，但这个代码有很大很悲催的 bug。找出这个 bug 然后改过来吧。</p>
+<p>如果你搞不定了，可以下载<a href="http://thinkpython2.com/code/GoodKangaroo.py" target="_blank">这个代码</a>，这个代码中解释了整个问题，并且提供了一个可行的解决方案。</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="chapter16.html" class="navigation navigation-prev " aria-label="Previous page: 第十六章 类和函数">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="chapter18.html" class="navigation navigation-next " aria-label="Next page: 第十八章 继承">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"第十七章 类和方法","level":"1.18","depth":1,"next":{"title":"第十八章 继承","level":"1.19","depth":1,"path":"chapter18.md","ref":"chapter18.md","articles":[]},"previous":{"title":"第十六章 类和函数","level":"1.17","depth":1,"path":"chapter16.md","ref":"chapter16.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter17.md","mtime":"2024-08-23T09:01:53.768Z","type":"markdown"},"gitbook":{"version":"5.1.4","time":"2024-08-23T09:11:00.343Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
