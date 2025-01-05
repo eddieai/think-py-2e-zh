@@ -6,7 +6,7 @@
         <title>第十六章 类和函数 · HonKit</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="HonKit 5.1.4">
+        <meta name="generator" content="HonKit 6.0.2">
         
         
         
@@ -24,7 +24,7 @@
                 
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-fontsettings/website.css">
                 
             
         
@@ -49,7 +49,7 @@
     
     
     <meta name="HandheldFriendly" content="true"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
@@ -399,12 +399,12 @@
 <h2 id="161--时间">16.1  时间</h2>
 <p>下面又是一个自定义类型的例子，这次咱们定义一个叫做 Time 的类，记录下当日的时间。</p>
 <p>类的定义是如下这样：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Time</span>:
+<pre><code class="lang-python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Time</span>:
 <span class="hljs-string">"""Represents the time of day.
 attributes: hour, minute, second     """</span>
 </code></pre>
 <p>我们可以建立一个新的 Time 对象，然后对时分秒分别进行赋值：</p>
-<pre><code class="lang-py">time = Time()
+<pre><code class="lang-python">time = Time()
 time.hour = <span class="hljs-number">11</span>
 time.minute = <span class="hljs-number">59</span>
 time.second = <span class="hljs-number">30</span>
@@ -419,7 +419,7 @@ Figure 16.1: Object diagram.</p>
 <h2 id="162--纯函数">16.2  纯函数</h2>
 <p>后面的这些章节中，我们要写两个函数来对 time 进行加法操作。这两个函数展示了两种函数类型：纯函数和修改器。写这两个函数的过程中，也体现了我即将讲到的一种新的开发模式：原型和补丁模式，这种方法就是在处理复杂问题的时候，先从简单的原型开始，然后逐渐解决复杂的内容。</p>
 <p>下面这段代码就是 add_time 函数的一个原型：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">add_time</span>(<span class="hljs-params">t1, t2</span>):
+<pre><code class="lang-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">add_time</span>(<span class="hljs-params">t1, t2</span>):
     <span class="hljs-built_in">sum</span> = Time()
     <span class="hljs-built_in">sum</span>.hour = t1.hour + t2.hour
     <span class="hljs-built_in">sum</span>.minute = t1.minute + t2.minute
@@ -428,7 +428,7 @@ Figure 16.1: Object diagram.</p>
 </code></pre>
 <p>这个函数新建了一个新的 Time 对象，初始化了所有的值，然后返回了一个对新对象的引用。这种函数叫纯函数，因为这种函数并不修改传来做参数的对象，也没有什么效果，比如显示值啊或者让用户输入啊等等，而只是返回一个值而已。</p>
 <p>下面就来测试一下这个函数，我将建立两个 Time 对象，start 包含了一个电影的开始时间，比如《巨蟒与圣杯》（译者注：1975 年喜剧电影。Python 的创造者 Guido van Rossum 特别喜欢这个喜剧团体：巨蟒飞行马戏团（Monty Python’s Flying Circus ），所以命名为 Python。），然后 duration（汉译就是持续时间）包含了该电影的时长，《巨蟒与圣杯》这部电影是一小时三十五分钟。add_time 函数就会算出电影结束的时间。</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>start = Time()
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>start = Time()
 <span class="hljs-meta">&gt;&gt;&gt; </span>start.hour = <span class="hljs-number">9</span>
 <span class="hljs-meta">&gt;&gt;&gt; </span>start.minute = <span class="hljs-number">45</span>
 <span class="hljs-meta">&gt;&gt;&gt; </span>start.second =  <span class="hljs-number">0</span>
@@ -442,7 +442,7 @@ Figure 16.1: Object diagram.</p>
 </code></pre>
 <p>很明显，10 点 80 分 00 秒这样的时间肯定不是你想要的结果。问题就出在了函数不值得如何应对时分秒的六十位进位，所以超过 60 的时候没进位就这样了。所以我们得把超出六十秒的进位到分，超过六十分的进位到小时。</p>
 <p>下面这个是改进版本：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">add_time</span>(<span class="hljs-params">t1, t2</span>):
+<pre><code class="lang-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">add_time</span>(<span class="hljs-params">t1, t2</span>):
     <span class="hljs-built_in">sum</span> = Time()
     <span class="hljs-built_in">sum</span>.hour = t1.hour + t2.hour
     <span class="hljs-built_in">sum</span>.minute = t1.minute + t2.minute
@@ -460,7 +460,7 @@ Figure 16.1: Object diagram.</p>
 <p>有时候需要对作为参数的对象进行一些修改。这时候这些修改就可以被调用者察觉。这样工作的函数就叫修改器了。</p>
 <p>increment 函数，增加给定的秒数到一个 Time 对象，就可以被改写成一个修改器。</p>
 <p>下面是个简单的版本：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">increment</span>(<span class="hljs-params">time, seconds</span>):
+<pre><code class="lang-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">increment</span>(<span class="hljs-params">time, seconds</span>):
     time.second += seconds
     <span class="hljs-keyword">if</span> time.second &gt;= <span class="hljs-number">60</span>:
         time.second -= <span class="hljs-number">60</span>
@@ -483,13 +483,13 @@ Figure 16.1: Object diagram.</p>
 <p>这样当我们写 add_time 和 increment 函数的时候，用 60 进制来进行计算就很有效率。</p>
 <p>这一观察表明有另外一种方法来解决整个问题——我们可以把 Time 对象转换成整数，然后因为计算机最擅长整数运算，这样就有优势了。</p>
 <p>下面这个函数就把 Times 转换成了整数：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">time_to_int</span>(<span class="hljs-params">time</span>):
+<pre><code class="lang-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">time_to_int</span>(<span class="hljs-params">time</span>):
     minutes = time.hour * <span class="hljs-number">60</span> + time.minute
     seconds = minutes * <span class="hljs-number">60</span> + time.second
     <span class="hljs-keyword">return</span> seconds
 </code></pre>
 <p>然后下面这个函数是反过来的，把整数转换成 Time（还记得 divmod 么，使用第一个数除以第二个数，返回的是除数和余数组成的元组。）</p>
-<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">int_to_time</span>(<span class="hljs-params">seconds</span>):
+<pre><code class="lang-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">int_to_time</span>(<span class="hljs-params">seconds</span>):
     time = Time()
     minutes, time.second = <span class="hljs-built_in">divmod</span>(seconds, <span class="hljs-number">60</span>)
     time.hour, time.minute = <span class="hljs-built_in">divmod</span>(minutes, <span class="hljs-number">60</span>)
@@ -497,7 +497,7 @@ Figure 16.1: Object diagram.</p>
 </code></pre>
 <p>你最好先考虑好了，然后多进行几次测试运行，然后要确保这些函数都是正确的。比如你就可以试着用很多个 x 的值来运算 time_to_int(int_to_time(x)) == x。这也是连贯性检测的一个例子。</p>
 <p>一旦你确定这些函数都没问题，就可以用它们来重写一下 add_time 这个函数了：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">add_time</span>(<span class="hljs-params">t1, t2</span>):
+<pre><code class="lang-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">add_time</span>(<span class="hljs-params">t1, t2</span>):
     seconds = time_to_int(t1) + time_to_int(t2)
     <span class="hljs-keyword">return</span> int_to_time(seconds)
 </code></pre>
@@ -510,7 +510,7 @@ Figure 16.1: Object diagram.</p>
 <p>对于一个 Time 对象来说，只要分和秒的值在 0-60 的前闭后开区间（即可以为 0 但不可以为 60），并且小时数为正数，就是格式正确的。小时和分钟都应该是整数，但秒是可以为小数的。</p>
 <p>像这些要求也叫约束条件，因为通常都得满足这些条件才行。反过来说，如果这些条件没满足，就有可能是程序中某处存在错误了。</p>
 <p>写一些检测约束条件的代码，能够帮助找出这些错误，并且找到导致错误的原因。例如，你亏写一个名字未 calid_time 的函数，接收一个 Time 对象，然后如果该对象不满足约束条件就返回 False：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">valid_time</span>(<span class="hljs-params">time</span>):
+<pre><code class="lang-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">valid_time</span>(<span class="hljs-params">time</span>):
     <span class="hljs-keyword">if</span> time.hour &lt; <span class="hljs-number">0</span> <span class="hljs-keyword">or</span> time.minute &lt; <span class="hljs-number">0</span> <span class="hljs-keyword">or</span> time.second &lt; <span class="hljs-number">0</span>:
         <span class="hljs-keyword">return</span> <span class="hljs-literal">False</span>
     <span class="hljs-keyword">if</span> time.minute &gt;= <span class="hljs-number">60</span> <span class="hljs-keyword">or</span> time.second &gt;= <span class="hljs-number">60</span>:
@@ -518,14 +518,14 @@ Figure 16.1: Object diagram.</p>
     <span class="hljs-keyword">return</span> <span class="hljs-literal">True</span>
 </code></pre>
 <p>然后在每个自定义函数的开头部位，你就可以检测一下参数，来确保这些参数没有错误：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">add_time</span>(<span class="hljs-params">t1, t2</span>):
+<pre><code class="lang-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">add_time</span>(<span class="hljs-params">t1, t2</span>):
     <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> valid_time(t1) <span class="hljs-keyword">or</span> <span class="hljs-keyword">not</span> valid_time(t2):
         <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">'invalid Time object in add_time'</span>)
     seconds = time_to_int(t1) + time_to_int(t2)
     <span class="hljs-keyword">return</span> int_to_time(seconds)
 </code></pre>
 <p>或者你也可以用一个 assert 语句，这个语句也是检测给定的约束条件的，如果出现错误就会抛出一个异常：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">add_time</span>(<span class="hljs-params">t1, t2</span>):
+<pre><code class="lang-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">add_time</span>(<span class="hljs-params">t1, t2</span>):
     <span class="hljs-keyword">assert</span> valid_time(t1) <span class="hljs-keyword">and</span> valid_time(t2)
     seconds = time_to_int(t1) + time_to_int(t2)
     <span class="hljs-keyword">return</span> int_to_time(seconds)
@@ -626,7 +626,7 @@ A statement that check a condition and raises an exception if it fails.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第十六章 类和函数","level":"1.17","depth":1,"next":{"title":"第十七章 类和方法","level":"1.18","depth":1,"path":"chapter17.md","ref":"chapter17.md","articles":[]},"previous":{"title":"第十五章 类和对象","level":"1.16","depth":1,"path":"chapter15.md","ref":"chapter15.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter16.md","mtime":"2024-08-23T09:01:53.766Z","type":"markdown"},"gitbook":{"version":"5.1.4","time":"2024-08-23T09:11:00.343Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第十六章 类和函数","level":"1.17","depth":1,"next":{"title":"第十七章 类和方法","level":"1.18","depth":1,"path":"chapter17.md","ref":"chapter17.md","articles":[]},"previous":{"title":"第十五章 类和对象","level":"1.16","depth":1,"path":"chapter15.md","ref":"chapter15.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter16.md","mtime":"2025-01-05T18:02:47.633Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-01-05T18:03:10.535Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
@@ -696,7 +696,7 @@ A statement that check a condition and raises an exception if it fails.</p>
         
     
         
-        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        <script src="gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
         
     
 

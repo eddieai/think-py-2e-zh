@@ -15,7 +15,7 @@
 
 提示：字符串模块 string 提供了一个名为 whitespace 的字符串，包含了空格、跳表符、另起一行等等，然后还有个 punctuation 模块，包含了各种标点符号的字符。咱们可以试试让 Python 把标点符号都给显示一下：
 
-```py
+```python
 >>> import string
 >>>string.punctuation
 '!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~' 
@@ -60,7 +60,7 @@ random 模块提供了生成假随机数的函数（从这里开始，咱们就�
 
 函数 random 返回一个在 0.0 到 1.0 的前闭后开区间（就是包括 0.0 但不包括 1.0，这个特性在 Python 随处都是，比如序列的索引等等）的随机数。每次调用 random，就会得到一个很长的数列中的下一个数。如下这个循环就是一个例子了：
 
-```py
+```python
 import random  for i in range(10):
 x = random.random()
 print(x)
@@ -68,7 +68,7 @@ print(x)
 
 randint 函数接收两个参数作为下界和上界，然后返回一个二者之间的整数，这个整数可以是下界或者上界。
 
-```py
+```python
 >>> random.randint(5, 10)
 5
 >>> random.randint(5, 10)
@@ -77,7 +77,7 @@ randint 函数接收两个参数作为下界和上界，然后返回一个二者
 
 choice 函数可以用来从一个序列中随机选出一个元素：
 
-```py
+```python
 >>> t = [1, 2, 3]
 >>> random.choice(t)
 2
@@ -91,7 +91,7 @@ random 模块还提供了其他一些函数，可以计算某些连续分布的�
 
 写一个名为 choose_from_hist 的函数，用这个函数来处理一下 11.2 中定义的那个 histogram 函数，从 histogram 的值当中随机选择一个，这个选择的概率按照比例来定。比如下面这个 histogram：
 
-```py
+```python
 >>> t = ['a', 'a', 'b']
 >>> hist = histogram(t)
 >>> hist
@@ -110,7 +110,7 @@ random 模块还提供了其他一些函数，可以计算某些连续分布的�
 
 下面这个程序先读取一个文件，然后对该文件中的词频进行了统计：
 
-```py
+```python
 import string
 def process_file(filename):
 	hist = dict()
@@ -137,28 +137,28 @@ process_line 使用字符串的方法 replace 把各种连字符都用空格替�
 
 要计算整个文件中的单词总数，就可以把 histogram 中的所有频数加到一起就可以了：
 
-```py
+```python
 def total_words(hist):
 	return sum(hist.values())
 ```
 
 不重复的单词的数目也就是字典中项的个数了：
 
-```py
+```python
 def different_words(hist):
 	return len(hist)
 ```
 
 输出结果的代码如下：
 
-```py
+```python
 print('Total number of words:', total_words(hist))
 print('Number of different words:', different_words(hist))
 ```
 
 结果如下所示：
 
-```py
+```python
 Total number of words: 161080
 Number of different words: 7214
 ```
@@ -168,7 +168,7 @@ Number of different words: 7214
 
 下面的函数就接收了词频统计结果，然后返回一个『单词-次数』元组组成的列表：
 
-```py
+```python
 def most_common(hist):
 	t = []
 	for key, value in hist.items():
@@ -179,7 +179,7 @@ def most_common(hist):
 
 这些元组中，要先考虑词频，返回的列表因此根据词频来排序。下面是一个输出最常用单词的循环体：
 
-```py
+```python
 t = most_common(hist)
 print('The most common words are:')
 for freq, word in t[:10]:
@@ -191,7 +191,7 @@ for freq, word in t[:10]:
 
 (译者注：这个效果在 Python 下很明显，此处 markdown 我刚开始熟悉，不清楚咋实现。)
 
-```py
+```python
 The most common words are:
 to      5242
 the     5205
@@ -211,7 +211,7 @@ she     2364
 
 咱们已经看过好多有可选参数的内置函数和方法了。实际上咱们自己也可以写，写这种有可选参数的自定义函数。比如下面就是一个根据词频数据来统计最常用单词的函数：
 
-```py
+```python
 def print_most_common(hist, num=10):
 	t = most_common(hist)
 	print('The most common words are:')
@@ -224,13 +224,13 @@ def print_most_common(hist, num=10):
 
 如果只提供第一个参数：
 
-```py
+```python
 print_most_common(hist)
 ```
 
 这样 num 就用默认值了。如果提供两个参数：
 
-```py
+```python
 print_most_common(hist, 20)
 ```
 
@@ -246,7 +246,7 @@ print_most_common(hist, 20)
 
 下面的代码中定义的 subtrac t 这个函数，接收两个字典 d1 和 d2，然后返回一个新字典，这个新字典包含所有 d1 中包含而 d2 中不包含的键。键值就无所谓了，就都设置为空即可。
 
-```py
+```python
 def subtract(d1, d2):
 	res = dict()
 	for key in d1:
@@ -257,7 +257,7 @@ def subtract(d1, d2):
 
 要找到书中含有而 words.txt 中不含有的单词，就可以用 process_file 函数来建立一个 words.txt 的词频统计，然后用 subtract 函数来相减：
 
-```py
+```python
 words = process_file('words.txt')
 diff = subtract(hist, words)
 print("Words in the book that aren't in the word list:")
@@ -267,7 +267,7 @@ for word in diff.keys():
 
 下面依然还是对《艾玛》得到的结果：
 
-```py
+```python
 Words in the book that aren't in the word list:
 rencontre
 jane's
@@ -293,7 +293,7 @@ Python 提供了一个数据结构叫 set（集合），该类型提供了很多
 
 要从词频数据中选一个随机的单词，最简单的算法就是根据已知的单词频率来将每个单词复制相对应的个数的副本，然后组建成一个列表，从列表中选择单词：
 
-```py
+```python
 def random_word(h):
 	t = []
 	for word, freq in h.items():
@@ -324,7 +324,7 @@ def random_word(h):
 
 如果让你从一本书中随机挑选一些单词，这些单词都能理解，但估计难以成为一句话：
 
-```py
+```python
 this the small regard harriet which knightley's it most things
 ```
 
@@ -332,7 +332,7 @@ this the small regard harriet which knightley's it most things
 
 衡量单词之间关系的一种方法就是马科夫分析法，这一方法就是：对给定的单词序列，分析一个词跟着另一个词后面出现的概率。比如，Eric, the Half a Bee 这首歌的开头：
 
-```py
+```python
 Half a bee, philosophically,
 Must, ipso facto, half not be.
 But half the bee has got to be
@@ -361,7 +361,7 @@ Markov analysis 马科夫分析：
 
 2. 在上面的程序中添加一个函数，基于马科夫分析来生成随机文本。下面是用《艾玛》使用两个单词长度的前缀来生成的一个随机文本样例：
 
-```py
+```python
 He was very clever, be it sweetness or be angry, ashamed or only amused, at such a stroke. She had never thought of Hannah till you were never meant for me?" "I cannot make speeches, Emma:" he soon cut it all himself.
 ```
 这个例子中，我保留了单词中连接的标点符号。得到的结果在语法上基本是正确的，但也还差点。语义上，这些单词连起来也还能有一些意义，但也不咋对劲。
@@ -395,7 +395,7 @@ He was very clever, be it sweetness or be angry, ashamed or only amused, at such
 
 你的首选估计就是列表了，因为列表很容易增加和剔除元素，但我们还需要能用前缀做字典中的键，所以列表就不合格了。那就剩元组了，元组没法添加和删除元素，但可以用加法运算符来建立新的元组。
 
-```py
+```python
 def shift(prefix, word):
 	return prefix[1:] + (word,)
 ```

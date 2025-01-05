@@ -6,7 +6,7 @@
 
 字符串就是一串有序的字符。你可以通过方括号操作符，每次去访问字符串中的一个字符：
 
-```py
+```python
 >>> fruit = 'banana'
 >>> letter = fruit[1]
 ```
@@ -19,14 +19,14 @@
 
 但你可能发现得到的结果和你预期的有点不一样：
 
-```py
+```python
 >>> letter
 'a'
 ```
 
 大多数人都认为 banana 的第『1』个字符应该是 b，而不是 a。但对于计算机科学家来说，索引是字符串从头的偏移量，所以真正的首字母偏移量应该是 0.
 
-```py
+```python
 >>> letter = fruit[0]>>> letter
 'b'
 ```
@@ -35,7 +35,7 @@
 
 你可以在方括号内的索引中使用变量和表达式：
 
-```py
+```python
 >>> i = 1
 >>> fruit[i]
 'a'
@@ -45,7 +45,7 @@
 
 但要注意的事，索引的值必须是整形的。否则你就会遇到类型错误了：
 
-```py
+```python
 >>> letter = fruit[1.5]
 TypeError: string indices must be integers
 ```
@@ -53,21 +53,21 @@ TypeError: string indices must be integers
 
 len 是一个内置函数，会返回一个字符串中字符的长度：
 
-```py
+```python
 >>> fruit = 'banana'
 >>> len(fruit) 6
 ```
 
 要得到一个字符串的最后一个字符，你可能会想到去利用 len 函数：
 
-```py
+```python
 >>> length = len(fruit)
 >>> last = fruit[length]
 IndexError: string index out of range
 ```
 出现索引错误的原因就是 banana 这个字符串在第『6』个位置是没有字母的。因为我们从 0 开始数，所以这一共 6 个字母的顺序是 0 到 5 号。因此要得到最后一次字符，你需要在字符串长度的基础上减去 1 才行：
 
-```py
+```python
 >>> last = fruit[length-1]
 >>> last
 'a'
@@ -78,7 +78,7 @@ IndexError: string index out of range
 
 很多计算过程都需要每次从一个字符串中拿一个字符。一般都是从头开始，依次得到每个字符，然后做点处理，然后一直到末尾。这种处理模式叫遍历。写一个遍历可以使用 while 循环：
 
-```py
+```python
 index = 0
 while index < len(fruit):
 	letter = fruit[index]
@@ -92,7 +92,7 @@ while index < len(fruit):
 
 另外一种遍历的方法就是 for 循环了：
 
-```py
+```python
 for letter in fruit:
 	print(letter)
 ```
@@ -105,7 +105,7 @@ for letter in fruit:
 
 在 Robert McCloskey 的一本名叫《Make Way for Ducklings》的书中，小鸭子的名字依次为：Jack, Kack, Lack, Mack, Nack, Ouack, Pack, 和 Quack。下面这个循环会依次输出他们的名字：
 
-```py
+```python
 prefixes = 'JKLMNOPQ'
 suffix = 'ack'
 for letter in prefixes:
@@ -114,7 +114,7 @@ for letter in prefixes:
 
 输出结果如下：
 
-```py
+```python
 Jack Kack Lack Mack Nack Oack Pack Qack
 ```
 
@@ -124,7 +124,7 @@ Jack Kack Lack Mack Nack Oack Pack Qack
 
 字符串的一段叫做切片。从字符串中选择一部分做切片，与选择一个字符有些相似：
 
-```py
+```python
 >>> s = 'Monty Python'
 >>> s[0:5]
 'Monty'
@@ -141,7 +141,7 @@ ________________________________________
 
 如果你忽略了第一个索引（就是冒号前面的那个），切片会默认从字符串头部开始。如果你忽略了第二个索引，切片会一直包含到最后一位：
 
-```py
+```python
 >>> fruit = 'banana'
 >>> fruit[:3]
 'ban'
@@ -150,7 +150,7 @@ ________________________________________
 ```
 如果两个索引相等，得到的就是空字符串了，用两个单引号来表示：
 
-```py
+```python
 >>> fruit = 'banana'
 >>> fruit[3:3]
 ''
@@ -163,7 +163,7 @@ ________________________________________
 
 大家总是有可能想试试把方括号在赋值表达式的等号左侧，试图去更改字符串中的某一个字符。比如：
 
-```py
+```python
 >>> greeting = 'Hello, world!'
 >>> greeting[0] = 'J'
 TypeError: 'str' object does not support item assignment
@@ -174,7 +174,7 @@ TypeError: 'str' object does not support item assignment
 
 产生上述错误的原因是字符串是不能被修改的，这意味着你不能对一个已经存在的字符串进行任何改动。你顶多也就能建立一个新字符串，新字符串可以基于旧字符串进行一些改动。
 
-```py
+```python
 >>> greeting = 'Hello, world!'
 >>> new_greeting = 'J' + greeting[1:]
 >>> new_greeting
@@ -186,7 +186,7 @@ TypeError: 'str' object does not support item assignment
 ## 8.6  搜索
 下面这个函数是干啥的？
 
-```py
+```python
 def find(word, letter):
 	index = 0
 	while index < len(word):
@@ -209,7 +209,7 @@ def find(word, letter):
 
 下面这个程序计算了字母 a 在一个字符串中出现的次数：
 
-```py
+```python
 word = 'banana'
 count = 0
 for letter in word:
@@ -230,7 +230,7 @@ for letter in word:
 
 与函数的 upper(word)语法不同，方法的语法是 word.upper()。
 
-```py
+```python
 >>> word = 'banana'
 >>> new_word = word.upper()
 >>> new_word 
@@ -244,7 +244,7 @@ A method call is called an invocation;方法的调用被叫做——调用（译
 
 结果我们发现 string 有一个方法叫做 find，跟我们写过的函数 find 有惊人的相似：
 
-```py
+```python
 >>> word = 'banana'
 >>> index = word.find('a')
 >>> index
@@ -255,20 +255,20 @@ A method call is called an invocation;方法的调用被叫做——调用（译
 
 实际上，这个 find 方法比我们的 find 函数功能更通用；它不仅能查找字符，还能查找字符串：
 
-```py
+```python
 >>> word.find('na')
 2
 ```
 默认情况下 find 方法从字符串的开头来查找，不过可以给它一个第二个参数，让它从指定位置查找：
 
-```py
+```python
 >>> word.find('na', 3)
 4
 ```
 
 这是一个可选参数的例子；find 方法还能接收第三个参数，可以指定查找终止的位置：
 
-```py
+```python
 >>> name = 'bob'
 >>> name.find('b', 1, 2)
 -1
@@ -280,7 +280,7 @@ A method call is called an invocation;方法的调用被叫做——调用（译
 
 in 这个词在字符串操作中是一个布尔操作符，它读取两个字符串，如果前者的字符串为后者所包含，就返回真，否则为假：
 
-```py
+```python
 >>> 'a' in 'banana'
 True
 >>> 'seed' in 'banana'
@@ -288,7 +288,7 @@ False
 ```
 举个例子，下面的函数显示所有同时在 word1 和 word2 当中出现的字母：
 
-```py
+```python
 def in_both(word1, word2):
 	for letter in word1:
 		if letter in word2:
@@ -296,7 +296,7 @@ def in_both(word1, word2):
 ```
 选好变量名的话，Python 有时候读起来就跟英语差不多。你读一下这个循环，就能发现，『对第一个 word 当中的每一个字母 letter，如果这个字母也在第二个 word 当中出现，就输出这个字母 letter。』
 
-```py
+```python
 >>> in_both('apples', 'oranges')
 a e s
 ```
@@ -304,14 +304,14 @@ a e s
 
 关系运算符对于字符串来说也可用。比如可以看看两个字符串是不是相等：
 
-```py
+```python
 if word == 'banana':
 	print('All right, bananas.')
 ```
 
 其他的关系运算符可以来把字符串按照字母表顺序排列：
 
-```py
+```python
 if word < 'banana':
 	print('Your word, ' + word + ', comes before banana.')
 elif word > 'banana':
@@ -329,7 +329,7 @@ Python 对大小写字母的处理与人类常规思路不同。所有大写字�
 
 使用索引来遍历一个序列中的值的时候，弄清楚遍历的开头和结尾很不容易。下面这个函数用来对比两个单词，如果一个是另一个的倒序就返回真，但这个函数代码中有两处错误：
 
-```py
+```python
 def is_reverse(word1, word2):
 	if len(word1) != len(word2):
 		return False
@@ -350,14 +350,14 @@ i 和 j 都是索引：i 从头到尾遍历单词 word1，而 j 逆向遍历单�
 
 如果我们用这个函数来处理单词『pots』和『stop』，我们希望函数返回真，但得到的却是索引错误：
 
-```py
+```python
 >>> is_reverse('pots', 'stop')
  ...   File "reverse.py", line 15, in is_reverse     if word1[i] != word2[j]: IndexError: string index out of range
 ```
 
 为了改正这个错误，第一步就是在出错的那行之前先输出索引的值。
 
-```py
+```python
 while j > 0:
 	print(i, j)        # print here
 if word1[i] != word2[j]:
@@ -368,7 +368,7 @@ if word1[i] != word2[j]:
 
 然后我再次运行函数，得到更多信息了：
 
-```py
+```python
 >>> is_reverse('pots', 'stop')
 0 4
 ... IndexError: string index out of range
@@ -376,7 +376,7 @@ if word1[i] != word2[j]:
 
 第一次循环完毕的时候，j 的值是 4，这超出了『pots』这个字符串的范围了（译者注：应该是 0-3）。最后一个索引应该是 3，所以 j 的初始值应该是 len(word2)-1。
 
-```py
+```python
 >>> is_reverse('pots', 'stop')
 0 3 1 2 2 1
 True
@@ -467,7 +467,7 @@ A function or method argument that is not required.
 ###   练习 3
 字符串切片可以使用第三个索引，作为步长来使用；步长的意思就是取字符的间距。一个步长为 2 的意思就是每隔一个取一个字符；3 的意思就是每次取第三个，以此类推。
 
-```py
+```python
 >>> fruit = 'banana'
 >>> fruit[0:5:2]
 'bnn'
@@ -479,7 +479,7 @@ A function or method argument that is not required.
 ###   练习 4
 下面这些函数都试图检查一个字符串是不是包含小写字母，但他们当中肯定有些是错的。描述一下每个函数真正的行为（假设参数是一个字符串）。
 
-```py
+```python
 def any_lowercase1(s):
 	for c in s:
 		if c.islower():
@@ -517,7 +517,7 @@ def any_lowercase5(s):
 
 你也许会用得上内置函数 ord，它把字符转换成数值代码，然后还有个 chr 是用来把数值代码转换成字符。字母表中的字母都被编译成跟字母表中同样的顺序了，所以如下所示：
 
-```py
+```python
 >>> ord('c') - ord('a')
 2
 ```

@@ -6,7 +6,7 @@
         <title>第十五章 类和对象 · HonKit</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="HonKit 5.1.4">
+        <meta name="generator" content="HonKit 6.0.2">
         
         
         
@@ -24,7 +24,7 @@
                 
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-fontsettings/website.css">
                 
             
         
@@ -49,7 +49,7 @@
     
     
     <meta name="HandheldFriendly" content="true"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
@@ -405,17 +405,17 @@
 <p>•    还可以创建一个新的类型来用对象表示点。</p>
 <p>创建新的类型要比其他方法更复杂一点，不过也有一些优势，等会我们就会发现了。</p>
 <p>用户自定义的类型也被叫做一个类。一个类的定义大概是如下所示的样子：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Point</span>:
+<pre><code class="lang-python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Point</span>:
 <span class="hljs-string">"""Represents a point in 2-D space."""</span>
 </code></pre>
 <p>头部代码的意思是表示新建的类名字叫 Point。然后类的体内有一个文档字符串，解释类的用途。在类的定义内部可以定义各种变量和方法，等会再来详细学习一下这些内容哈。</p>
 <p>声明一个名为 Point 的类，就可以创建该类的一个对象。</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>Point
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>Point
 &lt;<span class="hljs-keyword">class</span> <span class="hljs-string">'__main__.Point'</span>&gt;
 </code></pre>
 <p>因为 Point 是在顶层位置定义的，所以全名就是 <strong>main</strong>.Point。</p>
 <p>类的对象就像是一个创建对象的工厂。要创建一个 Point，就可以像调用函数一样调用 Point。</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>blank = Point()
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>blank = Point()
 <span class="hljs-meta">&gt;&gt;&gt; </span>blank
 &lt;__main__.Point <span class="hljs-built_in">object</span> at <span class="hljs-number">0xb7e9d3ac</span>&gt;
 </code></pre>
@@ -425,7 +425,7 @@
 <p>每一个对象都是某一个类的一个实例，所以『对象』和『实例』可以互换来使用。不过本章我还是都使用『实例』这个词，这样就更能体现出咱们在谈论的是用户定义的类型。</p>
 <h2 id="152--属性">15.2  属性</h2>
 <p>用点号可以给实例进行赋值：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>blank.x = <span class="hljs-number">3.0</span>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>blank.x = <span class="hljs-number">3.0</span>
 <span class="hljs-meta">&gt;&gt;&gt; </span>blank.y = <span class="hljs-number">4.0</span>
 </code></pre>
 <p>这一语法形式就和从模块中选取变量的语法是相似的，比如 math.pi 或者 string.whitespace。然而在本章这种情况下，我们用点号实现的是对一个对象中某些特定名称的元素进行赋值。这些元素也叫做属性。</p>
@@ -437,7 +437,7 @@ Figure 15.1: Object diagram.</p>
 <hr></hr>
 <p>变量 blank 指代的是一个 Point 对象，该对象包含两个属性。每个属性都指代了一个浮点数。</p>
 <p>读取属性值可以用如下这样的语法：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>blank.y
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>blank.y
 <span class="hljs-number">4.0</span>
 <span class="hljs-meta">&gt;&gt;&gt; </span>x = blank.x
 <span class="hljs-meta">&gt;&gt;&gt; </span>x
@@ -445,18 +445,18 @@ Figure 15.1: Object diagram.</p>
 </code></pre>
 <p>这里的表达式 blank.x 的意思是，『到 blank 所指代的对象中，读取 x 的值。』在这个例子中，我们把这个值赋值给一个名为 x 的变量。这里的变量 x 和类的属性 x 并不冲突。</p>
 <p>点号可以随意在任意表达式中使用。比如下面这个例子：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-string">'(%g, %g)'</span> % (blank.x, blank.y)
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-string">'(%g, %g)'</span> % (blank.x, blank.y)
 <span class="hljs-string">'(3.0, 4.0)'</span>
 <span class="hljs-meta">&gt;&gt;&gt; </span>distance = math.sqrt(blank.x**<span class="hljs-number">2</span> + blank.y**<span class="hljs-number">2</span>)
 <span class="hljs-meta">&gt;&gt;&gt; </span>distance
 <span class="hljs-number">5.0</span>
 </code></pre>
 <p>你还可以把实例作为一个参数来使用。比如下面这样：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">print_point</span>(<span class="hljs-params">p</span>):
+<pre><code class="lang-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">print_point</span>(<span class="hljs-params">p</span>):
     <span class="hljs-built_in">print</span>(<span class="hljs-string">'(%g, %g)'</span> % (p.x, p.y))
 </code></pre>
 <p>print_point 这个函数就接收了一个点作为参数，然后显示点的数值位置。你可以把刚刚那个 blank 作为参数传过去来试试：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>print_point(blank)
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>print_point(blank)
 (<span class="hljs-number">3.0</span>, <span class="hljs-number">4.0</span>)
 </code></pre>
 <p>在函数内部，p 是 blank 的一个别名，所以如果函数内部对 p 进行了修改，blank 也会发生相应的改变。</p>
@@ -468,14 +468,14 @@ Figure 15.1: Object diagram.</p>
 <p>•    确定对角线上的两个顶点所在位置。</p>
 <p>现在还很难说这两者哪一个更好，那么咱们先用第一个方案来做个例子。</p>
 <p>下面就是类的定义：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Rectangle</span>:
+<pre><code class="lang-python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Rectangle</span>:
 <span class="hljs-string">"""Represents a rectangle.
 attributes: width, height, corner.
 """</span>
 </code></pre>
 <p>文档字符串中列出了属性：width 和 height 是数值；corner 是一个点对象，用来表示左下角顶点。</p>
 <p>要表示一个矩形，必须初始化一个矩形对象，然后对其属性进行赋值：</p>
-<pre><code class="lang-py">box = Rectangle()
+<pre><code class="lang-python">box = Rectangle()
 box.width = <span class="hljs-number">100.0</span>
 box.height = <span class="hljs-number">200.0</span>
 box.corner = Point()
@@ -490,29 +490,29 @@ Figure 15.2: Object diagram.</p>
 <p>图 15.2 展示了这个对象的状态图。一个类去作为另外一个类的属性，就叫做嵌入。</p>
 <h2 id="154--多个实例作返回值">15.4  多个实例作返回值</h2>
 <p>函数返回实例。比如 find_center 就接收一个 Rectangle （矩阵）对象作为参数，然后以一个 Point（点）对象的形式返回矩形中心位置的坐标所在点：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">find_center</span>(<span class="hljs-params">rect</span>):
+<pre><code class="lang-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">find_center</span>(<span class="hljs-params">rect</span>):
     p = Point()
     p.x = rect.corner.x + rect.width/<span class="hljs-number">2</span>
     p.y = rect.corner.y + rect.height/<span class="hljs-number">2</span>
     <span class="hljs-keyword">return</span> p
 </code></pre>
 <p>下面这个例子中，box 作为一个参数传递给了 find_center 函数，然后结果赋值给了点 center：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>center = find_center(box)
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>center = find_center(box)
 <span class="hljs-meta">&gt;&gt;&gt; </span>print_point(center)
 (<span class="hljs-number">50</span>, <span class="hljs-number">100</span>)
 </code></pre>
 <h2 id="155--对象可以修改">15.5  对象可以修改</h2>
 <p>通过对一个对象的属性进行赋值就可以修改该对象的状态了。比如，要改变一个举行的大小而不改变位置，就可以只修改宽度和高度，如下所示：</p>
-<pre><code class="lang-py">box.width = box.width + <span class="hljs-number">50</span>
+<pre><code class="lang-python">box.width = box.width + <span class="hljs-number">50</span>
 box.height = box.height + <span class="hljs-number">100</span>
 </code></pre>
 <p>你还可以写专门的函数来修改对象。比如 grow_rectangle 这个函数就接收一个矩形对象和 dwidth 与 dheight 两个数值，然后把这两个数值加到矩形的宽度和高度值上。</p>
-<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">grow_rectangle</span>(<span class="hljs-params">rect, dwidth, dheight</span>):
+<pre><code class="lang-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">grow_rectangle</span>(<span class="hljs-params">rect, dwidth, dheight</span>):
     rect.width += dwidth
     rect.height += dheight
 </code></pre>
 <p>下面的例子展示了具体的效果：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>box.width, box.height
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>box.width, box.height
 (<span class="hljs-number">150.0</span>, <span class="hljs-number">300.0</span>)
 <span class="hljs-meta">&gt;&gt;&gt; </span>grow_rectangle(box, <span class="hljs-number">50</span>, <span class="hljs-number">100</span>)
 <span class="hljs-meta">&gt;&gt;&gt; </span>box.width, box.height
@@ -523,14 +523,14 @@ box.height = box.height + <span class="hljs-number">100</span>
 <h2 id="156--复制">15.6  复制</h2>
 <p>别名有可能让程序读起来有困难，因为在一个位置做出的修改有可能导致另外一个位置发生不可预知的情况。这样也很难去追踪指向一个对象的所有变量。</p>
 <p>所以就可以不用别名，而用复制对象的方法。copy 模块包含了一个名叫 copy 的函数，可以复制任意对象：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>p1 = Point()
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>p1 = Point()
 <span class="hljs-meta">&gt;&gt;&gt; </span>p1.x = <span class="hljs-number">3.0</span>
 <span class="hljs-meta">&gt;&gt;&gt; </span>p1.y = <span class="hljs-number">4.0</span>
 <span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">import</span> copy
 <span class="hljs-meta">&gt;&gt;&gt; </span>p2 = copy.copy(p1)
 </code></pre>
 <p>p1 和 p2 包含的数据是相同的，但并不是同一个点对象。</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>print_point(p1)
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>print_point(p1)
 (<span class="hljs-number">3</span>, <span class="hljs-number">4</span>)
 <span class="hljs-meta">&gt;&gt;&gt; </span>print_point(p2)
 (<span class="hljs-number">3</span>, <span class="hljs-number">4</span>)
@@ -542,7 +542,7 @@ box.height = box.height + <span class="hljs-number">100</span>
 <p>is 运算符表明 p1 和 p2 不是同一个对象，这就是我们所预料的。但你可能本想着是==运算符应该得到的是 True 因为这两个点包含的数据是一样的。这样的话你就会很失望地发现对于实例来说，==运算符的默认行为就跟 is 运算符是一样的；它也还是检查对象的身份，而不是对象的相等性。这是因为你用的是用户自定义的类型，Python 不值得如何去衡量是否相等。至少是现在还不能。</p>
 <p>（译者注：==运算符的实现需要运算符重载，也就是多态的一种，来实现，也就是对用户自定义类型，需要用户自定义运算符，而不能简单地继续用内置运算符。因为自定义类型的运算是 Python 没法确定的，得用户自己来确定。）</p>
 <p>如果你用 copy.copy 复制了一个矩形，你会发现该函数复制了矩形对象，但没有复制内嵌的点对象。</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>box2 = copy.copy(box)
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>box2 = copy.copy(box)
 <span class="hljs-meta">&gt;&gt;&gt; </span>box2 <span class="hljs-keyword">is</span> box
 <span class="hljs-literal">False</span>
 <span class="hljs-meta">&gt;&gt;&gt; </span>box2.corner <span class="hljs-keyword">is</span> box.corner
@@ -555,7 +555,7 @@ Figure 15.3: Object diagram.</p>
 <p>图 15.3 展示了此时的类图的情况。这种运算叫做浅复制，因为复制了对象与对象内包含的所有引用，但不复制内嵌的对象。</p>
 <p>对于大多数应用来说，这并不是你的本来目的。在本节的样例中，对复制过的一个矩形进行 grow_rrectangle 函数运算，并不会影响另外一个，但使用 move_rectangle 就会对两个都有影响！这种行为就很让人疑惑，也容易带来错误。</p>
 <p>所幸的是 copy 模块还提供了一个名为 deepcopy （深复制）的方法，这样就能把内嵌的对象也复制了。你肯定不会奇怪了，这种运算就叫深复制了。</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>box3 = copy.deepcopy(box)
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>box3 = copy.deepcopy(box)
 <span class="hljs-meta">&gt;&gt;&gt; </span>box3 <span class="hljs-keyword">is</span> box
 <span class="hljs-literal">False</span>
 <span class="hljs-meta">&gt;&gt;&gt; </span>box3.corner <span class="hljs-keyword">is</span> box.corner
@@ -565,29 +565,29 @@ Figure 15.3: Object diagram.</p>
 <p>做个练习吧，写一个新版本的 move_rectangle，创建并返回一个新的矩形，而不是修改旧有的矩形。</p>
 <h2 id="157--调试">15.7  调试</h2>
 <p>当你开始使用对象的时候，你就容易遇到一些新的异常。如果你试图读取一个不存在的属性，就会得到一个属性错误 AttributeError：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>p = Point()
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>p = Point()
 <span class="hljs-meta">&gt;&gt;&gt; </span>p.x = <span class="hljs-number">3</span>
 <span class="hljs-meta">&gt;&gt;&gt; </span>p.y = <span class="hljs-number">4</span>
 <span class="hljs-meta">&gt;&gt;&gt; </span>p.z
 AttributeError: Point instance has no attribute <span class="hljs-string">'z'</span>
 </code></pre>
 <p>如果不确定一个对象是什么类型，可以『问』一下：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">type</span>(p)
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">type</span>(p)
 &lt;<span class="hljs-keyword">class</span> <span class="hljs-string">'__main__.Point'</span>&gt;
 </code></pre>
 <p>还可以用 isinstance 函数来检查一下一个对象是否为某一个类的实例：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">isinstance</span>(p, Point)
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">isinstance</span>(p, Point)
 <span class="hljs-literal">True</span>
 </code></pre>
 <p>如果不确定某一对象是否有一个特定的属性，可以用内置函数 hasattr：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">hasattr</span>(p, <span class="hljs-string">'x'</span>)
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">hasattr</span>(p, <span class="hljs-string">'x'</span>)
 <span class="hljs-literal">True</span>
 <span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">hasattr</span>(p, <span class="hljs-string">'z'</span>)
 <span class="hljs-literal">False</span>
 </code></pre>
 <p>hasattr 的第一个参数可以是任意一个对象；第二个参数是一个字符串，就是要判断是否存在的属性名字。</p>
 <p>用 try 语句也可以试验一个对象是否有你需要的属性：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">try</span>:
+<pre><code class="lang-python"><span class="hljs-keyword">try</span>:
     x = p.x
 <span class="hljs-keyword">except</span> AttributeError:
     x = <span class="hljs-number">0</span>
@@ -694,7 +694,7 @@ A diagram that shows objects, their attributes, and the values of the attributes
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第十五章 类和对象","level":"1.16","depth":1,"next":{"title":"第十六章 类和函数","level":"1.17","depth":1,"path":"chapter16.md","ref":"chapter16.md","articles":[]},"previous":{"title":"第十四章 文件","level":"1.15","depth":1,"path":"chapter14.md","ref":"chapter14.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter15.md","mtime":"2024-08-23T09:01:53.766Z","type":"markdown"},"gitbook":{"version":"5.1.4","time":"2024-08-23T09:11:00.343Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第十五章 类和对象","level":"1.16","depth":1,"next":{"title":"第十六章 类和函数","level":"1.17","depth":1,"path":"chapter16.md","ref":"chapter16.md","articles":[]},"previous":{"title":"第十四章 文件","level":"1.15","depth":1,"path":"chapter14.md","ref":"chapter14.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter15.md","mtime":"2025-01-05T18:02:47.633Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-01-05T18:03:10.535Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
@@ -764,7 +764,7 @@ A diagram that shows objects, their attributes, and the values of the attributes
         
     
         
-        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        <script src="gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
         
     
 

@@ -9,13 +9,13 @@
 
 这个文件就是纯文本，所以你可以用文本编辑器打开一下，不过也可以用 Python 来读取。Python 内置了一个叫 open 的函数，接收文件名做参数，返回一个文件对象，你可以用它来读取文件。
 
-```py
+```python
 >>> fin = open('words.txt')
 ```
 
 fin 是一个用来表示输入的文件的常用名字。这个文件对象提供了好几种读取的方法，包括逐行读取，这种方法是读取文本中的一整行直到结尾，然后把读取的内容作为字符串返回：
 
-```py
+```python
 >>> fin.readline()
 'aa\r\n'
 ```
@@ -24,14 +24,14 @@ fin 是一个用来表示输入的文件的常用名字。这个文件对象提�
 
 文件对象会记录这个单词在源文件中的位置，所以下次你再调用 readline 的时候，就能得到下一个词了：
 
-```py
+```python
 >>> fin.readline()
 'aah\r\n'
 ```
 
 下一个词是『aah』，这完全是一个正规的词汇，不要怪异眼神看我哦。另外如果转义字符让你很烦，咱们可以稍加修改来去掉它，用字符串的 strip 方法即可：
 
-```py
+```python
 >>> line = fin.readline()
 >>> word = line.strip()
 >>> word
@@ -40,7 +40,7 @@ fin 是一个用来表示输入的文件的常用名字。这个文件对象提�
 
 在 for 循环中也可以使用文件对象。下面的这个程序读取整个 words.txt 文件，然后每行输出一个词：
 
-```py
+```python
 fin = open('words.txt')
 	for line in fin:
 		word = line.strip()
@@ -81,7 +81,7 @@ fin = open('words.txt')
 
 刚刚的那些练习都有一些相似之处：都可以用我们在 8.6 学过的搜索来解决。下面是一个最简化的例子：
 
-```py
+```python
 def has_no_e(word):
 	for letter in word:
 		if letter == 'e':
@@ -95,7 +95,7 @@ def has_no_e(word):
 
 avoids 是一个更通用版本的 has_no_e 函数的实现，它的结构是一样的：
 
-```py
+```python
 def avoids(word, forbidden):
 	for letter in word:
 		if letter in forbidden:
@@ -107,7 +107,7 @@ def avoids(word, forbidden):
 
 uses_only 与之相似，无非是条件与之相反了而已。
 
-```py
+```python
 def uses_only(word, available):
 	for letter in word:
 		if letter not in available:
@@ -119,7 +119,7 @@ def uses_only(word, available):
 
 uses_all 这个函数与之也相似，不过我们转换了单词和字母字符串的角色：
 
-```py
+```python
 def uses_all(word, required):
 	for letter in required:
 		if letter not in word:
@@ -128,7 +128,7 @@ def uses_all(word, required):
 ```
 这次并没有遍历单词中的所有字母，循环遍历了所有指定的字母。如果有任何指定字母没有在单词中出新啊，就返回假。如果你已经像计算机科学家一样思考了，你就应该已经发现了 uses_all 是对之前我们解决过问题的一个实例，你已经写过这个代码了：
 
-```py
+```python
 def uses_all(word, required):
 	return uses_only(required, word)
 ```
@@ -140,7 +140,7 @@ def uses_all(word, required):
 
 但 is_abecedarian 这个函数中，我们需要对比临近的两个字母，所以用 for 循环就不那么好写了：
 
-```py
+```python
 def is_abecedarian(word):
 	previous = word[0]
 	for c in word:
@@ -152,7 +152,7 @@ def is_abecedarian(word):
 
 一种很好的替代思路就是使用递归：
 
-```py
+```python
 def is_abecedarian(word):
 	if len(word) <= 1:
 		return True
@@ -163,7 +163,7 @@ def is_abecedarian(word):
 
 另外一种方法是用 while 循环：
 
-```py
+```python
 def is_abecedarian(word):
 	i = 0
 	while i < len(word)-1:
@@ -184,7 +184,7 @@ def is_abecedarian(word):
 
 下面这个是练习 3 的 is_palindrome 的一个版本，使用了两个索引；一个从头开始一直到结尾；另外一个从末尾开始逆序进行。
 
-```py
+```python
 def is_palindrome(word):
 	i = 0
 	j = len(word)-1
@@ -198,7 +198,7 @@ def is_palindrome(word):
 
 或者我们可以把问题解构成之前解决过的样式，然后这样写：
 
-```py
+```python
 def is_palindrome(word):
 	return is_reverse(word, word)
 ```

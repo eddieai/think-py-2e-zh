@@ -6,7 +6,7 @@
         <title>第七章 迭代 · HonKit</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="HonKit 5.1.4">
+        <meta name="generator" content="HonKit 6.0.2">
         
         
         
@@ -24,7 +24,7 @@
                 
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-fontsettings/website.css">
                 
             
         
@@ -49,7 +49,7 @@
     
     
     <meta name="HandheldFriendly" content="true"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
@@ -400,7 +400,7 @@
 <blockquote>
 <p>（译者注：这个其实中文很好理解，英文当中词汇逻辑关系比较紧密，但灵活程度不如中文高啊。）</p>
 </blockquote>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>x = <span class="hljs-number">5</span>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>x = <span class="hljs-number">5</span>
 <span class="hljs-meta">&gt;&gt;&gt; </span>x
 <span class="hljs-number">5</span>
 <span class="hljs-meta">&gt;&gt;&gt; </span>x = <span class="hljs-number">7</span>
@@ -413,7 +413,7 @@
 <p>首先，数学上的等号所表示的相等是一个对称的关系，而 Python 中等号的赋值操作是不对称的。比如，在数学上，如果 a=7，那么 7=a。而在 Python，a=7 这个是合乎语法的，而 7=a 是错误的。</p>
 <p>（译者注：这里就是说 Python 中等号是一种单向的运算，就是把等号右边的值赋给等号左边的变量，而 Python 中其实也有数学上相等判断的表达式，就是双等号（==），这个是有对称性的，就是说 a==b，那么 b==a，或者 a==3，3==a 也可以。）</p>
 <p>另外在数学上，一个相等关系要么是真，要么是假。比如 a=b，那么 a 就会永远等于 b。在 Python 里面，赋值语句可以让两个变量相等，但可以不始终都相等，如下所示：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>a = <span class="hljs-number">5</span>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>a = <span class="hljs-number">5</span>
 <span class="hljs-meta">&gt;&gt;&gt; </span>b = a    <span class="hljs-comment"># a and b are now equal a 和 b 相等了</span>
 <span class="hljs-meta">&gt;&gt;&gt; </span>a = <span class="hljs-number">3</span>    <span class="hljs-comment"># a and b are no longer equal 现在 a 和 b 就不相等了</span>
 <span class="hljs-meta">&gt;&gt;&gt; </span>b
@@ -427,21 +427,21 @@ Figure 7.1: State diagram.</p>
 <hr></hr>
 <h2 id="72--更新变量">7.2  更新变量</h2>
 <p>最常见的一种再赋值就是对变量进行更新，这种情况下新的值是在旧值基础上进行修改得到的。</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>x = x + <span class="hljs-number">1</span>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>x = x + <span class="hljs-number">1</span>
 </code></pre>
 <p>上面的语句的意思是：获取 x 当前的值，在此基础上加 1，然后把结果作为新值赋给 x。如果你对不存在的变量进行更新，你就会得到错误了，因为 Python 要先进行等号右边的运算，然后才能赋值给 x。</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>x = x + <span class="hljs-number">1</span>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>x = x + <span class="hljs-number">1</span>
 NameError: name <span class="hljs-string">'x'</span> <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> defined
 </code></pre>
 <p>在你更新一个变量之前，你要先初始化一下，一般就是简单赋值一下就可以了：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>x = <span class="hljs-number">0</span>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>x = <span class="hljs-number">0</span>
 <span class="hljs-meta">&gt;&gt;&gt; </span>x = x + <span class="hljs-number">1</span>
 </code></pre>
 <p>对一个变量每次加 1 也可以叫做一种递增，每次减去 1 就可以叫做递减了。</p>
 <h2 id="73--循环：while-语句">7.3  循环：While 语句</h2>
 <p>计算机经常被用来自动执行一些重复的任务。重复同样的或者相似的任务，而不出错，这是计算机特别擅长的事情，咱们人就做不到了。在一个计算机程序里面，重复操作也被叫做迭代。</p>
 <p>我们已经见过两种使用了递归来进行迭代的函数：倒计时函数 countdown，以及 n 次输出函数 print_n。Python 还提供了一些功能来简化迭代，因为迭代用的很普遍。其中一个就是我们在 4.2 中见到的 for 循环语句。往后我们还要复习一下它。另外一个就是 while 循环语句。下面就是一个使用了 while 循环语句来实现的倒计时函数 countdown：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">countdown</span>(<span class="hljs-params">n</span>):
+<pre><code class="lang-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">countdown</span>(<span class="hljs-params">n</span>):
     <span class="hljs-keyword">while</span> n &gt; <span class="hljs-number">0</span>:
         <span class="hljs-built_in">print</span>(n)
         n = n - <span class="hljs-number">1</span>
@@ -461,7 +461,7 @@ NameError: name <span class="hljs-string">'x'</span> <span class="hljs-keyword">
 <p>否则的话，条件不能为假，循环不能停止，这就叫做无限循环。计算机科学家有一个笑话，就是看到洗发液的说明：起泡，冲洗，重复；这就是一个无限循环。</p>
 <p>在倒计时函数 countdown 里面，咱们能够保证有办法让循环终止：只要 n 小于等于 0 了，循环就不进行了。否则的话，n 每次就会通过循环来递减，最终还是能到 0 的。</p>
 <p>其他一些循环就不那么好描述了。比如：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">sequence</span>(<span class="hljs-params">n</span>):
+<pre><code class="lang-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">sequence</span>(<span class="hljs-params">n</span>):
     <span class="hljs-keyword">while</span> n != <span class="hljs-number">1</span>:
         <span class="hljs-built_in">print</span>(n)
         <span class="hljs-keyword">if</span> n % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>:            <span class="hljs-comment"># n is even</span>
@@ -478,7 +478,7 @@ NameError: name <span class="hljs-string">'x'</span> <span class="hljs-keyword">
 <h2 id="74--中断">7.4  中断</h2>
 <p>有时候你不知道啥时候终止循环，可能正好在中间循环体的时候要终止了。这时候你就可以用 break 语句来跳出循环。
 比如，假设你要让用户输入一些内容，当他们输入 done 的时候结束。你就可以用如下的方法实现：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:
+<pre><code class="lang-python"><span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:
     line = <span class="hljs-built_in">input</span>(<span class="hljs-string">'&gt; '</span>)
     <span class="hljs-keyword">if</span> line == <span class="hljs-string">'done'</span>:
         <span class="hljs-keyword">break</span>
@@ -487,7 +487,7 @@ NameError: name <span class="hljs-string">'x'</span> <span class="hljs-keyword">
 </code></pre>
 <p>循环条件就是 true，意味条件总是真的，所以循环就一直进行，一直到触发了 break 语句才跳出。</p>
 <p>每次循环的时候，程序都会有一个大于号&gt;来提示用户。如果用输入了 done，break 语句就会让程序跳出循环。否则的话程序会重复用户输入的内容，然后回到循环的头部。下面就是一个简单的运行例子：</p>
-<pre><code class="lang-py">&gt;&gt;&gt;<span class="hljs-keyword">not</span> done
+<pre><code class="lang-python">&gt;&gt;&gt;<span class="hljs-keyword">not</span> done
 &gt;&gt;&gt;<span class="hljs-keyword">not</span> done
 &gt;&gt;&gt;done
 Done!
@@ -498,20 +498,20 @@ Done!
 <p>比如，可以用牛顿法来计算平方根。加入你要知道一个数 a 的平方根。如果你用任意一个估计值 x 来开始，你可以用下面的公式获得一个更接近的值：</p>
 <p>$$y = \frac{x + \frac{a}{x}}{2}$$</p>
 <p>比如，如果 a 是 3，x 设为 3：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>a = <span class="hljs-number">4</span>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>a = <span class="hljs-number">4</span>
 <span class="hljs-meta">&gt;&gt;&gt; </span>x = <span class="hljs-number">3</span>
 <span class="hljs-meta">&gt;&gt;&gt; </span>y = (x + a/x) / <span class="hljs-number">2</span>
 <span class="hljs-meta">&gt;&gt;&gt; </span>y
 <span class="hljs-number">2.16666666667</span>
 </code></pre>
 <p>得到的结果比初始值 3 更接近真实值（4 的平方根是 2）。如果我们用这个结果做新的估计值来重复这个操作，结果就更加接近了：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>x = y
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>x = y
 <span class="hljs-meta">&gt;&gt;&gt; </span>y = (x + a/x) / <span class="hljs-number">2</span>
 <span class="hljs-meta">&gt;&gt;&gt; </span>y 
 <span class="hljs-number">2.00641025641</span>
 </code></pre>
 <p>这样进行一些次重复之后，估计值就几乎很准确了：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>x = y
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>x = y
 <span class="hljs-meta">&gt;&gt;&gt; </span>y = (x + a/x) / <span class="hljs-number">2</span>
 <span class="hljs-meta">&gt;&gt;&gt; </span>y <span class="hljs-number">2.00001024003</span>
 <span class="hljs-meta">&gt;&gt;&gt; </span>x = y
@@ -520,13 +520,13 @@ Done!
 <span class="hljs-number">2.00000000003</span>
 </code></pre>
 <p>一般情况下，我们不能提前知道到达正确结果需要多长时间，但是当估计值不再有明显变化的时候我们就知道了：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>x = y
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>x = y
 <span class="hljs-meta">&gt;&gt;&gt; </span>y = (x + a/x) / <span class="hljs-number">2</span>
 <span class="hljs-meta">&gt;&gt;&gt; </span>y
 <span class="hljs-number">2.0</span>
 </code></pre>
 <p>当 y 和 x 相等的时候，我们就可以停止了。下面这个循环中，用一个初始值 x 来开始循环，然后进行改进，一直到 x 的值不再变化为止：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:
+<pre><code class="lang-python"><span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:
     <span class="hljs-built_in">print</span>(x)
     y = (x + a/x) / <span class="hljs-number">2</span>
     <span class="hljs-keyword">if</span> y == x:
@@ -535,7 +535,7 @@ Done!
 </code></pre>
 <p>对大多数值来说，这个循环都挺管用的，但一般来说用浮点数来测试等式是很危险的。浮点数的值只能是近似正确：大多数的有理数，比如 1/3，以及无理数，比如根号 2，都不能用浮点数来准确表达的。</p>
 <p>相比之下，与其对比 x 和 y 是否精确相等，倒不如以下方法更安全：用内置的绝对值函数来计算一下差值的绝对值，也叫做数量级。</p>
-<pre><code class="lang-py"><span class="hljs-keyword">if</span> <span class="hljs-built_in">abs</span>(y-x) &lt; epsilon:
+<pre><code class="lang-python"><span class="hljs-keyword">if</span> <span class="hljs-built_in">abs</span>(y-x) &lt; epsilon:
     <span class="hljs-keyword">break</span>
 </code></pre>
 <p>这里可以让 epsilon 的值为 like 0.0000001，差值比这个小就说明已经足够接近了。</p>
@@ -601,7 +601,7 @@ A general process for solving a category of problems.</p>
 <p>第一列是数 a；第二列是咱们自己写的函数 mysqrt 计算出来的平方根，第三行是用 Python 内置的 math.sqrt 函数计算的平方根，最后一行是这两者的差值的绝对值。</p>
 <h3 id="练习-2">练习 2</h3>
 <p>Python 的内置函数 eval 接收字符串作为参数，然后用 Python 的解释器来运行。例如：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">eval</span>(<span class="hljs-string">'1 + 2 * 3'</span>)
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">eval</span>(<span class="hljs-string">'1 + 2 * 3'</span>)
 <span class="hljs-number">7</span>
 <span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">import</span> math
 <span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">eval</span>(<span class="hljs-string">'math.sqrt(5)'</span>)
@@ -662,7 +662,7 @@ A general process for solving a category of problems.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第七章 迭代","level":"1.8","depth":1,"next":{"title":"第八章 字符串","level":"1.9","depth":1,"path":"chapter8.md","ref":"chapter8.md","articles":[]},"previous":{"title":"第六章 有返回值的函数","level":"1.7","depth":1,"path":"chapter6.md","ref":"chapter6.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter7.md","mtime":"2024-08-23T09:01:53.771Z","type":"markdown"},"gitbook":{"version":"5.1.4","time":"2024-08-23T09:11:00.343Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第七章 迭代","level":"1.8","depth":1,"next":{"title":"第八章 字符串","level":"1.9","depth":1,"path":"chapter8.md","ref":"chapter8.md","articles":[]},"previous":{"title":"第六章 有返回值的函数","level":"1.7","depth":1,"path":"chapter6.md","ref":"chapter6.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter7.md","mtime":"2025-01-05T18:02:47.633Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-01-05T18:03:10.535Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
@@ -732,7 +732,7 @@ A general process for solving a category of problems.</p>
         
     
         
-        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        <script src="gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
         
     
 

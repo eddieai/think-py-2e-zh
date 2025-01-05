@@ -35,7 +35,7 @@ Python 是一种面向对象的编程语言，这就意味着它提供了一些�
 
 在 16.1，我们定义过一个名为 Time 的类，当时写过月名为 print_time 的函数：
 
-```py
+```python
 class Time:
 """Represents the time of day."""
 def print_time(time):
@@ -44,7 +44,7 @@ def print_time(time):
 
 要调用这个函数，就必须给传递过去一个 TIme 对象作为参数：
 
-```py
+```python
 >>> start = Time()
 >>> start.hour = 9
 >>> start.minute = 45
@@ -55,7 +55,7 @@ def print_time(time):
 
 要让 print_time 成为一个方法，只需要把函数定义内容放到类定义里面去。一定要注意缩进的变化哈。
 
-```py
+```python
 class Time:
 	def print_time(time):
 		print('%.2d:%.2d:%.2d' % (time.hour, time.minute, time.second)) 
@@ -63,7 +63,7 @@ class Time:
 
 现在就有两种方法来调用 print_time 这个函数了。第一种就是用函数的语法（一般大家不这么用）：
 
-```py
+```python
 >>> Time.print_time(start)
 09:45:00
 ```
@@ -73,7 +73,7 @@ class Time:
 
 另外一种形式就是用方法的语法（这个形式更简洁很多）：
 
-```py
+```python
 >>> start.print_time()
 09:45:00
 ```
@@ -86,7 +86,7 @@ class Time:
 
 按照惯例，方法的第一个参数也叫做 self，所以刚刚的 print_time 函数可以以如下这种更通用的形式来写：
 
-```py
+```python
 class Time:
 	def print_time(self):
 		print('%.2d:%.2d:%.2d' % (self.hour, self.minute, self.second))
@@ -109,7 +109,7 @@ The reason for this convention is an implicit metaphor:
 
 下面是 increment 函数（参见 16.4）被改写成的方法：
 
-```py
+```python
 #  inside class Time:
 def increment(self, seconds):
 	seconds += self.time_to_int()
@@ -121,7 +121,7 @@ def increment(self, seconds):
 
 >下面是调用 increment 的示范：
 
-```py
+```python
 >>> start.print_time()
 09:45:00
 >>> end = start.increment(1337)
@@ -134,7 +134,7 @@ def increment(self, seconds):
 
 这种表述挺混乱，如果弄错了就更麻烦了。比如，如果你用两个参数调用了 increment 函数，你会得到如下的错误：
 
-```py
+```python
 >>> end = start.increment(1337, 460)
 TypeError: increment() takes 2 positional arguments but 3 were given
 ```
@@ -151,14 +151,14 @@ parrot 和 cage 都是位置参数，dead 是关键字参数。
 ## 17.4  更复杂点的例子
 重写 is_after（参见 16.1），这就比较有难度了，因为这个函数接收两个 Time 对象作为参数。在这个情况下，一般就把第一个参数命名为 self，第二个命名为 other：
 
-```py
+```python
 #  inside class Time:
 def is_after(self, other):
 	return self.time_to_int() > other.time_to_int()
 ```
 要使用这个方法，就必须在一个对象后面调用，然后用另外一个对象作为参数：
 
-```py
+```python
 >>> end.is_after(start)
 True
 ```
@@ -168,7 +168,7 @@ True
 
 init 方法（就是对『initialization』的缩写，初始化的意思，这个方法相当于 C++中的构造函数）是一种特殊的方法，在对象被实例化的时候被调用。这个方法的全名是 __init__（两个下划线，然后是 init，然后还是两个下划线）。在 Time 类当中，init 方法示例如下：
 
-```py
+```python
 #  inside class Time:
 def __init__(self, hour=0, minute=0, second=0):
 	self.hour = hour
@@ -178,7 +178,7 @@ def __init__(self, hour=0, minute=0, second=0):
 
 一般情况下，init 方法里面的参数与属性变量的名字是相同的。下面这个语句
 
-```py
+```python
 		self.hour = hour
 ```
 
@@ -186,7 +186,7 @@ def __init__(self, hour=0, minute=0, second=0):
 
 这些参数都是可选的，所以如果你调用 Time 但不给任何参数，得到的就是默认值。
 
-```py
+```python
 >>> time = Time()
 >>> time.print_time()
 00:00:00
@@ -194,14 +194,14 @@ def __init__(self, hour=0, minute=0, second=0):
 
 如果你提供一个参数，就先覆盖 hour 的值：
 
-```py
+```python
 >>> time = Time (9)
 >>> time.print_time()
 09:00:00
 
 提供两个参数，就先后覆盖了 hour 和 minute 的值。
 
-```py
+```python
 >>> time = Time(9, 45)
 >>> time.print_time()
 09:45:00
@@ -218,14 +218,14 @@ __str__ 是一种特殊的方法，就跟 __init__ 差不多，str 方法是接�
 
 例如，下面就是 Time 对象的一个 str 方法：
 
-```py
+```python
 #  inside class Time:
 def __str__(self):
 	return '%.2d:%.2d:%.2d' % (self.hour, self.minute, self.second)
 ```
 这样当你用 print 打印输出一个对象的时候，Python 就会调用这个 str 方法：
 
-```py
+```python
 >>> time = Time(9, 45)
 >>> print(time) 09:45:00
 ```
@@ -237,7 +237,7 @@ def __str__(self):
 
 通过定义一些特定的方法，咱们就能针对自定义类型，让运算符有特定的作用。比如，如果你在 Time 类中定义了一个名字为 __add__ 的方法，你就可以对 Time 对象使用『+』加号运算符。
 
-```py
+```python
 #  inside class Time:
 def __add__(self, other):
 	seconds = self.time_to_int() + other.time_to_int()
@@ -245,7 +245,7 @@ def __add__(self, other):
 ```
 使用方法如下所示：
 
-```py
+```python
 >>> start = Time(9, 45)
 >>> duration = Time(1, 35)
 >>> print(start + duration)
@@ -261,7 +261,7 @@ def __add__(self, other):
 
 在前面的章节中，我们把两个 Time 对象进行了相加，但也许有时候需要把一个整数加到 Time 对象上面。下面这一个版本的 __add__ 方法就能够实现检查类型，然后调用 add_time 方法或者是 increment 方法：
 
-```py
+```python
 #  inside class Time:
 def __add__(self, other):
 	if isinstance(other, Time):
@@ -285,7 +285,7 @@ def increment(self, seconds):
 
 下面的例子中，就展示了用不同类型变量来相加的效果：
 
-```py
+```python
 >>> start = Time(9, 45)
 >>> duration = Time(1, 35)
 >>> print(start + duration)
@@ -296,14 +296,14 @@ def increment(self, seconds):
 
 然而不幸的是，这个加法运算不满足交换率。如果整数放到首位，就会得到如下所示的错误了：
 
-```py
+```python
 >>> print(1337 + start)
 TypeError: unsupported operand type(s) for +: 'int' and 'instance'
 ```
 
 这里的问题就在于，Python 并没有让一个 Time 对象来加一个整数，而是去调用了整形的加法去把一个 Time 对象加到整数上面去，这就用系统原本的加法，而这个加法不能处理 Time 对象。有一个很聪明的方法来解决这个问题：用一个特殊的方法 __radd__，这个方法的意思就是『右加』。在一个 Time 对象出现在加号运算符右侧的时候，该方法就会被调用了。下面就是这个方法的定义：
 
-```py
+```python
 #  inside class Time:
 def __radd__(self, other):
 	return self.__add__(other)
@@ -312,7 +312,7 @@ And here’s how it’s used:
 
 >使用如下所示：
 
-```py
+```python
 >>> print(1337 + start)
 10:07:17
 ```
@@ -330,7 +330,7 @@ And here’s how it’s used:
 
 我们之前为字符串写的很多函数，也都可以用到其他序列类型上面。比如在 11.2 我们用 histogram 来统计一个单词中每个字母出现的次数。
 
-```py
+```python
 def histogram(s):
 	d = dict()
 	for c in s:
@@ -343,7 +343,7 @@ def histogram(s):
 
 这个函数也可以用于列表、元组，甚至字典，只要 s 的元素是散列的，就能用做 d 当中的键。
 
-```py
+```python
 >>> t = ['spam', 'egg', 'spam', 'spam', 'bacon', 'spam']
 >>> histogram(t)
 {'bacon': 1, 'egg': 1, 'spam': 4}
@@ -354,7 +354,7 @@ def histogram(s):
 
 Time 对象有了自己的加法方法，就可以与 sum 函数来配合使用了：
 
-```py
+```python
 >>> t1 = Time(7, 43)
 >>> t2 = Time(7, 41)
 >>> t3 = Time(7, 37)
@@ -376,14 +376,14 @@ Time 对象有了自己的加法方法，就可以与 sum 函数来配合使用�
 
 另外一种读取属性的方法是用内置函数 vars，这个函数会接收一个对象，然后返回一个字典，字典中的键值对就是属性名的字符串与对应的值。
 
-```py
+```python
 >>> p = Point(3, 4)
 >>> vars(p)
 {'y': 4, 'x': 3}
 ```
 出于调试目的，你估计也会发现下面这个函数随时用一下会带来很多便利：
 
-```py
+```python
 def print_attributes(obj):
 	for attr in vars(obj):
 		print(attr, getattr(obj, attr))

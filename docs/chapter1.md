@@ -37,7 +37,7 @@ Python 现在有两个主要的分之，即 Python2 和 Python3。如果你学�
 
 Python 的解释器是一个读取并执行 Python 代码的程序。根据你的系统环境，你可以点击图标或者在命令行中输入 python 来运行解释器。它运行起来，你会看到类似这样的输出：
 
-```py
+```python
 Python 3.4.0 (default, Jun 19 2015, 14:20:21)  
 [GCC 4.8.2] on linux 
 Type "help", "copyright", "credits" or "license" for more information. 
@@ -49,7 +49,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 最后一行那个是提示符，告诉你解释器已经就绪了，你可以输入代码了。如果你输入一行代码然后回车键，解释器就会显示结果了，如下所示：
 
-```py
+```python
 >>> 1 + 1 
 >>> 1 + 1 
 2
@@ -60,7 +60,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 传统意义上，大家学一门新编程语言要写的第一个程序都被叫做『Hello，World！』，因为这第一个程序就用来显示这个词组『Hello，World！』。在 Python 中，是这样实现的：
 
-```py
+```python
 >>> print('Hello, World!') 
 >>> Hello, World! 
 ```
@@ -70,7 +70,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 在 Python2 中，打印的语句有一点点不一样：print 不是一个函数，所以就不用有括号了。
 
-```py
+```python
 >>> print 'Hello, World!' 
 >>> Hello, World! 
 ```
@@ -83,7 +83,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 运算符+，-和*表示加法、减法和乘法，如下所示：
 
-```py
+```python
 >>> 40 + 2 
 >>> 40 + 2 
 42 
@@ -97,7 +97,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 运算符右斜杠/意味着除法：
 
-```py
+```python
 >>> 84 / 2 
 >>> 84 / 2 
 42.0 
@@ -108,7 +108,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 最后，再说个运算符**，它表示乘方，就是前一个数为底数，后一个数为指数的次幂运算：
 
-```py
+```python
 >>> 6**2 + 6 
 >>> 6**2 + 6 
 42 
@@ -116,7 +116,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 在其他的一些编程语言中，^这个符号是乘方的意思，但在 Python 中这是一个位运算操作符叫做『异或』。要是你不熟悉位运算操作符，结果一定让你很惊讶：
 
-```py
+```python
 >>> 6 ^ 2 
 >>> 6 ^ 2 
 4 
@@ -133,7 +133,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 如果你不确定一个值是什么类型呢，你可以让解释器来告诉你：
 
-```py
+```python
 >>> type(2) 
 >>> type(2) 
 <class 'int'> 
@@ -153,7 +153,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 那'2' 和 '42.0'这种是啥呢？他们看着像是数字，但带了单引号了。
 
-```py
+```python
 >>> type('2') 
 >>> type('2') 
 <class 'str'> 
@@ -167,7 +167,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 咱们现在输入一个大的整数，在中间用逗号分隔试试看，比如 1，000，000，并不是 Python 中合乎语法的整形，但也被接受了：
 
-```py
+```python
 >>> 1,000,000 
 >>> 1,000,000 
 (1, 0, 0) 

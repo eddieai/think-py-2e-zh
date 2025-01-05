@@ -6,7 +6,7 @@
         <title>第五章 条件循环 · HonKit</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="HonKit 5.1.4">
+        <meta name="generator" content="HonKit 6.0.2">
         
         
         
@@ -24,7 +24,7 @@
                 
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-fontsettings/website.css">
                 
             
         
@@ -49,7 +49,7 @@
     
     
     <meta name="HandheldFriendly" content="true"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
@@ -397,22 +397,22 @@
 <p>本章的主题是 if 语句，就是条件判断，会对应程序的不同状态来执行不同的代码。但首先我要介绍两种新的运算符：floor（地板除法，舍弃小数位）和 modulus（求模，取余数）</p>
 <h2 id="51--地板除和求模">5.1  地板除和求模</h2>
 <p>floor 除法，中文有一种翻译是地板除法，挺难听，不过凑活了，运算符是两个右斜杠：//，与传统除法不同，地板除法会把运算结果的小数位舍弃，返回整值。例如，加入一部电影的时间长度是 105 分钟。你可能想要知道这部电影用小时来计算是多长。传统的除法运算如下，会返回一个浮点小数：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>minutes = <span class="hljs-number">105</span> 
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>minutes = <span class="hljs-number">105</span> 
 <span class="hljs-meta">&gt;&gt;&gt; </span>minutes / <span class="hljs-number">60</span> 
 <span class="hljs-number">1.75</span>
 </code></pre>
 <p>不过一般咱们不写有小数的小时数。地板除法返回的就是整的小时数，舍弃掉小数位：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>minutes = <span class="hljs-number">105</span> 
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>minutes = <span class="hljs-number">105</span> 
 <span class="hljs-meta">&gt;&gt;&gt; </span>hours = minutes // <span class="hljs-number">60</span> 
 <span class="hljs-meta">&gt;&gt;&gt; </span>hours 
 <span class="hljs-number">1</span>
 </code></pre>
 <p>想要知道舍弃那部分的长度，可以用分钟数减去这么一个小时，然后剩下的分钟数就是了：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>remainder = minutes - hours * <span class="hljs-number">60</span> &gt;&gt;&gt; remainder
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>remainder = minutes - hours * <span class="hljs-number">60</span> &gt;&gt;&gt; remainder
 <span class="hljs-number">45</span>
 </code></pre>
 <p>另外一个方法就是使用求模运算符了，百分号%就是了，求模运算就是求余数，会把两个数相除然后返回余数。</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>remainder = minutes % <span class="hljs-number">60</span> 
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>remainder = minutes % <span class="hljs-number">60</span> 
 <span class="hljs-meta">&gt;&gt;&gt; </span>remainder 
 <span class="hljs-number">45</span>
 </code></pre>
@@ -421,19 +421,19 @@
 <p>如果你用 Python2 的话，除法是不一样的。在两边都是整形的时候，常规除法运算符/就会进行地板除法，而两边只要有一侧是浮点数就会进行浮点除法。</p>
 <h2 id="52--布尔表达式">5.2  布尔表达式</h2>
 <p>布尔表达式是一种非对即错的表达式，只有这么两个值，true（真）或者 false（假）。下面的例子都用了双等号运算符，这个运算符会判断两边的值是否相等，相等就是 True，不相等就是 False：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">5</span> == <span class="hljs-number">5</span> 
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">5</span> == <span class="hljs-number">5</span> 
 <span class="hljs-literal">True</span> 
 <span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">5</span> == <span class="hljs-number">6</span> 
 <span class="hljs-literal">False</span>
 </code></pre>
 <p>True 和 False 都是特殊的值，属于 bool 布尔类型；它们俩不是字符串：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">type</span>(<span class="hljs-literal">True</span>) 
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">type</span>(<span class="hljs-literal">True</span>) 
 &lt;<span class="hljs-keyword">class</span> <span class="hljs-string">'bool'</span>&gt;  
 <span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">type</span>(<span class="hljs-literal">False</span>) 
 &lt;<span class="hljs-keyword">class</span> <span class="hljs-string">'bool'</span>&gt;
 </code></pre>
 <p>双等号运算符是关系运算符的一种，其他关系运算符如下：</p>
-<pre><code class="lang-py">x != y    <span class="hljs-comment"># x is not equal to y          二者相等     </span>
+<pre><code class="lang-python">x != y    <span class="hljs-comment"># x is not equal to y          二者相等     </span>
 x &gt; y    <span class="hljs-comment"># x is greater than y          前者更大     </span>
 x &gt; y    <span class="hljs-comment"># x is greater than y          前者更大     </span>
 x &lt; y    <span class="hljs-comment"># x is less than y            前者更小  </span>
@@ -447,24 +447,24 @@ x &lt;= y    <span class="hljs-comment"># x is less than or equal to y     小�
 <p>n%2 == 0 或 n%3 == 0，只要条件有一个成立就是真，就是说这个可以被 2 或 3 整除就行了。</p>
 <p>最后说这个非运算，是针对布尔表达式的，非（x&gt;y）为真，那么 x&gt;y 就是假的，意味着 x 小于等于 y。</p>
 <p>严格来说，逻辑运算符的运算对象应该必须是布尔表达式，不过 Python 就不太严格。任何非零变量都会被认为是真：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">42</span> <span class="hljs-keyword">and</span> <span class="hljs-literal">True</span> 
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">42</span> <span class="hljs-keyword">and</span> <span class="hljs-literal">True</span> 
 <span class="hljs-literal">True</span>
 </code></pre>
 <p>这种灵活性特别有用，不过有的情况下也容易引起混淆。建议你尽量不要这样用，除非你很熟练了。</p>
 <h2 id="54--条件执行">5.4  条件执行</h2>
 <p>有用的程序必然要有条件检查判断的功能，根据不同条件要让程序有相应的行为。条件语句就让咱们能够实现这种判断。最简单的就是 if 语句了：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">if</span> x &gt; <span class="hljs-number">0</span>:
+<pre><code class="lang-python"><span class="hljs-keyword">if</span> x &gt; <span class="hljs-number">0</span>:
     <span class="hljs-built_in">print</span>(<span class="hljs-string">'x is positive'</span>)
 </code></pre>
 <p>if 后面的布尔表达式就叫做条件。如果条件为真，随后缩进的语句就运行。如果条件为假，就不运行。</p>
 <p>if 语句与函数定义的结构基本一样：一个头部，后面跟着缩进的语句。这样的语句叫做复合语句。</p>
 <p>、复合语句中语句体内的语句数量是不限制的，但至少要有一个。有的时候会遇到一个语句体内不放语句的情况，比如空出来用来后续补充。这种情况下，你就可以用 pass 语句，就是啥也不会做的。</p>
-<pre><code class="lang-py"><span class="hljs-keyword">if</span> x &lt; <span class="hljs-number">0</span>:
+<pre><code class="lang-python"><span class="hljs-keyword">if</span> x &lt; <span class="hljs-number">0</span>:
     <span class="hljs-keyword">pass</span>          <span class="hljs-comment"># <span class="hljs-doctag">TODO:</span> need to handle negative values!</span>
 </code></pre>
 <h2 id="55-选择执行">5.5 选择执行</h2>
 <p>if 语句的第二种形式就是『选择执行』，这种情况下会存在两种备选的语句，根据条件来判断执行哪一个。语法如下所示：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">if</span> x % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>:
+<pre><code class="lang-python"><span class="hljs-keyword">if</span> x % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>:
     <span class="hljs-built_in">print</span>(<span class="hljs-string">'x is even'</span>) 
 <span class="hljs-keyword">else</span>:
     <span class="hljs-built_in">print</span>(<span class="hljs-string">'x is odd'</span>)
@@ -473,7 +473,7 @@ x &lt;= y    <span class="hljs-comment"># x is less than or equal to y     小�
 如果 x 除以 2 的余数为 0，x 就是一个偶数了，程序就会显示对应的信息。如果条件不成立，那就运行第二条语句。这里条件非真即假，只有两个选择。这些选择也叫『分支』，因为在运行流程上产生了不同的分支。</p>
 <h2 id="56--链式条件">5.6  链式条件</h2>
 <p>有时我们要面对的可能性不只有两种，需要更多的分支。这时候可以使用连锁条件来实现：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">if</span> x &lt; y:     
+<pre><code class="lang-python"><span class="hljs-keyword">if</span> x &lt; y:     
     <span class="hljs-built_in">print</span>(<span class="hljs-string">'x is less than y'</span>) 
 <span class="hljs-keyword">elif</span> x &gt; y:     
     <span class="hljs-built_in">print</span>(<span class="hljs-string">'x is greater than y'</span>) 
@@ -481,7 +481,7 @@ x &lt;= y    <span class="hljs-comment"># x is less than or equal to y     小�
     <span class="hljs-built_in">print</span>(<span class="hljs-string">'x and y are equal'</span>)
 </code></pre>
 <p>elif 是『else if』的缩写。这回也还是只会有一个分支的语句会被运行。elif 语句的数量是无限制的。如果有 else 语句的话，这个 else 语句必须放到整个条件链的末尾，不过 else 语句并不是必须有的。</p>
-<pre><code class="lang-py"><span class="hljs-keyword">if</span> choice == <span class="hljs-string">'a'</span>:
+<pre><code class="lang-python"><span class="hljs-keyword">if</span> choice == <span class="hljs-string">'a'</span>:
     draw_a()
 <span class="hljs-keyword">elif</span> choice == <span class="hljs-string">'b'</span>:
     draw_b()
@@ -491,7 +491,7 @@ x &lt;= y    <span class="hljs-comment"># x is less than or equal to y     小�
 <p>每一个条件都会依次被检查。如果第一个是假，下一个就会被检查，依此类推。如果有一个为真了，相应的分支语句就运行了，这些条件判断的语句就都结束了。如果有一个以上的条件为真，只有先出现的为真的条件所对应的分支语句会运行。</p>
 <h2 id="57--嵌套条件">5.7  嵌套条件</h2>
 <p>一个条件判断也可以嵌套在另一个条件判断内。上一节的例子可以改写成如下：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">if</span> x == y:
+<pre><code class="lang-python"><span class="hljs-keyword">if</span> x == y:
     <span class="hljs-built_in">print</span>(<span class="hljs-string">'x and y are equal'</span>)
 <span class="hljs-keyword">else</span>:
     <span class="hljs-keyword">if</span> x &lt; y:
@@ -502,22 +502,22 @@ x &lt;= y    <span class="hljs-comment"># x is less than or equal to y     小�
 <p>外部的条件判断包含两个分支。第一个分支只有一个简单的语句。第二个分支包含了另外一重条件判断，这个内部条件判断有两个分支。这两个分支都是简单的语句，他们的位置也可以继续放条件判断语句的。</p>
 <p>虽然语句的缩进会让代码结构看着比较清晰明显，但嵌套的条件语句读起来还是有点难度。所以建议你如果可以的话，尽量避免使用嵌套的条件判断。</p>
 <p>逻辑运算符有时候对简化嵌套条件判断很有用。比如下面这个代码就能改写成更简单的版本:</p>
-<pre><code class="lang-py"><span class="hljs-keyword">if</span> <span class="hljs-number">0</span> &lt; x:
+<pre><code class="lang-python"><span class="hljs-keyword">if</span> <span class="hljs-number">0</span> &lt; x:
     <span class="hljs-keyword">if</span> x &lt; <span class="hljs-number">10</span>:
         <span class="hljs-built_in">print</span>(<span class="hljs-string">'x is a positive single-digit number.'</span>)
 </code></pre>
 <p>上面的例子中，只有两个条件都满足了才会运行 print 语句，所以就用逻辑运算符来实现同样的效果即可：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">if</span> <span class="hljs-number">0</span> &lt; x <span class="hljs-keyword">and</span> x &lt; <span class="hljs-number">10</span>:
+<pre><code class="lang-python"><span class="hljs-keyword">if</span> <span class="hljs-number">0</span> &lt; x <span class="hljs-keyword">and</span> x &lt; <span class="hljs-number">10</span>:
     <span class="hljs-built_in">print</span>(<span class="hljs-string">'x is a positive single-digit number.'</span>)
 </code></pre>
 <p>这种条件下，Python 提供了更简洁的表达方法：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">if</span> <span class="hljs-number">0</span> &lt; x &lt; <span class="hljs-number">10</span>:
+<pre><code class="lang-python"><span class="hljs-keyword">if</span> <span class="hljs-number">0</span> &lt; x &lt; <span class="hljs-number">10</span>:
     <span class="hljs-built_in">print</span>(<span class="hljs-string">'x is a positive single-digit number.'</span>)
 </code></pre>
 <p>（译者注：Python 的这种友善度远远超过了 C 和 C++，这也是为何我一直建议国内高校用 Python 取代 C++来给本科生和研究生做编程入门课程。）</p>
 <h2 id="58--递归运算">5.8  递归运算</h2>
 <p>一个函数可以去调用另一个函数；函数来调用自己也是允许的。这就是递归，是程序最神奇的功能之一，现在可能还不好理解为什么，那么来看看下面这个函数为例：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">countdown</span>(<span class="hljs-params">n</span>):
+<pre><code class="lang-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">countdown</span>(<span class="hljs-params">n</span>):
     <span class="hljs-keyword">if</span> n &lt;= <span class="hljs-number">0</span>:
         <span class="hljs-built_in">print</span>(<span class="hljs-string">'Blastoff!'</span>)
     <span class="hljs-keyword">else</span>:
@@ -543,7 +543,7 @@ Blastoff!
 </code></pre>
 <p>调用自身的函数就是递归的；执行这种函数的过程就叫递归运算。</p>
 <p>我们再写一个用 print 把一个字符串 s 显示 n 次的例子：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">print_n</span>(<span class="hljs-params">s, n</span>):
+<pre><code class="lang-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">print_n</span>(<span class="hljs-params">s, n</span>):
     <span class="hljs-keyword">if</span> n &lt;= <span class="hljs-number">0</span>:
         <span class="hljs-keyword">return</span>
     <span class="hljs-built_in">print</span>(s)
@@ -568,7 +568,7 @@ Figure 5.1: Stack diagram.</p>
 <p>下面练习一下，画一个 print_n 函数的栈图，让 s 为字符串『Hello』，n 为 2。然后写一个函数，名字为 do_n，使用一个操作对象和一个数字 n 作为实际参数，给出一个 n 作为次数来调用这个函数。</p>
 <h2 id="510--无穷递归">5.10  无穷递归</h2>
 <p>如果一个递归一直都不能到达基准条件，那就会持续不断地进行自我调用，程序也就永远不会终止了。这就叫无穷递归，一般这都不是个好事情哈。下面就是一个无穷递归的最简单的例子：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">recurse</span>():
+<pre><code class="lang-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">recurse</span>():
     recurse()
 </code></pre>
 <p>在大多数的开发环境下，无穷递归的程序并不会真的永远运行下去。Python 会在函数达到允许递归的最大层次后返回一个错误信息：</p>
@@ -602,7 +602,7 @@ What...is the airspeed velocity of an unladen swallow?
 42
 </code></pre>
 <p>如果用户输入的是其他内容，而不是一串数字，就会得到一个错误了：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>speed = <span class="hljs-built_in">input</span>(prompt)
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>speed = <span class="hljs-built_in">input</span>(prompt)
 What...<span class="hljs-keyword">is</span> the airspeed velocity of an unladen swallow?
 What do you mean, an African <span class="hljs-keyword">or</span> a European swallow?
 <span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">int</span>(speed) ValueError: invalid literal <span class="hljs-keyword">for</span> <span class="hljs-built_in">int</span>() <span class="hljs-keyword">with</span> base <span class="hljs-number">10</span>
@@ -628,7 +628,7 @@ IndentationError: unexpected indent
 <p>公式为：
 <img src="http://7xnq2o.com1.z0.glb.clouddn.com/ThinkPython%E4%BF%A1%E5%99%AA%E6%AF%94.jpg" alt=""></img></p>
 <p>在 Python，你可能像下面这样写：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">import</span> math
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> math
 signal_power = <span class="hljs-number">9</span>
 noise_power = <span class="hljs-number">10</span>
 ratio = signal_power // noise_power
@@ -722,7 +722,7 @@ A recursion that doesn’t have a base case, or never reaches it. Eventually, an
 <h3 id="练习-1">练习 1</h3>
 <p>time 模块提供了一个名字同样叫做 time 的函数，会返回当前格林威治时间的时间戳，就是以某一个时间点作为初始参考值。在 Unix 系统中，时间戳的参考值是 1970 年 1 月 1 号。</p>
 <p>（译者注：时间戳就是系统当前时间相对于 1970.1.1 00:00:00 以秒计算的偏移量，时间戳是惟一的。）</p>
-<pre><code class="lang-Bash">&gt;&gt;&gt; import time
+<pre><code class="lang-Bash">&gt;&gt;&gt; import <span class="hljs-keyword">time</span>
 &gt;&gt;&gt; time.time() 1437746094.5735958
 </code></pre>
 <p>写一个脚本，读取当前的时间，把这个时间转换以天为单位，剩余部分转换成小时-分钟-秒的形式，加上参考时间以来的天数。</p>
@@ -751,7 +751,7 @@ A recursion that doesn’t have a base case, or never reaches it. Eventually, an
 </ol>
 <h3 id="4---练习-4">4   练习 4</h3>
 <p>下面的代码输出会是什么？画一个栈图来表示一下如下例子中程序输出结果时候的状态。</p>
-<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">recurse</span>(<span class="hljs-params">n, s</span>):
+<pre><code class="lang-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">recurse</span>(<span class="hljs-params">n, s</span>):
     <span class="hljs-keyword">if</span> n == <span class="hljs-number">0</span>:
         <span class="hljs-built_in">print</span>(s)
     <span class="hljs-keyword">else</span>:
@@ -767,7 +767,7 @@ recurse(<span class="hljs-number">3</span>, <span class="hljs-number">0</span>)
 <p>接下来的练习用到了第四章我们提到过的 turtle 小乌龟模块。</p>
 <h3 id="练习-5">练习 5</h3>
 <p>阅读下面的函数，看看你能否弄清楚函数的作用。运行一下试试（参考第四章里面的例子来酌情修改代码）。</p>
-<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">draw</span>(<span class="hljs-params">t, length, n</span>):
+<pre><code class="lang-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">draw</span>(<span class="hljs-params">t, length, n</span>):
     <span class="hljs-keyword">if</span> n == <span class="hljs-number">0</span>:
         <span class="hljs-keyword">return</span>
     angle = <span class="hljs-number">50</span>
@@ -854,7 +854,7 @@ Figure 5.2: A Koch curve.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第五章 条件循环","level":"1.6","depth":1,"next":{"title":"第六章 有返回值的函数","level":"1.7","depth":1,"path":"chapter6.md","ref":"chapter6.md","articles":[]},"previous":{"title":"第四章 案例学习：交互设计","level":"1.5","depth":1,"path":"chapter4.md","ref":"chapter4.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter5.md","mtime":"2024-08-23T09:01:53.770Z","type":"markdown"},"gitbook":{"version":"5.1.4","time":"2024-08-23T09:11:00.343Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第五章 条件循环","level":"1.6","depth":1,"next":{"title":"第六章 有返回值的函数","level":"1.7","depth":1,"path":"chapter6.md","ref":"chapter6.md","articles":[]},"previous":{"title":"第四章 案例学习：交互设计","level":"1.5","depth":1,"path":"chapter4.md","ref":"chapter4.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter5.md","mtime":"2025-01-05T18:02:47.633Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-01-05T18:03:10.535Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
@@ -924,7 +924,7 @@ Figure 5.2: A Koch curve.</p>
         
     
         
-        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        <script src="gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
         
     
 

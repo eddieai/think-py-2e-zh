@@ -6,7 +6,7 @@
 
 赋值语句的作用是创建一个新的变量，并且赋值给这个变量：
 
-```py
+```python
 >>> message = 'And now for something completely different'
 >>> n = 17 
 >>> pi = 3.141592653589793 
@@ -32,7 +32,7 @@ ________________________________________
 你要是给变量起名不合规则，就会出现语法错误提示了：
 
 
-```py
+```python
 >>> 76trombones = 'big parade' 
 SyntaxError: invalid syntax 
 >>> more@ = 1000000 
@@ -61,7 +61,7 @@ SyntaxError: invalid syntax
 
 表达式是数值,变量和操作符的组合。单个值本身也被当作一个表达式，变量也是如此，下面这些例子都是一些正确表达式：
 
-```py
+```python
 >>> 42 
 42 
 >>> n 
@@ -75,7 +75,7 @@ SyntaxError: invalid syntax
 
 语句是一组具有某些效果的代码，比如创建变量，或者显示值。
 
-```py
+```python
 >>> n = 17 
 >>> print(n)
 ```
@@ -100,7 +100,7 @@ Python 两种模式都支持，所以你可以先用交互模式做点测试，�
 
 举个例子哈，比如咱们把 Python 当计算器用，你输入以下内容：
 
-```py
+```python
 >>> miles = 26.2 
 >>> miles * 1.61 
 42.182 
@@ -111,7 +111,7 @@ Python 两种模式都支持，所以你可以先用交互模式做点测试，�
 
 不过你要是直接把这些代码存成脚本然后运行，是啥都看不到的，没有输出。在脚本模式表达式是没有明显效果的。Python 确实会计算这些表达式，但不显示结果，想看到结果你就得告诉他输出一下：
 
-```py
+```python
 miles = 26.2 
 print(miles * 1.61) 
 ```
@@ -122,7 +122,7 @@ print(miles * 1.61)
 脚本一般都是包含了一系列的语句。如果语句超过一条，每个语句执行的时候都会显示结果。比如下面这个：
 
 
-```py
+```python
 print(1) 
 x = 2 
 print(x) 
@@ -131,7 +131,7 @@ produces the output
 
 输出的结果如下
 
-```py
+```python
 1 
 2 
 ```
@@ -139,7 +139,7 @@ produces the output
 赋值语句是不会有任何输出的。
 检查下你理解了没哈，把下面这些语句输入到 Python 解释器，看看会发生什么：
 
-```py
+```python
 5 x = 5 x + 1 
 ```
 现在再把同样的语句输入到脚本中，然后用 Python 来运行一下。看看输出是啥样的？把脚本中的表达式修改一下，每一个都加一个打印语句再试试。
@@ -162,7 +162,7 @@ produces the output
 
 一般情况下，咱们不能对字符串进行数学运算的，即使字符串看上去像是数字也不行，所以以下这些都是非法操作：
 
-```py
+```python
 '2'-'1'
 'eggs'/'easy'
 'third'*'a charm' 
@@ -173,7 +173,7 @@ produces the output
 
 +加号的意思就是字符串拼接了，会把两个字符串拼到一起，如下所示：
 
-```py
+```python
 >>> first = 'throat'  
 >>> second = 'warbler' 
 >>> first + second 
@@ -192,13 +192,13 @@ throatwarbler
 
 为了解决阅读的困难，咱们就可以添加一些笔记到代码中，把程序的功能用自然语言来解释一下。这种笔记就叫注释了，使用井号#来开头的：
 
-```py
+```python
 #  compute the percentage of the hour that has elapsed percentage = (minute * 100) / 60 
 ```
 
 注释可以另起一行，也可以放到行末尾：
 
-```py
+```python
 percentage = (minute * 100) / 60     # percentage of an hour 
 ```
 
@@ -210,13 +210,13 @@ percentage = (minute * 100) / 60     # percentage of an hour
 
 下面这个注释就显然是多余的，根本没必要：
 
-```py
+```python
 v = 5     # assign 5 to v 
 ```
 
 下面这种注释包含了重要信息，就很重要了：
 
-```py
+```python
 v = 5     # velocity in meters/second.  
 ```
 

@@ -6,7 +6,7 @@
         <title>第十二章 元组 · HonKit</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="HonKit 5.1.4">
+        <meta name="generator" content="HonKit 6.0.2">
         
         
         
@@ -24,7 +24,7 @@
                 
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-fontsettings/website.css">
                 
             
         
@@ -49,7 +49,7 @@
     
     
     <meta name="HandheldFriendly" content="true"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
@@ -399,78 +399,78 @@
 <h2 id="121--元组不可修改">12.1  元组不可修改</h2>
 <p>元组是一系列的值。这些值可以是任意类型的，并且用整数序号作为索引，所以可以发现元组和列表非常相似。二者间重要的区别就是元组是不可修改的。</p>
 <p>元组的语法是一系列用逗号分隔的值：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>t = <span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-string">'c'</span>, <span class="hljs-string">'d'</span>, <span class="hljs-string">'e'</span>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>t = <span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-string">'c'</span>, <span class="hljs-string">'d'</span>, <span class="hljs-string">'e'</span>
 </code></pre>
 <p>通常都用一对圆括号把元组的元素包括起来，当然不这样也没事。</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>t = (<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-string">'c'</span>, <span class="hljs-string">'d'</span>, <span class="hljs-string">'e'</span>)
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>t = (<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-string">'c'</span>, <span class="hljs-string">'d'</span>, <span class="hljs-string">'e'</span>)
 </code></pre>
 <p>要建立一个单个元素构成的元组，必须要在结尾加上逗号：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>t1 = <span class="hljs-string">'a'</span>,
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>t1 = <span class="hljs-string">'a'</span>,
 <span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">type</span>(t1)
 &lt;<span class="hljs-keyword">class</span> <span class="hljs-string">'tuple'</span>&gt;
 </code></pre>
 <p>只用括号放一个值则并不是元组：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>t2 = (<span class="hljs-string">'a'</span>)
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>t2 = (<span class="hljs-string">'a'</span>)
 <span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">type</span>(t2)
 &lt;<span class="hljs-keyword">class</span> <span class="hljs-string">'str'</span>&gt;
 </code></pre>
 <p>另一中建立元组的方法是使用内置函数 tuple。不提供参数的情况下，默认就建立一个空的元组。</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>t = <span class="hljs-built_in">tuple</span>()
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>t = <span class="hljs-built_in">tuple</span>()
 <span class="hljs-meta">&gt;&gt;&gt; </span>t
 ()
 </code></pre>
 <p>如果参数为一个序列（比如字符串、列表或者元组），结果就会得到一个以该序列元素组成的元组。</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>t = <span class="hljs-built_in">tuple</span>(<span class="hljs-string">'lupins'</span>)
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>t = <span class="hljs-built_in">tuple</span>(<span class="hljs-string">'lupins'</span>)
 <span class="hljs-meta">&gt;&gt;&gt; </span>t
 (<span class="hljs-string">'l'</span>, <span class="hljs-string">'u'</span>, <span class="hljs-string">'p'</span>, <span class="hljs-string">'i'</span>, <span class="hljs-string">'n'</span>, <span class="hljs-string">'s'</span>)
 </code></pre>
 <p>tuple 是内置函数命了，所以你就不能用来作为变量名了。</p>
 <p>列表的各种运算符也基本适用于元组。方括号可以用来索引元素：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>t = (<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-string">'c'</span>, <span class="hljs-string">'d'</span>, <span class="hljs-string">'e'</span>)
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>t = (<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-string">'c'</span>, <span class="hljs-string">'d'</span>, <span class="hljs-string">'e'</span>)
 <span class="hljs-meta">&gt;&gt;&gt; </span>t[<span class="hljs-number">0</span>]
 <span class="hljs-string">'a'</span>
 </code></pre>
 <p>切片运算符也可以用于选取某一区间的元素。</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>t[<span class="hljs-number">1</span>:<span class="hljs-number">3</span>]
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>t[<span class="hljs-number">1</span>:<span class="hljs-number">3</span>]
 (<span class="hljs-string">'b'</span>, <span class="hljs-string">'c'</span>)
 </code></pre>
 <p>但如果你想修改元组中的某个元素，就会得到错误了：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>t[<span class="hljs-number">0</span>] = <span class="hljs-string">'A'</span>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>t[<span class="hljs-number">0</span>] = <span class="hljs-string">'A'</span>
 TypeError: <span class="hljs-built_in">object</span> doesn<span class="hljs-string">'t support item assignment
 </span></code></pre>
 <p>因为元组是不能修改的，你不能修改其中的元素。但是可以用另一个元组来替换已有的元组。</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>t = (<span class="hljs-string">'A'</span>,) + t[<span class="hljs-number">1</span>:]
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>t = (<span class="hljs-string">'A'</span>,) + t[<span class="hljs-number">1</span>:]
 <span class="hljs-meta">&gt;&gt;&gt; </span>t
 (<span class="hljs-string">'A'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-string">'c'</span>, <span class="hljs-string">'d'</span>, <span class="hljs-string">'e'</span>)
 </code></pre>
 <p>上面这个语句建立了一个新的元组，然后让 t 指向了这个新的元组。</p>
 <p>关系运算符也适用于元组和其他序列；Python 从每个元素的首个元素开始对比。如果相等，就对比下一个元素，依此类推，之道找到不同元素为止。</p>
 <p>有了不同元素之后，后面的其他元素就被忽略掉了（即便很大也没用）。</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>) &lt; (<span class="hljs-number">0</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>)
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>) &lt; (<span class="hljs-number">0</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>)
 <span class="hljs-literal">True</span>
 <span class="hljs-meta">&gt;&gt;&gt; </span>(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2000000</span>) &lt; (<span class="hljs-number">0</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>)
 <span class="hljs-literal">True</span>
 </code></pre>
 <h2 id="122--元组赋值">12.2  元组赋值</h2>
 <p>对两个变量的值进行交换是一种常用操作。用常见语句来实现的话，就必须有一个临时变量。比如下面这个例子中是交换 a 和 b：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>temp = a
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>temp = a
 <span class="hljs-meta">&gt;&gt;&gt; </span>a = b
 <span class="hljs-meta">&gt;&gt;&gt; </span>b = temp
 </code></pre>
 <p>这样解决还是挺麻烦的；用元组赋值就更简洁了：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>a, b = b, a
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>a, b = b, a
 </code></pre>
 <p>等号左边的是变量组成的一个元组；右边的是表达式的元组。每个值都被赋给了对应的变量。等号右边的表达式的值保留了赋值之前的初始值。</p>
 <p>等号左右两侧的变量和值的数目都必须是一样的。</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>a, b = <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>a, b = <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>
 ValueError: too many values to unpack
 </code></pre>
 <p>更普适的情况下，等号右边以是任意一种序列（字符串、列表或者元组）。比如，要把一个电子邮件地址转换成一个用户名和一个域名，可以用如下代码实现：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>addr = <span class="hljs-string">'monty@python.org'</span>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>addr = <span class="hljs-string">'monty@python.org'</span>
 <span class="hljs-meta">&gt;&gt;&gt; </span>uname, domain = addr.split(<span class="hljs-string">'@'</span>)
 </code></pre>
 <p>split 的返回值是一个有两个元素的列表；第一个元素赋值给了 uname 这个变量，第二个赋值给了 domain 这个变量。</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>uname
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>uname
 <span class="hljs-string">'monty'</span>
 <span class="hljs-meta">&gt;&gt;&gt; </span>domain
 <span class="hljs-string">'python.org'</span>
@@ -479,124 +479,124 @@ ValueError: too many values to unpack
 <p>严格来说，一个函数只能返回一个值，但如果这个值是一个元组，效果就和返回多个值一样了。例如，如果你想要将两个整数相除，计算商和余数，如果要分开计算 x/y 以及 x%y 就很麻烦了。更好的办法是同时计算这两个值。</p>
 <p>内置函数 divmod 就会接收两个参数，然后返回一个有两个值的元组，这两个值分别为商和余数。</p>
 <p>可以把结果存储为一个元组：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>t = <span class="hljs-built_in">divmod</span>(<span class="hljs-number">7</span>, <span class="hljs-number">3</span>)
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>t = <span class="hljs-built_in">divmod</span>(<span class="hljs-number">7</span>, <span class="hljs-number">3</span>)
 <span class="hljs-meta">&gt;&gt;&gt; </span>t
 (<span class="hljs-number">2</span>, <span class="hljs-number">1</span>)
 </code></pre>
 <p>或者可以用元组赋值来分别存储这两个值：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>quot, rem = <span class="hljs-built_in">divmod</span>(<span class="hljs-number">7</span>, <span class="hljs-number">3</span>)
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>quot, rem = <span class="hljs-built_in">divmod</span>(<span class="hljs-number">7</span>, <span class="hljs-number">3</span>)
 <span class="hljs-meta">&gt;&gt;&gt; </span>quot
 <span class="hljs-number">2</span>
 <span class="hljs-meta">&gt;&gt;&gt; </span>rem
 <span class="hljs-number">1</span>
 </code></pre>
 <p>下面的例子中，函数返回一个元组作为返回值：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">min_max</span>(<span class="hljs-params">t</span>):
+<pre><code class="lang-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">min_max</span>(<span class="hljs-params">t</span>):
     <span class="hljs-keyword">return</span> <span class="hljs-built_in">min</span>(t), <span class="hljs-built_in">max</span>(t)
 </code></pre>
 <p>max 和 min 都是内置函数，会找到序列中的最大值或者最小值，min_max 这个函数会同时求得最大值和最小值，然后把这两个值作为元组来返回。</p>
 <h2 id="124--参数长度可变的元组">12.4  参数长度可变的元组</h2>
 <p>函数的参数可以有任意多个。用星号*开头来作为形式参数名，可以将所有实际参数收录到一个元组中。例如 printall 就可以获取任意多个数的参数，然后把它们都打印输出：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">printall</span>(<span class="hljs-params">*args</span>):
+<pre><code class="lang-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">printall</span>(<span class="hljs-params">*args</span>):
     <span class="hljs-built_in">print</span>(args)
 </code></pre>
 <p>你可以随意命名收集来的这些参数，但 args 这个是约定俗成的惯例。下面展示一下这个函数如何使用：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>printall(<span class="hljs-number">1</span>, <span class="hljs-number">2.0</span>, <span class="hljs-string">'3'</span>)
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>printall(<span class="hljs-number">1</span>, <span class="hljs-number">2.0</span>, <span class="hljs-string">'3'</span>)
 (<span class="hljs-number">1</span>, <span class="hljs-number">2.0</span>, <span class="hljs-string">'3'</span>)
 </code></pre>
 <p>与聚集相对的就是分散了。如果有一系列的值，然后想把它们作为多个参数传递给一个函数，就可以用星号*运算符。比如 divmod 要求必须是两个参数；如果给它一个元组，是不能进行运算的：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>t = (<span class="hljs-number">7</span>, <span class="hljs-number">3</span>)
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>t = (<span class="hljs-number">7</span>, <span class="hljs-number">3</span>)
 <span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">divmod</span>(t)
 TypeError: <span class="hljs-built_in">divmod</span> expected <span class="hljs-number">2</span> arguments, got <span class="hljs-number">1</span>
 </code></pre>
 <p>但如果拆分这个元组，就可以了：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">divmod</span>(*t)
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">divmod</span>(*t)
 (<span class="hljs-number">2</span>, <span class="hljs-number">1</span>)
 </code></pre>
 <p>很多内置函数都用到了参数长度可变的元组。比如 max 和 min 就可以接收任意数量的参数：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">max</span>(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>)
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">max</span>(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>)
 <span class="hljs-number">3</span>
 </code></pre>
 <p>但求和函数 sum 就不行了。</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">sum</span>(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>)
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">sum</span>(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>)
 TypeError: <span class="hljs-built_in">sum</span> expected at most <span class="hljs-number">2</span> arguments, got <span class="hljs-number">3</span>
 </code></pre>
 <p>做个练习，写一个名为 sumall 的函数，让它可以接收任意数量的参数，返回总和。</p>
 <h2 id="125--列表和元组">12.5  列表和元组</h2>
 <p>zip 是一个内置函数，接收两个或更多的序列作为参数，然后返回返回一个元组列表，该列表中每个元组都包含了从各个序列中的一个元素。这个函数名的意思就是拉锁，就是把不相关的两排拉锁齿连接到一起。</p>
 <p>下面这个例子中，一个字符串和一个列表通过 zip 这个函数连接到了一起：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>s = <span class="hljs-string">'abc'</span>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>s = <span class="hljs-string">'abc'</span>
 <span class="hljs-meta">&gt;&gt;&gt; </span>t = [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>]
 <span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">zip</span>(s, t)
 &lt;<span class="hljs-built_in">zip</span> <span class="hljs-built_in">object</span> at <span class="hljs-number">0x7f7d0a9e7c48</span>&gt;
 </code></pre>
 <p>该函数的返回值是一个 zip 对象，该对象可以用来迭代所有的数值对。zip 函数经常被用到 for 循环中：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">for</span> pair <span class="hljs-keyword">in</span> <span class="hljs-built_in">zip</span>(s, t): ...
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">for</span> pair <span class="hljs-keyword">in</span> <span class="hljs-built_in">zip</span>(s, t): ...
 <span class="hljs-built_in">print</span>(pair) ...
 (<span class="hljs-string">'a'</span>, <span class="hljs-number">0</span>) (<span class="hljs-string">'b'</span>, <span class="hljs-number">1</span>) (<span class="hljs-string">'c'</span>, <span class="hljs-number">2</span>)
 </code></pre>
 <p>zip 对象是一种迭代器，也就是某种可以迭代整个序列的对象。迭代器和列表有些相似，但不同于列表的是，你无法通过索引来选择迭代器中的指定元素。</p>
 <p>如果想用列表的运算符和方法，可以用 zip 对象来构成一个列表：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">list</span>(<span class="hljs-built_in">zip</span>(s, t))
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">list</span>(<span class="hljs-built_in">zip</span>(s, t))
 [(<span class="hljs-string">'a'</span>, <span class="hljs-number">0</span>), (<span class="hljs-string">'b'</span>, <span class="hljs-number">1</span>), (<span class="hljs-string">'c'</span>, <span class="hljs-number">2</span>)]
 </code></pre>
 <p>返回值是一个由元组构成的列表；在这个例子中，每个元组都包含了字符串中的一个字母，以及列表中对应位置的元素。</p>
 <p>在长度不同的序列中，返回的结果长度取决于最短的一个。</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">list</span>(<span class="hljs-built_in">zip</span>(<span class="hljs-string">'Anne'</span>, <span class="hljs-string">'Elk'</span>))
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">list</span>(<span class="hljs-built_in">zip</span>(<span class="hljs-string">'Anne'</span>, <span class="hljs-string">'Elk'</span>))
 [(<span class="hljs-string">'A'</span>, <span class="hljs-string">'E'</span>), (<span class="hljs-string">'n'</span>, <span class="hljs-string">'l'</span>), (<span class="hljs-string">'n'</span>, <span class="hljs-string">'k'</span>)]
 </code></pre>
 <p>用 for 循环来遍历一个元组列表的时候，可以用元组赋值语句：</p>
-<pre><code class="lang-py">t = [(<span class="hljs-string">'a'</span>, <span class="hljs-number">0</span>), (<span class="hljs-string">'b'</span>, <span class="hljs-number">1</span>), (<span class="hljs-string">'c'</span>, <span class="hljs-number">2</span>)]
+<pre><code class="lang-python">t = [(<span class="hljs-string">'a'</span>, <span class="hljs-number">0</span>), (<span class="hljs-string">'b'</span>, <span class="hljs-number">1</span>), (<span class="hljs-string">'c'</span>, <span class="hljs-number">2</span>)]
 <span class="hljs-keyword">for</span> letter, number <span class="hljs-keyword">in</span> t:
     <span class="hljs-built_in">print</span>(number, letter)
 </code></pre>
 <p>每次经历循环的时候，Python 都选中列表中的下一个元组，然后把元素赋值给字母和数字。该循环的输出如下：</p>
-<pre><code class="lang-py"><span class="hljs-number">0</span> a <span class="hljs-number">1</span> b <span class="hljs-number">2</span> c
+<pre><code class="lang-python"><span class="hljs-number">0</span> a <span class="hljs-number">1</span> b <span class="hljs-number">2</span> c
 </code></pre>
 <p>如果结合使用 zip、for 循环以及元组赋值，就能得到一种能同时遍历两个以上序列的代码组合。比如下面例子中的 has_match 这个函数，接收两个序列 t1 和 t2 作为参数，然后如果存在一个索引位置 i 使得 t1[i] == t2[i]就返回真：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">has_match</span>(<span class="hljs-params">t1, t2</span>):
+<pre><code class="lang-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">has_match</span>(<span class="hljs-params">t1, t2</span>):
     <span class="hljs-keyword">for</span> x, y <span class="hljs-keyword">in</span> <span class="hljs-built_in">zip</span>(t1, t2):
         <span class="hljs-keyword">if</span> x == y:
             <span class="hljs-keyword">return</span> <span class="hljs-literal">True</span>
     <span class="hljs-keyword">return</span> <span class="hljs-literal">False</span>
 </code></pre>
 <p>如果你要遍历一个序列中的所有元素以及它们的索引，可以用内置的函数 enumerate：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">for</span> index, element <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(<span class="hljs-string">'abc'</span>):
+<pre><code class="lang-python"><span class="hljs-keyword">for</span> index, element <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(<span class="hljs-string">'abc'</span>):
     <span class="hljs-built_in">print</span>(index, element)
 </code></pre>
 <p>enumerate 函数的返回值是一个枚举对象，它会遍历整个成对序列；每一对都包括一个索引（从 0 开始）以及给定序列的一个元素。在本节的例子中，输出依然如下：</p>
-<pre><code class="lang-py"><span class="hljs-number">0</span> a <span class="hljs-number">1</span> b <span class="hljs-number">2</span> c
+<pre><code class="lang-python"><span class="hljs-number">0</span> a <span class="hljs-number">1</span> b <span class="hljs-number">2</span> c
 </code></pre>
 <h2 id="126--词典与元组">12.6  词典与元组</h2>
 <p>字典有一个名为 items 的方法，会返回一个由元组组成的序列，每一个元组都是字典中的一个键值对。</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>d = {<span class="hljs-string">'a'</span>:<span class="hljs-number">0</span>, <span class="hljs-string">'b'</span>:<span class="hljs-number">1</span>, <span class="hljs-string">'c'</span>:<span class="hljs-number">2</span>}
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>d = {<span class="hljs-string">'a'</span>:<span class="hljs-number">0</span>, <span class="hljs-string">'b'</span>:<span class="hljs-number">1</span>, <span class="hljs-string">'c'</span>:<span class="hljs-number">2</span>}
 <span class="hljs-meta">&gt;&gt;&gt; </span>t = d.items()
 <span class="hljs-meta">&gt;&gt;&gt; </span>t
 dict_items([(<span class="hljs-string">'c'</span>, <span class="hljs-number">2</span>), (<span class="hljs-string">'a'</span>, <span class="hljs-number">0</span>), (<span class="hljs-string">'b'</span>, <span class="hljs-number">1</span>)])
 </code></pre>
 <p>结果是一个 dict_items 对象，这是一个迭代器，迭代所有的键值对。可以在 for 循环里面用这个对象，如下所示：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">for</span> key, value <span class="hljs-keyword">in</span> d.items():
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">for</span> key, value <span class="hljs-keyword">in</span> d.items():
 <span class="hljs-meta">... </span>    <span class="hljs-built_in">print</span>(key, value)
 <span class="hljs-meta">... </span>c <span class="hljs-number">2</span> a <span class="hljs-number">0</span> b <span class="hljs-number">1</span>
 </code></pre>
 <p>你也应该预料到了，字典里面的项是没有固定顺序的。</p>
 <p>反过来使用的话，你就也可以用一个元组的列表来初始化一个新的字典：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>t = [(<span class="hljs-string">'a'</span>, <span class="hljs-number">0</span>), (<span class="hljs-string">'c'</span>, <span class="hljs-number">2</span>), (<span class="hljs-string">'b'</span>, <span class="hljs-number">1</span>)]
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>t = [(<span class="hljs-string">'a'</span>, <span class="hljs-number">0</span>), (<span class="hljs-string">'c'</span>, <span class="hljs-number">2</span>), (<span class="hljs-string">'b'</span>, <span class="hljs-number">1</span>)]
 <span class="hljs-meta">&gt;&gt;&gt; </span>d = <span class="hljs-built_in">dict</span>(t)
 <span class="hljs-meta">&gt;&gt;&gt; </span>d
 {<span class="hljs-string">'a'</span>: <span class="hljs-number">0</span>, <span class="hljs-string">'c'</span>: <span class="hljs-number">2</span>, <span class="hljs-string">'b'</span>: <span class="hljs-number">1</span>}
 </code></pre>
 <p>结合使用 dict 和 zip ，会得到一种建立字典的简便方法：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>d = <span class="hljs-built_in">dict</span>(<span class="hljs-built_in">zip</span>(<span class="hljs-string">'abc'</span>, <span class="hljs-built_in">range</span>(<span class="hljs-number">3</span>)))
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>d = <span class="hljs-built_in">dict</span>(<span class="hljs-built_in">zip</span>(<span class="hljs-string">'abc'</span>, <span class="hljs-built_in">range</span>(<span class="hljs-number">3</span>)))
 <span class="hljs-meta">&gt;&gt;&gt; </span>d
 {<span class="hljs-string">'a'</span>: <span class="hljs-number">0</span>, <span class="hljs-string">'c'</span>: <span class="hljs-number">2</span>, <span class="hljs-string">'b'</span>: <span class="hljs-number">1</span>}
 </code></pre>
 <p>字典的 update 方法也接收一个元组列表，然后把它们作为键值对添加到一个已存在的字典中。</p>
 <p>把元组用作字典中的键是很常见的做法（主要也是因为这种情况不能用列表）。比如，一个电话字典可能就映射了姓氏、名字的数据对到不同的电话号码。假如我们定义了 last，first 和 number 这三个变量，可以用如下方法来实现：</p>
-<pre><code class="lang-py">directory[last, first] = number
+<pre><code class="lang-python">directory[last, first] = number
 </code></pre>
 <p>方括号内的表达式是一个元组。我们可以用元组赋值语句来遍历这个字典。</p>
-<pre><code class="lang-py"><span class="hljs-keyword">for</span> last, first <span class="hljs-keyword">in</span> directory:
+<pre><code class="lang-python"><span class="hljs-keyword">for</span> last, first <span class="hljs-keyword">in</span> directory:
     <span class="hljs-built_in">print</span>(first, last, directory[last,first])
 </code></pre>
 <p>上面这个循环会遍历字典中的键，这些键都是元组。程序会把每个元组的元素分别赋值给 last 和 first，然后输出名字以及对应的电话号。</p>
@@ -624,29 +624,29 @@ Figure 12.2: State diagram.</p>
 <p>列表、字典以及元组，都是数据结构的一些样例；在本章我们开始见识这些复合的数据结构，比如由元组组成的列表，或者包含元组作为键而列表作为键值的字典等等。符合数据结构非常有用，但容易导致一些错误，我把这种错误叫做结构错误；这种错误往往是由于一个数据结构中出现了错误的类型、大小或者结构而引起的。比如，如果你想要一个由一个整形构成的列表，而我给你一个单纯的整形变量（不是放进列表的），就会出错了。</p>
 <p>要想有助于解决这类错误，我写了一个叫做 structshape 的模块，该模块提供了一个同名函数，接收任何一种数据结构作为参数，然后返回一个字符串来总结该数据结构的形态。可以从 <a href="http://thinkpython2.com/code/structshape.py" target="_blank">这里</a>下载。</p>
 <p>下面是一个简单列表的示范：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">from</span> structshape <span class="hljs-keyword">import</span> structshape
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">from</span> structshape <span class="hljs-keyword">import</span> structshape
 <span class="hljs-meta">&gt;&gt;&gt; </span>t = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]
 <span class="hljs-meta">&gt;&gt;&gt; </span>structshape(t)
 <span class="hljs-string">'list of 3 int'</span>
 </code></pre>
 <p>更带劲点的程序可能还应该写“list of 3 ints”，但不理会单复数变化有利于简化问题。下面是一个列表的列表：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>t2 = [[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>], [<span class="hljs-number">3</span>,<span class="hljs-number">4</span>], [<span class="hljs-number">5</span>,<span class="hljs-number">6</span>]]
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>t2 = [[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>], [<span class="hljs-number">3</span>,<span class="hljs-number">4</span>], [<span class="hljs-number">5</span>,<span class="hljs-number">6</span>]]
 <span class="hljs-meta">&gt;&gt;&gt; </span>structshape(t2)
 <span class="hljs-string">'list of 3 list of 2 int'</span>
 </code></pre>
 <p>如果列表元素是不同类型，structshape 会按照顺序，把每种类型都列出：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>t3 = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4.0</span>, <span class="hljs-string">'5'</span>, <span class="hljs-string">'6'</span>, [<span class="hljs-number">7</span>], [<span class="hljs-number">8</span>], <span class="hljs-number">9</span>]
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>t3 = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4.0</span>, <span class="hljs-string">'5'</span>, <span class="hljs-string">'6'</span>, [<span class="hljs-number">7</span>], [<span class="hljs-number">8</span>], <span class="hljs-number">9</span>]
 <span class="hljs-meta">&gt;&gt;&gt; </span>structshape(t3)
 <span class="hljs-string">'list of (3 int, float, 2 str, 2 list of int, int)'</span>
 </code></pre>
 <p>下面是一个元组的列表：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>s = <span class="hljs-string">'abc'</span>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>s = <span class="hljs-string">'abc'</span>
 <span class="hljs-meta">&gt;&gt;&gt; </span>lt = <span class="hljs-built_in">list</span>(<span class="hljs-built_in">zip</span>(t, s))
 <span class="hljs-meta">&gt;&gt;&gt; </span>structshape(lt)
 <span class="hljs-string">'list of 3 tuple of (int, str)'</span>
 </code></pre>
 <p>下面是一个有三个项的字典，该字典映射了从整形数到字符串。</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>d = <span class="hljs-built_in">dict</span>(lt)
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>d = <span class="hljs-built_in">dict</span>(lt)
 <span class="hljs-meta">&gt;&gt;&gt; </span>structshape(d)
 <span class="hljs-string">'dict of 3 int-&gt;str'</span>
 </code></pre>
@@ -772,7 +772,7 @@ An error caused because a value has the wrong shape; that is, the wrong type or 
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第十二章 元组","level":"1.13","depth":1,"next":{"title":"第十三章 案例学习：数据结构的选择","level":"1.14","depth":1,"path":"chapter13.md","ref":"chapter13.md","articles":[]},"previous":{"title":"第十一章 字典","level":"1.12","depth":1,"path":"chapter11.md","ref":"chapter11.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter12.md","mtime":"2024-08-23T09:01:53.764Z","type":"markdown"},"gitbook":{"version":"5.1.4","time":"2024-08-23T09:11:00.343Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第十二章 元组","level":"1.13","depth":1,"next":{"title":"第十三章 案例学习：数据结构的选择","level":"1.14","depth":1,"path":"chapter13.md","ref":"chapter13.md","articles":[]},"previous":{"title":"第十一章 字典","level":"1.12","depth":1,"path":"chapter11.md","ref":"chapter11.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter12.md","mtime":"2025-01-05T18:02:47.633Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-01-05T18:03:10.535Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
@@ -842,7 +842,7 @@ An error caused because a value has the wrong shape; that is, the wrong type or 
         
     
         
-        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        <script src="gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
         
     
 

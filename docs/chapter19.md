@@ -7,7 +7,7 @@
 
 在 5.4 中，我们见到了条件语句。条件语句往往用于二选一的情况下；比如：
 
-```py
+```python
 if x > 0:
 	y = math.log(x)
 else:
@@ -19,7 +19,7 @@ else:
 
 用一个条件表达式能让这个语句更简洁：
 
-```py
+```python
 y = math.log(x) 	if x > 0 	else 	float('nan')
 ```
 
@@ -28,7 +28,7 @@ y = math.log(x) 	if x > 0 	else 	float('nan')
 
 递归函数有时候也可以用这种条件表达式来改写。例如下面就是分形函数 factorial 的一个递归版本：
 
-```py
+```python
 def factorial(n):
 	if n == 0:
 		return 1
@@ -38,14 +38,14 @@ def factorial(n):
 
 我们可以这样改写：
 
-```py
+```python
 def factorial(n):
 	return 1 if n == 0  else  return n * factorial(n-1)
 ```
 
 条件表达式还可以用于处理可选参数。例如下面就是练习 2 中 GoodKangaroo 类的 init 方法：
 
-```py
+```python
 def __init__(self, name, contents=None):
 	self.name = name
 	if contents == None:
@@ -55,7 +55,7 @@ def __init__(self, name, contents=None):
 
 我们可以这样来改写：
 
-```py
+```python
 def __init__(self, name, contents=None):
 	self.name = name
 	self.pouch_contents = []
@@ -68,7 +68,7 @@ def __init__(self, name, contents=None):
 
 在 10.7 当中，我们看到了映射和过滤模式。例如，下面这个函数接收一个字符串列表，然后将每一个元素都用字符串方法 capitalize 处理成大写的，然后返回一个新的字符串列表：
 
-```py
+```python
 def capitalize_all(t):
 	res = []
 	for s in t:
@@ -78,7 +78,7 @@ def capitalize_all(t):
 
 用列表推导就可以将上面的代码写得更简洁：
 
-```py
+```python
 def capitalize_all(t):
 	return [s.capitalize() for s in t]
 ```
@@ -91,7 +91,7 @@ def capitalize_all(t):
 
 列表推导也可以用到滤波中。例如，下面的函数从 t 中选择了大写的元素，然后返回成一个新的列表：
 
-```py
+```python
 def only_upper(t):
 	res = []
 	for s in t:
@@ -102,7 +102,7 @@ def only_upper(t):
 
 咱们可以用列表推导来重写这个函数：
 
-```py
+```python
 def only_upper(t):
 	return [s for s in t if s.isupper()]
 ```
@@ -116,7 +116,7 @@ def only_upper(t):
 
 生成器表达式与列表推导相似，用的不是方括号，而是圆括号：
 
-```py
+```python
 >>> g = (x**2 for x in range(5))
 >>> g
 <generator object <genexpr> at 0x7f4c45a786c0>
@@ -124,7 +124,7 @@ def only_upper(t):
 
 上面这样运行得到的结果就是一个生成器对象，用来遍历一个值的序列。但与列表推导不同的是，生成器表达式并不会立即计算出所有的值；它要等着被调用。内置函数 next 会从生成器中得到下一个值：
 
-```py
+```python
 >>> next(g)
 0
 >>> next(g)
@@ -133,7 +133,7 @@ def only_upper(t):
 
 当程序运行到序列末尾的时候，next 函数就会抛出一个停止遍历的异常。你也可以用一个 for 循环来遍历所有的值：
 
-```py
+```python
 >>> for val in g: ...
 print(val)
 4
@@ -143,14 +143,14 @@ print(val)
 
 生成器对象能够追踪在序列中的位置，所以 for 语句就会在 next 函数退出的地方开始。一旦生成器使用完毕了，接下来就要抛出一个停止异常了：
 
-```py
+```python
 >>> next(g)
 StopIteration
 ```
 
 生成器表达式多用于求和、求最大或者最小这样的函数中：
 
-```py
+```python
 >>> sum(x**2 for x in range(5))
 30
 ```
@@ -158,21 +158,21 @@ StopIteration
 
 Python 提供了一个名为 any 的内置函数，该函数接收一个布尔值序列，只要里面有任意一个是真，就返回真。该函数适用于列表：
 
-```py
+```python
 >>> any([False, False, True])
 True
 ```
 
 但这个函数多用于生成器表达式中：
 
-```py
+```python
 >>> any(letter == 't' for letter in 'monty')
 True
 ```
 
 这个例子没多大用，因为效果和 in 运算符是一样的。但我们能用 any 函数来改写我们在 9.3 中写的一些搜索函数。例如，我们可以用如下的方式来改写 avoids：
 
-```py
+```python
 def avoids(word, forbidden):
 	return not any(letter in forbidden for letter in word)
 ```
@@ -192,7 +192,7 @@ Python 还提供了另外一个内置函数 all，该函数在整个序列都是
 
 在 13.6 中，我用了字典来查找存在于文档中而不存在于词汇列表中的词汇。我写的这个函数接收两个参数，一个是 d1 是包含了文档中的词作为键，另外一个是 d2 包含了词汇列表。程序会返回一个字典，这个字典包含的键存在于 d1 而不在 d2 中。
 
-```py
+```python
 def subtract(d1, d2):
 	res = dict()
 	for key in d1:
@@ -212,7 +212,7 @@ Python 还提供了另一个内置类型，名为 set（也就是集合的意思
 
 例如，集合的减法就可以用一个名为 difference 的方法，或者就用减号-。所以我们可以把 subtract 改写成如下形式：
 
-```py
+```python
 def subtract(d1, d2):
 	return set(d1) - set(d2)
 ```
@@ -222,7 +222,7 @@ def subtract(d1, d2):
 
 本书中的一些练习都可以通过使用集合而改写成更精简更高效的形式。例如，下面的代码就是 has_duplicates 的一个实现方案，来自练习 7，用的是字典：
 
-```py
+```python
 def has_duplicates(t):
 	d = {}
 	for x in t:
@@ -236,7 +236,7 @@ def has_duplicates(t):
 
 用集合的话，我们就能把该函数写成如下形式：
 
-```py
+```python
 def has_duplicates(t):
 	return len(set(t)) < len(t)
 ```
@@ -244,7 +244,7 @@ def has_duplicates(t):
 
 我们还能用集合来做一些第九章的练习。例如，下面就是用一个循环实现的一个版本的 uses_only：
 
-```py
+```python
 def uses_only(word, available):
 	for letter in word:
 	if letter not in available:
@@ -253,7 +253,7 @@ def uses_only(word, available):
 ```
 uses_only 会检查 word 中的所有字母是否出现在 available 中。我们可以用如下方法重写：
 
-```py
+```python
 def uses_only(word, available):
 	return set(word) <= set(available)
 ```
@@ -265,7 +265,7 @@ def uses_only(word, available):
 
 计数器定义在一个名为 collections 的标准模块中，所以你必须先导入一下。你可以用字符串，列表或者任何支持遍历的类型来初始化一个计数器：
 
-```py
+```python
 >>> from collections import Counter
 >>> count = Counter('parrot')>>> count
 Counter({'r': 2, 't': 1, 'o': 1, 'p': 1, 'a': 1})
@@ -274,14 +274,14 @@ Counter({'r': 2, 't': 1, 'o': 1, 'p': 1, 'a': 1})
 
 与字典不同的是，当你读取一个不存在的元素的时候，计数器并不会抛出异常。相反的，这时候程序会返回 0：
 
-```py
+```python
 >>> count['d']
 0
 ```
 
 我们可以用计数器来重写一下练习 6 中的这个 is_anagram 函数：
 
-```py
+```python
 def is_anagram(word1, word2):
 	return Counter(word1) == Counter(word2)
 ```
@@ -290,7 +290,7 @@ def is_anagram(word1, word2):
 
 、计数器提供了一些方法和运算器来运行类似集合的运算，包括加法，剪发，合并和交集等等。此外还提供了一个最常用的方法，most_common，该方法会返回一个由值-出现概率组成的数据对的列表，按照概率从高到低排列：
 
-```py
+```python
 >>> count = Counter('parrot')
 >>> for val, freq in count.most_common(3): ...
 print(val, freq)
@@ -305,21 +305,21 @@ collection 模块还提供了一个默认字典，与普通字典的区别在于
 
 当你创建一个默认字典的时候，就提供了一个能创建新值的函数。用来创建新对象的函数也被叫做工厂。内置的创建列表、集合以及其他类型的函数都可以被用作工厂：
 
-```py
+```python
 >>> from collections import defaultdict
 >>> d = defaultdict(list)
 ```
 
 要注意到这里的参数是一个列表，是一个类的对象，而不是 list()，带括号的就是一个新列表了。这个创建新值的函数只有当你试图读取一个不存在的键的时候才会被调用。
 
-```py
+```python
 >>> t = d['new key']
 >>> t []
 ```
 
 新的这个我们称之为 t 的列表，也会被添加到字典中。所以如果我们修改 t，这种修改也会在 d 中出现。
 
-```py
+```python
 >>> t.append('new value')
 >>> d
 defaultdict(<class 'list'>, {'new key': ['new value']})
@@ -330,7 +330,7 @@ defaultdict(<class 'list'>, {'new key': ['new value']})
 
 下面就是原版的代码：
 
-```py
+```python
 def all_anagrams(filename):
 	d = {}
 	for line in open(filename):
@@ -345,7 +345,7 @@ def all_anagrams(filename):
 
 用默认集合就可以简化一下，就如你在练习 2 中用过的那样：
 
-```py
+```python
 def all_anagrams(filename):
 	d = {}
 	for line in open(filename):
@@ -360,7 +360,7 @@ def all_anagrams(filename):
 
 这时候咱们就可以用默认字典来避免这个问题并且简化代码：
 
-```py
+```python
 def all_anagrams(filename):
 	d = defaultdict(list)
 	for line in open(filename):
@@ -376,7 +376,7 @@ def all_anagrams(filename):
 
 很多简单的类就是一些相关值的集合。例如在 15 章中定义的 Point 类中就包含两个数值，x 和 y。当你这样定义一个类的时候，你通常要写一个 init 方法和一个 str 方法：
 
-```py
+```python
 class Point:
 	def __init__(self, x=0, y=0):
 		self.x = x
@@ -387,14 +387,14 @@ class Point:
 
 要传达这么小规模的信息却要用这么多代码。Python 提供了一个更简单的方式来做类似的事情：
 
-```py
+```python
 from collections import namedtuple
 	Point = namedtuple('Point', ['x', 'y'])
 ```
 
 第一个参数是你要写的类的名字。第二个是 Point 对象需要有的属性列表，为字符串。命名元组返回的值是一个类的对象。
 
-```py
+```python
 >>> Point
 <class '__main__.Point'>
 ```
@@ -403,7 +403,7 @@ Point 会自动提供诸如 init 和 str 之类的方法，所以就不用再去
 
 要建立一个 Point 对象，你就可以用 Point 类作为一个函数用：
 
-```py
+```python
 >>> p = Point(1, 2)
 >>> p
 Point(x=1, y=2)
@@ -413,14 +413,14 @@ init 方法把参数赋值给按照你设定来命名的属性。 str 方法输�
 
 你可以用名字来读取命名元组中的元素：
 
-```py
+```python
 >>> p.x, p.y
 (1, 2)
 ```
 
 但你也可以把命名元组当做元组来用：
 
-```py
+```python
 >>> p[0], p[1]
 (1, 2)
 >>> x, y = p
@@ -430,7 +430,7 @@ init 方法把参数赋值给按照你设定来命名的属性。 str 方法输�
 
 命名元组提供了定义简单类的快捷方式。缺点就是这些简单的类不能总保持简单的状态。有时候你可能想给一个命名元组添加方法。这时候你就得定义一个新类来继承命名元组：
 
-```py
+```python
 class Pointier(Point):
 	# add more methods here
 ```
@@ -442,20 +442,20 @@ Or you could switch to a conventional class definition.
 
 在 12.4 中，我们已经学过了如何写将参数收集到一个元组中的函数：
 
-```py
+```python
 def printall(*args):
 	print(args)
 ```
 
 这种函数可以用任意数量的位置参数（就是无关键词的参数）来调用。
 
-```py
+```python
 >>> printall(1, 2.0, '3')
 (1, 2.0, '3')
 ```
 但*运算符并不能收集关键词参数：
 
-```py
+```python
 >>> printall(1, 2.0, third='3')
 TypeError: printall() got an unexpected keyword argument 'third'
 ```
@@ -463,20 +463,20 @@ To gather keyword arguments, you can use the ** operator:
 
 >要收集关键词参数，你就可以用**运算符：
 
-```py
+```python
 def printall(*args, **kwargs):
 	print(args, kwargs)
 ```
 你可以用任意名字来命名这里的关键词收集参数，不过通常大家都用 kwargs。得到的结果是一个字典，映射了关键词键名与键值：
 
-```py
+```python
 >>> printall(1, 2.0, third='3')
 >>> (1, 2.0) {'third': '3'}
 ```
 
 如果你有一个关键词和值组成的字典，你就可以用散射运算符，**来调用一个函数：
 
-```py
+```python
 >>> d = dict(x=1, y=2)
 >>> Point(**d)
 Point(x=1, y=2)
@@ -484,7 +484,7 @@ Point(x=1, y=2)
 
 不用散射运算符的话，函数会把 d 当做一个单独的位置参数，所以就会把 d 赋值股额 x，然后出错，因为没有给 y 赋值：
 
-```py
+```python
 >>> d = dict(x=1, y=2)
 >>> Point(d)
 Traceback (most recent call last):   File "<stdin>", line 1, in <module> TypeError: __new__() missing 1 required positional argument: 'y'
@@ -523,7 +523,7 @@ A function, usually passed as a parameter, used to create objects.
 
 下面的函数是递归地计算二项式系数的。
 
-```py
+```python
 def binomial_coeff(n, k):
 	"""Compute the binomial coefficient "n choose k".
 	n: number of trials

@@ -6,7 +6,7 @@
         <title>第六章 有返回值的函数 · HonKit</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="HonKit 5.1.4">
+        <meta name="generator" content="HonKit 6.0.2">
         
         
         
@@ -24,7 +24,7 @@
                 
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-fontsettings/website.css">
                 
             
         
@@ -49,7 +49,7 @@
     
     
     <meta name="HandheldFriendly" content="true"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
@@ -397,21 +397,21 @@
 <p>我们已经用过的很多 Python 的函数，比如数学函数，都会有返回值。但我们写过的函数都是无返回值的：他们实现一些效果，比如输出一些值，或者移动小乌龟，但他们就是不返回值。</p>
 <h2 id="61-返回值">6.1 返回值</h2>
 <p>对函数进行调用，就会产生一个返回的值，我们一般把这个值赋给某个变量，或者放进表达式中来用。</p>
-<pre><code class="lang-py">e = math.exp(<span class="hljs-number">1.0</span>)
+<pre><code class="lang-python">e = math.exp(<span class="hljs-number">1.0</span>)
 height = radius * math.sin(radians)
 </code></pre>
 <p>目前为止，我们写过的函数都没有返回值。简单说是没有返回值，更确切的讲，这些函数的返回值是空（None）。</p>
 <p>在本章，我们总算要写一些有返回值的函数了。第一个例子就是一个计算给定半径的圆的面积的函数：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">area</span>(<span class="hljs-params">radius</span>):
+<pre><code class="lang-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">area</span>(<span class="hljs-params">radius</span>):
     a = math.pi * radius**<span class="hljs-number">2</span>
     <span class="hljs-keyword">return</span> a
 </code></pre>
 <p>返回语句我们之前已经遇到过了，但在有返回值的函数里面，返回语句可以包含表达式。这个返回语句的意思是：立即返回下面这个表达式作为返回值。返回语句里面的表达式可以随便多复杂都行，所以刚刚那个计算面积的函数我们可以精简改写成以下形式：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">area</span>(<span class="hljs-params">radius</span>):
+<pre><code class="lang-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">area</span>(<span class="hljs-params">radius</span>):
     <span class="hljs-keyword">return</span> math.pi * radius**<span class="hljs-number">2</span>
 </code></pre>
 <p>另外，有一些临时变量可以让后续的调试过程更简单。所以有时候可以多设置几条返回语句，每一条都对应一种情况。</p>
-<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">absolute_value</span>(<span class="hljs-params">x</span>):
+<pre><code class="lang-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">absolute_value</span>(<span class="hljs-params">x</span>):
     <span class="hljs-keyword">if</span> x &lt; <span class="hljs-number">0</span>:
         <span class="hljs-keyword">return</span> -x
     <span class="hljs-keyword">else</span>:
@@ -419,14 +419,14 @@ height = radius * math.sin(radians)
 </code></pre>
 <p>因为这些返回语句对应的是不同条件，因此实际上最终只会有一个返回动作执行。</p>
 <p>返回语句运行的时候，函数就结束了，也不会运行任何其他的语句了。返回语句后面的代码，执行流程里所有其他的位置都无法再触碰了，这种代码叫做『死亡代码』。在有返回值的函数里面，建议要确认一下每一种存在的可能，来让函数触发一个返回语句。下面例子中：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">absolute_value</span>(<span class="hljs-params">x</span>):
+<pre><code class="lang-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">absolute_value</span>(<span class="hljs-params">x</span>):
     <span class="hljs-keyword">if</span> x &lt; <span class="hljs-number">0</span>:
         <span class="hljs-keyword">return</span> -x
     <span class="hljs-keyword">if</span> x &gt; <span class="hljs-number">0</span>:
         <span class="hljs-keyword">return</span> x
 </code></pre>
 <p>这个函数就是错误的，因为一旦 x 等于 0 了，两个条件都没满足，没有触发返回语句，函数就结束了。执行流程走完这个函数之后，返回的就是空（None），而本应该返回 0 的绝对值的。</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>absolute_value(<span class="hljs-number">0</span>)
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>absolute_value(<span class="hljs-number">0</span>)
 <span class="hljs-meta">&gt;&gt;&gt; </span>absolute_value(<span class="hljs-number">0</span>)
 <span class="hljs-literal">None</span>
 </code></pre>
@@ -438,17 +438,17 @@ height = radius * math.sin(radians)
 <p>$$distance = \sqrt{(x_2 − x_1)^2 + (y_2 − y_1)^2}$$</p>
 <p>首先大家来想一下用 Python 来计算两点距离的函数应该是什么样。换句话说，输入的参数是什么，输出的返回值是什么？</p>
 <p>这个案例里面，输入的应该是两个点的坐标，平面上就是四个数字了。返回的值是两点间的距离，就是一个浮点数了。</p>
-<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">distance</span>(<span class="hljs-params">x1, y1, x2, y2</span>):
+<pre><code class="lang-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">distance</span>(<span class="hljs-params">x1, y1, x2, y2</span>):
     <span class="hljs-keyword">return</span> <span class="hljs-number">0.0</span>
 </code></pre>
 <p>当然了，上面这个版本的代码肯定算不出距离了；不管输入什么都会返回 0 了。但这个函数语法上正确，而且可以运行，这样在程序过于复杂的情况之前就能及时测试了。</p>
 <p>要测试一下这个新函数，就用简单的参数来调用一下吧：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>distance(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">6</span>)
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>distance(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">6</span>)
 <span class="hljs-number">0.0</span>
 </code></pre>
 <p>我选择这些数值，水平的距离就是 3，竖直距离就是 4；这样的话，平面距离就应该是 5 了，是一个 3-4-5 三角形的斜边长了。我们已经知道正确结果应该是什么了，这样对测试来说很有帮助。</p>
 <p>现在我们已经确认过了，这个函数在语法上是正确的，接下来我们就可以在函数体内添加代码了。下一步先添加一下求 x2-x1 和 y2-y1 的值的内容。接下来的版本里面，就把它们存在一些临时变量里面，然后输出一下。</p>
-<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">distance</span>(<span class="hljs-params">x1, y1, x2, y2</span>):
+<pre><code class="lang-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">distance</span>(<span class="hljs-params">x1, y1, x2, y2</span>):
     dx = x2 - x1
     dy = y2 - y1
     <span class="hljs-built_in">print</span>(<span class="hljs-string">'dx is'</span>, dx)
@@ -456,7 +456,7 @@ height = radius * math.sin(radians)
     <span class="hljs-keyword">return</span> <span class="hljs-number">0.0</span>
 </code></pre>
 <p>这个函数如果工作的话，应该显示出'dx is 3'和'dy is 4'。如果成功显示了，我们就知道函数已经得到了正确的实际参数，并且正确进行了初步的运算。如果没有显示，只要检查一下这么几行代码就可以了。接下来，就要计算 dx 和 dy 的平方和了。</p>
-<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">distance</span>(<span class="hljs-params">x1, y1, x2, y2</span>):
+<pre><code class="lang-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">distance</span>(<span class="hljs-params">x1, y1, x2, y2</span>):
     dx = x2 - x1
     dy = y2 - y1
     dsquared = dx**<span class="hljs-number">2</span> + dy**<span class="hljs-number">2</span>
@@ -464,7 +464,7 @@ height = radius * math.sin(radians)
     <span class="hljs-keyword">return</span> <span class="hljs-number">0.0</span>
 </code></pre>
 <p>在这一步，咱们依然亏运行一下程序，来检查输出，输出的应该是 25。输出正确的话，最后一步就是用 math.sqrt 这个函数来计算并返回结果：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">distance</span>(<span class="hljs-params">x1, y1, x2, y2</span>):
+<pre><code class="lang-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">distance</span>(<span class="hljs-params">x1, y1, x2, y2</span>):
     dx = x2 - x1
     dy = y2 - y1
     dsquared = dx**<span class="hljs-number">2</span> + dy**<span class="hljs-number">2</span>
@@ -487,45 +487,45 @@ height = radius * math.sin(radians)
 <h2 id="63--组合">6.3  组合</h2>
 <p>你现在应该已经能够在一个函数里面调用另外一个函数了。下面我们写一个函数作为例子，这个函数需要两个点，一个是圆心，一个是圆周上面的点，函数要用来计算这个圆的面积。</p>
 <p>假设圆心的坐标存成一对变量：xc 和 yc，圆周上一点存成一对变量：xp 和 yp。第一步就是算出来这个圆的半径，也就是这两个点之间的距离。我们就用之前写过的那个 distance 的函数来完成这件事：</p>
-<pre><code class="lang-py">radius = distance(xc, yc, xp, yp)
+<pre><code class="lang-python">radius = distance(xc, yc, xp, yp)
 </code></pre>
 <p>下一步就是根据计算出来的半径来算圆的面积；计算面积的函数我们也写过了：</p>
-<pre><code class="lang-py">result = area(radius)
+<pre><code class="lang-python">result = area(radius)
 </code></pre>
 <p>把上述的步骤组合在一个函数里面：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">circle_area</span>(<span class="hljs-params">xc, yc, xp, yp</span>):
+<pre><code class="lang-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">circle_area</span>(<span class="hljs-params">xc, yc, xp, yp</span>):
     radius = distance(xc, yc, xp, yp)
     result = area(radius)
     <span class="hljs-keyword">return</span> result
 </code></pre>
 <p>临时变量 radius 和 result 是用于开发和调试用的，只要程序能正常工作了，就可以把它们都精简下去：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">circle_area</span>(<span class="hljs-params">xc, yc, xp, yp</span>):
+<pre><code class="lang-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">circle_area</span>(<span class="hljs-params">xc, yc, xp, yp</span>):
     <span class="hljs-keyword">return</span> area(distance(xc, yc, xp, yp))
 </code></pre>
 <h2 id="64--布尔函数">6.4  布尔函数</h2>
 <p>函数也可以返回布尔值，这种情况便于隐藏函数内部的复杂测试。例如：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">is_divisible</span>(<span class="hljs-params">x, y</span>):
+<pre><code class="lang-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">is_divisible</span>(<span class="hljs-params">x, y</span>):
     <span class="hljs-keyword">if</span> x % y == <span class="hljs-number">0</span>:
         <span class="hljs-keyword">return</span> <span class="hljs-literal">True</span>
     <span class="hljs-keyword">else</span>:
         <span class="hljs-keyword">return</span> <span class="hljs-literal">False</span>
 </code></pre>
 <p>一般情况下都给这种布尔函数起个独特的名字，比如要有判断意味的提示；is_divisible 这个函数就去判断 x 能否被 y 整除而对应地返回真或假。</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>is_divisible(<span class="hljs-number">6</span>, <span class="hljs-number">4</span>)
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>is_divisible(<span class="hljs-number">6</span>, <span class="hljs-number">4</span>)
 <span class="hljs-literal">False</span>
 <span class="hljs-meta">&gt;&gt;&gt; </span>is_divisible(<span class="hljs-number">6</span>, <span class="hljs-number">3</span>)
 <span class="hljs-literal">True</span>
 </code></pre>
 <p>双等号运算符的返回结果是一个布尔值，所以我们可以用下面的方法来简化刚刚的函数：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">is_divisible</span>(<span class="hljs-params">x, y</span>):
+<pre><code class="lang-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">is_divisible</span>(<span class="hljs-params">x, y</span>):
     <span class="hljs-keyword">return</span> x % y == <span class="hljs-number">0</span>
 </code></pre>
 <p>布尔函数经常用于条件语句：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">if</span> is_divisible(x, y):
+<pre><code class="lang-python"><span class="hljs-keyword">if</span> is_divisible(x, y):
     <span class="hljs-built_in">print</span>(<span class="hljs-string">'x is divisible by y'</span>)
 </code></pre>
 <p>可以用于写如下这种代码：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">if</span> is_divisible(x, y) == <span class="hljs-literal">True</span>:
+<pre><code class="lang-python"><span class="hljs-keyword">if</span> is_divisible(x, y) == <span class="hljs-literal">True</span>:
     <span class="hljs-built_in">print</span>(<span class="hljs-string">'x is divisible by y'</span>
 </code></pre>
 <p>但额外的比较并没有必要。</p>
@@ -545,15 +545,15 @@ An adjective used to describe something that is vorpal.</p>
 </code></pre><p>这个定义表明了 0 的阶乘为 1，然后对任意一个数 n 的阶乘，是 n 与 n-1 阶乘相乘。</p>
 <p>所以 3 的阶乘就是 3 乘以 2 的阶乘，而 2 的阶乘就是 2 乘以 1 的阶乘，1 的阶乘是 1 乘以 0 的阶乘。算到一起，3 的阶乘就等于 3<em>2</em>1*1，就是 6 了。</p>
 <p>如果要给某种对象写一个递归的定义，就可以用 Python 程序来实现。第一步是要来确定形式参数是什么。在这种情况下要明确阶乘所用到的都应该是整形：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">factorial</span>(<span class="hljs-params">n</span>):
+<pre><code class="lang-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">factorial</span>(<span class="hljs-params">n</span>):
 </code></pre>
 <p>如果传来的实际参数碰巧是 0，要返回 1：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">factorial</span>(<span class="hljs-params">n</span>):
+<pre><code class="lang-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">factorial</span>(<span class="hljs-params">n</span>):
     <span class="hljs-keyword">if</span> n == <span class="hljs-number">0</span>:
         <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>
 </code></pre>
 <p>其他情况就有意思了，我们必须用递归的方式来调用 n-1 的阶乘，然后用它来乘以 n：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">factorial</span>(<span class="hljs-params">n</span>):
+<pre><code class="lang-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">factorial</span>(<span class="hljs-params">n</span>):
     <span class="hljs-keyword">if</span> n == <span class="hljs-number">0</span>:
         <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>
     <span class="hljs-keyword">else</span>:
@@ -586,7 +586,7 @@ Figure 6.1: Stack diagram.</p>
       fibonacci(1) = 1
       fibonacci(n) = fibonacci(n−1) + fibonacci(n−2)
 </code></pre><p>翻译成 Python 的语言大概如下这样：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">fibonacci</span> (n):
+<pre><code class="lang-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">fibonacci</span> (n):
     <span class="hljs-keyword">if</span> n == <span class="hljs-number">0</span>:
         <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>
     <span class="hljs-keyword">elif</span>  n == <span class="hljs-number">1</span>:
@@ -597,7 +597,7 @@ Figure 6.1: Stack diagram.</p>
 <p>跃』的方法，如果你假设两个递归调用都正常工作，整个过程就很明确了，你就得到正确答案加到一起即可。</p>
 <h2 id="68--检查类型">6.8  检查类型</h2>
 <p>如果我们让阶乘使用 1.5 做参数会咋样？</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>factorial(<span class="hljs-number">1.5</span>)
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>factorial(<span class="hljs-number">1.5</span>)
 RuntimeError: Maximum recursion depth exceeded
 </code></pre>
 <p>看上去就像是无穷递归一样。为什么会这样？因为这个函数的基准条件是 n 等于 0。但如果 n 不是一个整形变量，就会无法达到基准条件，然后无穷递归下去。</p>
@@ -606,7 +606,7 @@ RuntimeError: Maximum recursion depth exceeded
 <p>我们有两种选择。我们可以尝试着把阶乘函数改写成可以用浮点数做参数的，或者也可以让阶乘函数检查一下参数类型。第一种选择就会写出一个伽玛函数，这已经超越了本书的范围。所以我们用第二种方法。</p>
 <p>（译者注：伽玛函数（Gamma 函数），也叫欧拉第二积分，是阶乘函数在实数与复数上扩展的一类函数。该函数在分析学、概率论、偏微分方程和组合数学中有重要的应用。与之有密切联系的函数是贝塔函数，也叫第一类欧拉积分。）</p>
 <p>我们可以用内置的 isinstance 函数来判断参数的类型。我们也还得确定一下参数得是大于 0 的：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">factorial</span> (n):
+<pre><code class="lang-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">factorial</span> (n):
     <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> <span class="hljs-built_in">isinstance</span>(n, <span class="hljs-built_in">int</span>):
         <span class="hljs-built_in">print</span>(<span class="hljs-string">'Factorial is only defined for integers.'</span>)
         <span class="hljs-keyword">return</span> <span class="hljs-literal">None</span>
@@ -619,7 +619,7 @@ RuntimeError: Maximum recursion depth exceeded
         <span class="hljs-keyword">return</span> n * factorial(n-<span class="hljs-number">1</span>)
 </code></pre>
 <p>第一个基准条件用来处理非整数；第二个用来处理负整数。在小数或者负数做参数的时候，函数就会输出错误信息，返回空到调用出来表明出错了：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>factorial(<span class="hljs-string">'fred'</span>)
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>factorial(<span class="hljs-string">'fred'</span>)
 Factorial <span class="hljs-keyword">is</span> only defined <span class="hljs-keyword">for</span> integers. <span class="hljs-literal">None</span>
 <span class="hljs-meta">&gt;&gt;&gt; </span>factorial(-<span class="hljs-number">2</span>)
 Factorial <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> defined <span class="hljs-keyword">for</span> negative integers. <span class="hljs-literal">None</span>
@@ -641,7 +641,7 @@ Factorial <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</s
 <p>如果形式参数看上去没问题，在每一个返回语句之前都加上 print 语句，显示一下要返回的值。如果可以的话，尽量亲自去检查一下这些结果，自己算一算。尽量调用有值的函数，这样检查结果更方便些（比如在 6.2 中那样。）</p>
 <p>如果函数看着没啥问题，就检查一下函数的调用，来检查一下返回值是不是有用到，确保返回值被正确使用。</p>
 <p>在函数的开头结尾添加输出语句，能够确保整个执行流程更加可视化。比如下面就是一个有输出版本的阶乘函数：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">factorial</span>(<span class="hljs-params">n</span>):
+<pre><code class="lang-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">factorial</span>(<span class="hljs-params">n</span>):
     space = <span class="hljs-string">' '</span> * (<span class="hljs-number">4</span> * n)
     <span class="hljs-built_in">print</span>(space, <span class="hljs-string">'factorial'</span>, n)
     <span class="hljs-keyword">if</span> n == <span class="hljs-number">0</span>:
@@ -654,7 +654,7 @@ Factorial <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</s
         <span class="hljs-keyword">return</span> result
 </code></pre>
 <p>space 在这里是一串空格的字符串，是用来缩进输出的。下面就是 4 的阶乘得到的结果：</p>
-<pre><code class="lang-py">                             factorial <span class="hljs-number">4</span>
+<pre><code class="lang-python">                             factorial <span class="hljs-number">4</span>
                      factorial <span class="hljs-number">3</span>
                  factorial <span class="hljs-number">2</span>
                  factorial <span class="hljs-number">1</span>
@@ -695,7 +695,7 @@ A programming pattern that uses a conditional statement to check for and handle 
 <h2 id="611--练习">6.11  练习</h2>
 <h3 id="练习-1">练习 1</h3>
 <p>为下面的程序画栈图。程序输出会是什么样的？</p>
-<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">b</span>(<span class="hljs-params">z</span>):
+<pre><code class="lang-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">b</span>(<span class="hljs-params">z</span>):
     prod = a(z, z)
     <span class="hljs-built_in">print</span>(z, prod)
     <span class="hljs-keyword">return</span> prod
@@ -712,7 +712,7 @@ y = x + <span class="hljs-number">1</span>
 </code></pre>
 <h3 id="练习-2">练习 2</h3>
 <p>Ackermann 阿克曼函数的定义如下：</p>
-<pre><code class="lang-py">A(m, n) =   n+<span class="hljs-number">1</span>    <span class="hljs-keyword">if</span>  m = <span class="hljs-number">0</span>
+<pre><code class="lang-python">A(m, n) =   n+<span class="hljs-number">1</span>    <span class="hljs-keyword">if</span>  m = <span class="hljs-number">0</span>
             A(m−<span class="hljs-number">1</span>, <span class="hljs-number">1</span>)    <span class="hljs-keyword">if</span>  m &gt; <span class="hljs-number">0</span>  <span class="hljs-keyword">and</span>  n = <span class="hljs-number">0</span>
             A(m−<span class="hljs-number">1</span>, A(m, n−<span class="hljs-number">1</span>))    <span class="hljs-keyword">if</span>  m &gt; <span class="hljs-number">0</span>  <span class="hljs-keyword">and</span>  n &gt; <span class="hljs-number">0.</span>
 </code></pre>
@@ -720,7 +720,7 @@ y = x + <span class="hljs-number">1</span>
 <h3 id="练习-3">练习 3</h3>
 <p>回文的词特点是正序和倒序拼写相同给，比如 noon 以及 redivider。用递归的思路来看，回文词的收尾相同，中间部分是回文词。</p>
 <p>下面的函数是把字符串作为实际参数，然后返回函数的头部、尾部以及中间字母：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">first</span>(<span class="hljs-params">word</span>):
+<pre><code class="lang-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">first</span>(<span class="hljs-params">word</span>):
     <span class="hljs-keyword">return</span> word[<span class="hljs-number">0</span>]
 <span class="hljs-keyword">def</span> <span class="hljs-title function_">last</span>(<span class="hljs-params">word</span>):
     <span class="hljs-keyword">return</span> word[-<span class="hljs-number">1</span>]
@@ -786,7 +786,7 @@ y = x + <span class="hljs-number">1</span>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第六章 有返回值的函数","level":"1.7","depth":1,"next":{"title":"第七章 迭代","level":"1.8","depth":1,"path":"chapter7.md","ref":"chapter7.md","articles":[]},"previous":{"title":"第五章 条件循环","level":"1.6","depth":1,"path":"chapter5.md","ref":"chapter5.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter6.md","mtime":"2024-08-23T09:01:53.771Z","type":"markdown"},"gitbook":{"version":"5.1.4","time":"2024-08-23T09:11:00.343Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第六章 有返回值的函数","level":"1.7","depth":1,"next":{"title":"第七章 迭代","level":"1.8","depth":1,"path":"chapter7.md","ref":"chapter7.md","articles":[]},"previous":{"title":"第五章 条件循环","level":"1.6","depth":1,"path":"chapter5.md","ref":"chapter5.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter6.md","mtime":"2025-01-05T18:02:47.633Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-01-05T18:03:10.535Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
@@ -856,7 +856,7 @@ y = x + <span class="hljs-number">1</span>
         
     
         
-        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        <script src="gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
         
     
 

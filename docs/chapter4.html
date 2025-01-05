@@ -6,7 +6,7 @@
         <title>第四章 案例学习：交互设计 · HonKit</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="HonKit 5.1.4">
+        <meta name="generator" content="HonKit 6.0.2">
         
         
         
@@ -24,7 +24,7 @@
                 
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-fontsettings/website.css">
                 
             
         
@@ -49,7 +49,7 @@
     
     
     <meta name="HandheldFriendly" content="true"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
@@ -401,12 +401,12 @@
 <p>本章代码样例可以点击<a href="http://thinkpython2.com/code/polygon.py" target="_blank">此链接</a>来下载了。</p>
 <h2 id="41--乌龟模块">4.1  乌龟模块</h2>
 <p>要检查你是不是已经安装了这个乌龟模块，你要打开 Python 解释器来输入如下内容：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">import</span> turtle 
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">import</span> turtle 
 <span class="hljs-meta">&gt;&gt;&gt; </span>bob = turtle.Turtle()
 </code></pre>
 <p>运行上述例子的时候，应该就能新建一个小窗口，还有个小箭头象征小乌龟。如果有的话就对了，把窗口关掉吧先。</p>
 <p>建立一个叫做 mypolygon.py 的文件，在里面输入如下内容：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">import</span> turtle 
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> turtle 
 bob = turtle.Turtle() 
 <span class="hljs-built_in">print</span>(bob) 
 turtle.mainloop()
@@ -417,13 +417,13 @@ turtle.mainloop()
 <p>这就意味着 bob 已经指向了模块 turtle 中所定义的 Turtle 类的一个对象。</p>
 <p>mainloop 这个函数是告诉窗口等用户来做些事情，当然本次尝试的情况下用户也就是关闭窗口而已了。</p>
 <p>一旦你创建了一个 Trutle，你就可以调用一些方法让他在窗口中移动。方法跟函数有点相似，但语法的使用稍微不太一样。比如你可以让小乌龟往前走：</p>
-<pre><code class="lang-py">bob.fd(<span class="hljs-number">100</span>)
+<pre><code class="lang-python">bob.fd(<span class="hljs-number">100</span>)
 </code></pre>
 <p>fd 这个方法，是 turtle 类这个叫做 bob 的对象所包含的。调用这个方法就像是做出一个请求一样：你再让 bob 向前移动。fd 这个方法的参数是像素数距离，所以实际的大小依赖于你显示器的情况了。</p>
 <p>Turtle 对象中还有一些其他方法，比如 bk 是后退，lt 是左转，rt 是右转。lt 和 rt 用偏转角度做参数。</p>
 <p>另外，每个 Turtle 都相当于带着笔，可以落下或者抬起；如果笔落下了，Turtle 移动的时候就会留下轨迹了。抬笔落笔的方法缩写粉笔嗯是 pu 和 pd。</p>
 <p>画一个直角，就要把下面这些线加到程序里面（当然要先创建一个 bob 并且在此之前运行 mainloop）：</p>
-<pre><code class="lang-py">bob.fd(<span class="hljs-number">100</span>) 
+<pre><code class="lang-python">bob.fd(<span class="hljs-number">100</span>) 
 bob.lt(<span class="hljs-number">90</span>) 
 bob.fd(<span class="hljs-number">100</span>)
 </code></pre>
@@ -431,7 +431,7 @@ bob.fd(<span class="hljs-number">100</span>)
 <p>现在修改一下程序，去画一个正方形。这个程序运行不好的话就不要继续后面的章节！</p>
 <h2 id="42--简单的重复">4.2  简单的重复</h2>
 <p>你估计会写出如下的内容：</p>
-<pre><code class="lang-py">bob.fd(<span class="hljs-number">100</span>) 
+<pre><code class="lang-python">bob.fd(<span class="hljs-number">100</span>) 
 bob.lt(<span class="hljs-number">90</span>)  
 bob.fd(<span class="hljs-number">100</span>) 
 bob.lt(<span class="hljs-number">90</span>)  
@@ -440,7 +440,7 @@ bob.lt(<span class="hljs-number">90</span>)
 bob.fd(<span class="hljs-number">100</span>)
 </code></pre>
 <p>上面这个太麻烦了，咱们可以用一个 for 语句来让这个过程更简洁。把下面的代码添加到 mypolygon.py 中然后运行一下：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">4</span>):     
+<pre><code class="lang-python"><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">4</span>):     
     <span class="hljs-built_in">print</span>(<span class="hljs-string">'Hello!'</span>)
 </code></pre>
 <p>你将会看到这样的输出：</p>
@@ -451,7 +451,7 @@ Hello!
 </code></pre>
 <p>这就是 for 语句的最简单的一种应用；以后我们会看到更多。不过当前这种简单的足够你来重构一下你的正方形绘制程序了。不达目的不罢休，不要跳过困难哈，一定要编写出来这个再进行后面的内容。</p>
 <p>这就是一个用 for 语句来画正方形的语句：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">4</span>):     
+<pre><code class="lang-python"><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">4</span>):     
     bob.fd(<span class="hljs-number">100</span>)     
     bob.lt(<span class="hljs-number">90</span>)
 </code></pre>
@@ -469,7 +469,7 @@ Hello!
 <p>5.在 circle 基础上做一个叫做 arc 的函数，在 circle 的基础上添加一个 angle（译者注：角度）变量，用这个角度值来确定画多大的一个圆弧。用度做单位，当 angle 等于 360 度的时候，arc 函数就应当画出一个整团了。</p>
 <h2 id="44--封装">4.4  封装</h2>
 <p>第一个练习让你把正方形绘制的代码定义到一个函数里面，然后调用这个函数，传入一个 turtle 对象作为参数。下面就是个例子了：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">square</span>(<span class="hljs-params">t</span>):     
+<pre><code class="lang-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">square</span>(<span class="hljs-params">t</span>):     
     <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">4</span>):         
         t.fd(<span class="hljs-number">100</span>)         
         t.lt(<span class="hljs-number">90</span>)  
@@ -477,13 +477,13 @@ square(bob)
 </code></pre>
 <p>在最内部的语句里面，fd 和 lt 缩进了两次，这个意思是他们是 for 循环的循环体内部成员，而 for 循环本身缩进了一次，说明 for 语句被包含在函数的定义当中。接下来的那行 square(bob)，紧靠左侧，没有缩进，这说明 for 循环和函数定义都结束了。</p>
 <p>在函数体内部，t 所指代的就是小乌龟 bob，因此让 t 来左转九十度的效果完全等同于让 bob 来左转九十度。本文中没有把形式参数的名字设置成 bob，这是为啥呢？是因为用 t 可以指代任意一个小乌龟，不仅仅是 bob，所以你就能再创建另一个小乌龟，把它传递给 square 这个函数作为实际参数：</p>
-<pre><code class="lang-py">alice = Turtle() 
+<pre><code class="lang-python">alice = Turtle() 
 square(alice)
 </code></pre>
 <p>用函数的形式把一段代码包装起来，叫做封装。这样有一个好处，就是给代码起了个名字，有类似文档说明的功能，更好理解了。另外一个好处是下次重复使用这段代码的时候，再次调用函数就可以了，这比复制粘贴函数体可方便多了。</p>
 <h2 id="45--泛化">4.5  泛化</h2>
 <p>下一步就是给 square 函数添加一个长度参数了。下面是样例：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">square</span>(<span class="hljs-params">t, length</span>):     
+<pre><code class="lang-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">square</span>(<span class="hljs-params">t, length</span>):     
     <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">4</span>):         
         t.fd(length)         
         t.lt(<span class="hljs-number">90</span>)  
@@ -491,7 +491,7 @@ square(bob, <span class="hljs-number">100</span>)
 </code></pre>
 <p>给函数添加参数，就叫做泛化，因为者可以让函数的功能更广泛：在之前的版本中，square 这个函数画出来的正方形总是一个尺寸的；在这个新版本里面，可以自定义边长了。</p>
 <p>下一步也还是泛化。这次就是不光要画正方形了，要画一个多边形，可以指定边数的。下面是样例：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">polygon</span>(<span class="hljs-params">t, n, length</span>):    
+<pre><code class="lang-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">polygon</span>(<span class="hljs-params">t, n, length</span>):    
     angle = <span class="hljs-number">360</span> / n     
     <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(n):         
         t.fd(length)         
@@ -501,13 +501,13 @@ polygon(bob, <span class="hljs-number">7</span>, <span class="hljs-number">70</s
 <p>这个例子画了一个每个边长度都为 70 像素的七边形。</p>
 <p>如果你用 Python2 的话，角度可能因为整除而导致的偏差。简单的解决方法就是用 360.0 来除以 n 而不是用 360，这就是用浮点数替代了原来的整形，结果就是一个浮点数了。</p>
 <p>当一个函数有超过一个数据参数的时候，很容易忘掉这些参数都是什么，或者忘掉他们的顺序。为了避免这个情况，可以把形式参数的名字包含在一个实际参数列表中：</p>
-<pre><code class="lang-py">polygon(bob, n=<span class="hljs-number">7</span>, length=<span class="hljs-number">70</span>)
+<pre><code class="lang-python">polygon(bob, n=<span class="hljs-number">7</span>, length=<span class="hljs-number">70</span>)
 </code></pre>
 <p>这些列表叫做关键参数列表，因为他们把形式参数的名字作为关键词包含了进来。（注意区别这里的关键词可不是 Python 语言的关键词哈！这里就是字面意思，很关键的词。）</p>
 <p>这种语法结构让程序更容易被人读懂。也能提醒实际参数和形式参数的使用过程：调用一个函数的时候，把实际参数的值赋给了形式参数。</p>
 <h2 id="46--接口设计">4.6  接口设计</h2>
 <p>下一步就是写 circle 这个函数了，需要半径 r 作为一个参数。下面是一个简单的样例，使用 polygon 函数来画一个 50 边形，来接近一个圆：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">import</span> math  
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> math  
 <span class="hljs-keyword">def</span> <span class="hljs-title function_">circle</span>(<span class="hljs-params">t, r</span>):     
     circumference = <span class="hljs-number">2</span> * math.pi * r    
     n = <span class="hljs-number">50</span>     
@@ -520,7 +520,7 @@ polygon(bob, <span class="hljs-number">7</span>, <span class="hljs-number">70</s
 <p>函数的接口就是关于它如何工作的一个概述：都有什么变量？函数实现什么功能？以及返回值是什么？允许调用者随意操作而不用处理一些无关紧要的细节，这种函数接口就是简洁的。</p>
 <p>在本节的例子中，r 包含于接口内，因为要用它来确定所画圆的大小。n 就不那么合适了，因为它是用来处理如何具体绘制一个圆的。</p>
 <p>与其让接口复杂冗余，更好的思路是让 n 根据周长来自适应一个合适的值：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">circle</span>(<span class="hljs-params">t, r</span>):     
+<pre><code class="lang-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">circle</span>(<span class="hljs-params">t, r</span>):     
     circumference = <span class="hljs-number">2</span> * math.pi * r     
     n = <span class="hljs-built_in">int</span>(circumference / <span class="hljs-number">3</span>) + <span class="hljs-number">1</span>     
     length = circumference / n     
@@ -530,7 +530,7 @@ polygon(bob, <span class="hljs-number">7</span>, <span class="hljs-number">70</s
 <h2 id="47--重构">4.7  重构</h2>
 <p>当我写 circle 这个函数的时候，我能利用多边形函数 polygon 是因为一个足够多边的多边形和圆很接近。但圆弧就不太适合这个思路了；我们不能用多边形或者圆来画一个圆弧。</p>
 <p>一个替代的方法就是把 polygon 修改一下，转换成圆弧。结果大概如下所示：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">arc</span>(<span class="hljs-params">t, r, angle</span>):     
+<pre><code class="lang-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">arc</span>(<span class="hljs-params">t, r, angle</span>):     
     arc_length = <span class="hljs-number">2</span> * math.pi * r * angle / <span class="hljs-number">360</span>     
     n = <span class="hljs-built_in">int</span>(arc_length / <span class="hljs-number">3</span>) + <span class="hljs-number">1</span>     
     step_length = arc_length / n     
@@ -540,13 +540,13 @@ polygon(bob, <span class="hljs-number">7</span>, <span class="hljs-number">70</s
         t.lt(step_angle)
 </code></pre>
 <p>这个函数的后半段看着和多边形那个还挺像的，但必须修改一下接口才能重利用多边形的代码。我们在多边形函数上增加 angle（角度）作为第三个参数，但继续叫多边形就不太合适了，因为不闭合啊！所以就改名叫它多段线 polyline：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">polyline</span>(<span class="hljs-params">t, n, length, angle</span>):     
+<pre><code class="lang-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">polyline</span>(<span class="hljs-params">t, n, length, angle</span>):     
     <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(n):         
     t.fd(length)         
     t.lt(angle)
 </code></pre>
 <p>现在就可以用多段线 polyline 来重写多边形 polygon 和圆弧 arc：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">polygon</span>(<span class="hljs-params">t, n, length</span>):     
+<pre><code class="lang-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">polygon</span>(<span class="hljs-params">t, n, length</span>):     
     angle = <span class="hljs-number">360.0</span> / n     
     polyline(t, n, length, angle)  
 <span class="hljs-keyword">def</span> <span class="hljs-title function_">arc</span>(<span class="hljs-params">t, r, angle</span>):     
@@ -557,7 +557,7 @@ polygon(bob, <span class="hljs-number">7</span>, <span class="hljs-number">70</s
     polyline(t, n, step_length, step_angle)
 </code></pre>
 <p>最终，咱们就可以用圆弧 arc 来重写 circle 的实现了：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">circle</span>(<span class="hljs-params">t, r</span>):     
+<pre><code class="lang-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">circle</span>(<span class="hljs-params">t, r</span>):     
     arc(t, r, <span class="hljs-number">360</span>)
 </code></pre>
 <p>这个过程中，改进了接口设计，增强了代码再利用，这就叫做重构。在本节的这个例子中，我们先是注意到圆弧 arc 和多边形 polygon 有相似的代码，所以我们把他们都用多段线 polyline 来实现。</p>
@@ -579,7 +579,7 @@ polygon(bob, <span class="hljs-number">7</span>, <span class="hljs-number">70</s
 <p>这个模式有一些缺点，我们后续会看到一些替代的方式，但这个模式是很有用的，尤其对耐饿实现不值得怎么去把程序分成多个函数的情况。</p>
 <h2 id="49--文档字符串">4.9  文档字符串</h2>
 <p>文档字符串是指：在函数开头部位，解释函数的交互接口的字符串，doc 是文档 documentation 的缩写。下面是一个例子：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">polyline</span>(<span class="hljs-params">t, n, length, angle</span>):     
+<pre><code class="lang-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">polyline</span>(<span class="hljs-params">t, n, length, angle</span>):     
 <span class="hljs-string">"""
 Draws n line segments with the given length and     angle (in degrees) between them. 
 t is a turtle.     """</span>         
@@ -725,7 +725,7 @@ Figure 4.2: Turtle pies.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第四章 案例学习：交互设计","level":"1.5","depth":1,"next":{"title":"第五章 条件循环","level":"1.6","depth":1,"path":"chapter5.md","ref":"chapter5.md","articles":[]},"previous":{"title":"第三章 函数","level":"1.4","depth":1,"path":"chapter3.md","ref":"chapter3.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter4.md","mtime":"2024-08-23T09:01:53.770Z","type":"markdown"},"gitbook":{"version":"5.1.4","time":"2024-08-23T09:11:00.343Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第四章 案例学习：交互设计","level":"1.5","depth":1,"next":{"title":"第五章 条件循环","level":"1.6","depth":1,"path":"chapter5.md","ref":"chapter5.md","articles":[]},"previous":{"title":"第三章 函数","level":"1.4","depth":1,"path":"chapter3.md","ref":"chapter3.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter4.md","mtime":"2025-01-05T18:02:47.633Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-01-05T18:03:10.535Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
@@ -795,7 +795,7 @@ Figure 4.2: Turtle pies.</p>
         
     
         
-        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        <script src="gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
         
     
 

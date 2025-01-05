@@ -156,7 +156,7 @@ Think Python 这本书是面向初学者介绍 Python 编程。
 
 ### Docker
 
-```
+```python
 docker pull apachecn0/think-py-2e-zh
 docker run -tid -p <port>:80 apachecn0/think-py-2e-zh
 # 访问 http://localhost:{port} 查看文档
@@ -164,7 +164,7 @@ docker run -tid -p <port>:80 apachecn0/think-py-2e-zh
 
 ### PYPI
 
-```
+```python
 pip install think-py-2e-zh
 think-py-2e-zh <port>
 # 访问 http://localhost:{port} 查看文档
@@ -172,7 +172,7 @@ think-py-2e-zh <port>
 
 ### NPM
 
-```
+```python
 npm install -g think-py-2e-zh
 think-py-2e-zh <port>
 # 访问 http://localhost:{port} 查看文档

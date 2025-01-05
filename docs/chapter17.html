@@ -6,7 +6,7 @@
         <title>第十七章 类和方法 · HonKit</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="HonKit 5.1.4">
+        <meta name="generator" content="HonKit 6.0.2">
         
         
         
@@ -24,7 +24,7 @@
                 
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-fontsettings/website.css">
                 
             
         
@@ -49,7 +49,7 @@
     
     
     <meta name="HandheldFriendly" content="true"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
@@ -411,13 +411,13 @@
 <p>在接下来的章节中，我们就要把之前两章写过的一些函数改写成方法。这种转换是纯机械的；你就遵守一系列步骤就可以实现了。如果你对二者之间的相互转化很熟悉了，你就可以根据情况自己选择是用函数还是用方法。</p>
 <h2 id="172--输出对象">17.2  输出对象</h2>
 <p>在 16.1，我们定义过一个名为 Time 的类，当时写过月名为 print_time 的函数：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Time</span>:
+<pre><code class="lang-python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Time</span>:
 <span class="hljs-string">"""Represents the time of day."""</span>
 <span class="hljs-keyword">def</span> <span class="hljs-title function_">print_time</span>(<span class="hljs-params">time</span>):
     <span class="hljs-built_in">print</span>(<span class="hljs-string">'%.2d:%.2d:%.2d'</span> % (time.hour, time.minute, time.second))
 </code></pre>
 <p>要调用这个函数，就必须给传递过去一个 TIme 对象作为参数：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>start = Time()
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>start = Time()
 <span class="hljs-meta">&gt;&gt;&gt; </span>start.hour = <span class="hljs-number">9</span>
 <span class="hljs-meta">&gt;&gt;&gt; </span>start.minute = <span class="hljs-number">45</span>
 <span class="hljs-meta">&gt;&gt;&gt; </span>start.second = <span class="hljs-number">00</span>
@@ -425,23 +425,23 @@
 09:<span class="hljs-number">45</span>:<span class="hljs-number">00</span>
 </code></pre>
 <p>要让 print_time 成为一个方法，只需要把函数定义内容放到类定义里面去。一定要注意缩进的变化哈。</p>
-<pre><code class="lang-py"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Time</span>:
+<pre><code class="lang-python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Time</span>:
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">print_time</span>(<span class="hljs-params">time</span>):
         <span class="hljs-built_in">print</span>(<span class="hljs-string">'%.2d:%.2d:%.2d'</span> % (time.hour, time.minute, time.second))
 </code></pre>
 <p>现在就有两种方法来调用 print_time 这个函数了。第一种就是用函数的语法（一般大家不这么用）：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>Time.print_time(start)
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>Time.print_time(start)
 09:<span class="hljs-number">45</span>:<span class="hljs-number">00</span>
 </code></pre>
 <p>上面这里用到了点号，Time 是类的名字，pritn_time 是方法的名字。start 就是传过去的一个参数了。</p>
 <p>另外一种形式就是用方法的语法（这个形式更简洁很多）：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>start.print_time()
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>start.print_time()
 09:<span class="hljs-number">45</span>:<span class="hljs-number">00</span>
 </code></pre>
 <p>在上面这里也用了点号，print_time 依然还是方法名字，然后 start 是调用方法所在的对象，也叫做主语。这里就如同句子中的主语一样，方法调用的主语就是方法的归属者。</p>
 <p>在方法内部，主语被用作第一个参数，所以在上面的例子中中，start 就被赋值给了 time。</p>
 <p>按照惯例，方法的第一个参数也叫做 self，所以刚刚的 print_time 函数可以以如下这种更通用的形式来写：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Time</span>:
+<pre><code class="lang-python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Time</span>:
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">print_time</span>(<span class="hljs-params">self</span>):
         <span class="hljs-built_in">print</span>(<span class="hljs-string">'%.2d:%.2d:%.2d'</span> % (<span class="hljs-variable language_">self</span>.hour, <span class="hljs-variable language_">self</span>.minute, <span class="hljs-variable language_">self</span>.second))
 </code></pre>
@@ -455,7 +455,7 @@
 <p>做个练习吧，重写一下 time_to_int（参见 16.4），把这个函数写成一个方法。你也可以试着把 int_to_time 也携程方法，不过这可能不太行得通，因为把这个函数改成方法的话，没有对象来调用方法。</p>
 <h2 id="173--另外一个例子">17.3  另外一个例子</h2>
 <p>下面是 increment 函数（参见 16.4）被改写成的方法：</p>
-<pre><code class="lang-py"><span class="hljs-comment">#  inside class Time:</span>
+<pre><code class="lang-python"><span class="hljs-comment">#  inside class Time:</span>
 <span class="hljs-keyword">def</span> <span class="hljs-title function_">increment</span>(<span class="hljs-params">self, seconds</span>):
     seconds += <span class="hljs-variable language_">self</span>.time_to_int()
     <span class="hljs-keyword">return</span> int_to_time(seconds)
@@ -464,7 +464,7 @@
 <blockquote>
 <p>下面是调用 increment 的示范：</p>
 </blockquote>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>start.print_time()
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>start.print_time()
 09:<span class="hljs-number">45</span>:<span class="hljs-number">00</span>
 <span class="hljs-meta">&gt;&gt;&gt; </span>end = start.increment(<span class="hljs-number">1337</span>)
 <span class="hljs-meta">&gt;&gt;&gt; </span>end.print_time()
@@ -472,7 +472,7 @@
 </code></pre>
 <p>主语，start，用自己（self）赋值给第一个参数。然后参数，1337，赋值给了第二个参数，秒值 seconds。</p>
 <p>这种表述挺混乱，如果弄错了就更麻烦了。比如，如果你用两个参数调用了 increment 函数，你会得到如下的错误：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>end = start.increment(<span class="hljs-number">1337</span>, <span class="hljs-number">460</span>)
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>end = start.increment(<span class="hljs-number">1337</span>, <span class="hljs-number">460</span>)
 TypeError: increment() takes <span class="hljs-number">2</span> positional arguments but <span class="hljs-number">3</span> were given
 </code></pre>
 <p>这个错误信息刚开始看上去还挺不好理解，因为括号里面确实是只有两个参数。不过实际上主语也会把自己当做一个参数，所以总共实际上是有三个参数了。
@@ -482,40 +482,40 @@ TypeError: increment() takes <span class="hljs-number">2</span> positional argum
 <p>parrot 和 cage 都是位置参数，dead 是关键字参数。</p>
 <h2 id="174--更复杂点的例子">17.4  更复杂点的例子</h2>
 <p>重写 is_after（参见 16.1），这就比较有难度了，因为这个函数接收两个 Time 对象作为参数。在这个情况下，一般就把第一个参数命名为 self，第二个命名为 other：</p>
-<pre><code class="lang-py"><span class="hljs-comment">#  inside class Time:</span>
+<pre><code class="lang-python"><span class="hljs-comment">#  inside class Time:</span>
 <span class="hljs-keyword">def</span> <span class="hljs-title function_">is_after</span>(<span class="hljs-params">self, other</span>):
     <span class="hljs-keyword">return</span> <span class="hljs-variable language_">self</span>.time_to_int() &gt; other.time_to_int()
 </code></pre>
 <p>要使用这个方法，就必须在一个对象后面调用，然后用另外一个对象作为参数：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>end.is_after(start)
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>end.is_after(start)
 <span class="hljs-literal">True</span>
 </code></pre>
 <p>这里就体现出一种语法上的好处了，因为读起来基本就根英语是一样的嗯：『end is after start?』</p>
 <h2 id="175--init-方法">17.5  init 方法</h2>
 <p>init 方法（就是对『initialization』的缩写，初始化的意思，这个方法相当于 C++中的构造函数）是一种特殊的方法，在对象被实例化的时候被调用。这个方法的全名是 <strong>init</strong>（两个下划线，然后是 init，然后还是两个下划线）。在 Time 类当中，init 方法示例如下：</p>
-<pre><code class="lang-py"><span class="hljs-comment">#  inside class Time:</span>
+<pre><code class="lang-python"><span class="hljs-comment">#  inside class Time:</span>
 <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, hour=<span class="hljs-number">0</span>, minute=<span class="hljs-number">0</span>, second=<span class="hljs-number">0</span></span>):
     <span class="hljs-variable language_">self</span>.hour = hour
     <span class="hljs-variable language_">self</span>.minute = minute
     <span class="hljs-variable language_">self</span>.second = second
 </code></pre>
 <p>一般情况下，init 方法里面的参数与属性变量的名字是相同的。下面这个语句</p>
-<pre><code class="lang-py">        <span class="hljs-variable language_">self</span>.hour = hour
+<pre><code class="lang-python">        <span class="hljs-variable language_">self</span>.hour = hour
 </code></pre>
 <p>就存储了参数 hour 的值，赋给了属性变量 hour 本身。</p>
 <p>这些参数都是可选的，所以如果你调用 Time 但不给任何参数，得到的就是默认值。</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>time = Time()
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>time = Time()
 <span class="hljs-meta">&gt;&gt;&gt; </span>time.print_time()
 <span class="hljs-number">00</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span>
 </code></pre>
 <p>如果你提供一个参数，就先覆盖 hour 的值：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>time = Time (<span class="hljs-number">9</span>)
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>time = Time (<span class="hljs-number">9</span>)
 <span class="hljs-meta">&gt;&gt;&gt; </span>time.print_time()
 09:<span class="hljs-number">00</span>:<span class="hljs-number">00</span>
 
 提供两个参数，就先后覆盖了 hour 和 minute 的值。
 
-```py
+```python
 <span class="hljs-meta">&gt;&gt;&gt; </span>time = Time(<span class="hljs-number">9</span>, <span class="hljs-number">45</span>)
 <span class="hljs-meta">&gt;&gt;&gt; </span>time.print_time()
 09:<span class="hljs-number">45</span>:<span class="hljs-number">00</span>
@@ -525,25 +525,25 @@ TypeError: increment() takes <span class="hljs-number">2</span> positional argum
 <h2 id="176--str-方法">17.6  <strong>str</strong> 方法</h2>
 <p><strong>str</strong> 是一种特殊的方法，就跟 <strong>init</strong> 差不多，str 方法是接收一个对象，返回一个代表该对象的字符串。</p>
 <p>例如，下面就是 Time 对象的一个 str 方法：</p>
-<pre><code class="lang-py"><span class="hljs-comment">#  inside class Time:</span>
+<pre><code class="lang-python"><span class="hljs-comment">#  inside class Time:</span>
 <span class="hljs-keyword">def</span> <span class="hljs-title function_">__str__</span>(<span class="hljs-params">self</span>):
     <span class="hljs-keyword">return</span> <span class="hljs-string">'%.2d:%.2d:%.2d'</span> % (<span class="hljs-variable language_">self</span>.hour, <span class="hljs-variable language_">self</span>.minute, <span class="hljs-variable language_">self</span>.second)
 </code></pre>
 <p>这样当你用 print 打印输出一个对象的时候，Python 就会调用这个 str 方法：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>time = Time(<span class="hljs-number">9</span>, <span class="hljs-number">45</span>)
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>time = Time(<span class="hljs-number">9</span>, <span class="hljs-number">45</span>)
 <span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">print</span>(time) 09:<span class="hljs-number">45</span>:<span class="hljs-number">00</span>
 </code></pre>
 <p>写一个新的类的时候，总要先写出来 init 方法，这样有利于简化对象的初始化，还要写个 str 方法，这个方法在调试的时候很有用。
 做个练习，写一下 Point 这个类的 str 方法。创建一个 Point 对象，然后用 print 输出一下。</p>
 <h2 id="177--运算符重载">17.7  运算符重载</h2>
 <p>通过定义一些特定的方法，咱们就能针对自定义类型，让运算符有特定的作用。比如，如果你在 Time 类中定义了一个名字为 <strong>add</strong> 的方法，你就可以对 Time 对象使用『+』加号运算符。</p>
-<pre><code class="lang-py"><span class="hljs-comment">#  inside class Time:</span>
+<pre><code class="lang-python"><span class="hljs-comment">#  inside class Time:</span>
 <span class="hljs-keyword">def</span> <span class="hljs-title function_">__add__</span>(<span class="hljs-params">self, other</span>):
     seconds = <span class="hljs-variable language_">self</span>.time_to_int() + other.time_to_int()
     <span class="hljs-keyword">return</span> int_to_time(seconds)
 </code></pre>
 <p>使用方法如下所示：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>start = Time(<span class="hljs-number">9</span>, <span class="hljs-number">45</span>)
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>start = Time(<span class="hljs-number">9</span>, <span class="hljs-number">45</span>)
 <span class="hljs-meta">&gt;&gt;&gt; </span>duration = Time(<span class="hljs-number">1</span>, <span class="hljs-number">35</span>)
 <span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">print</span>(start + duration)
 <span class="hljs-number">11</span>:<span class="hljs-number">20</span>:<span class="hljs-number">00</span>
@@ -553,7 +553,7 @@ TypeError: increment() takes <span class="hljs-number">2</span> positional argum
 <p>做个练习，给 Point 类写一个加法的方法。</p>
 <h2 id="178--根据对象类型进行运算">17.8  根据对象类型进行运算</h2>
 <p>在前面的章节中，我们把两个 Time 对象进行了相加，但也许有时候需要把一个整数加到 Time 对象上面。下面这一个版本的 <strong>add</strong> 方法就能够实现检查类型，然后调用 add_time 方法或者是 increment 方法：</p>
-<pre><code class="lang-py"><span class="hljs-comment">#  inside class Time:</span>
+<pre><code class="lang-python"><span class="hljs-comment">#  inside class Time:</span>
 <span class="hljs-keyword">def</span> <span class="hljs-title function_">__add__</span>(<span class="hljs-params">self, other</span>):
     <span class="hljs-keyword">if</span> <span class="hljs-built_in">isinstance</span>(other, Time):
         <span class="hljs-keyword">return</span> <span class="hljs-variable language_">self</span>.add_time(other)
@@ -569,7 +569,7 @@ TypeError: increment() takes <span class="hljs-number">2</span> positional argum
 <p>内置函数 isinstance 接收一个值和一个类的对象，如果该值是这个类的一个实例，就会返回真。</p>
 <p>如果拿来相加的是一个 Time 对象，<strong>add</strong> 就会调用 add_time 方法。其他情况下，程序会把参数当做一个数字，然后就调用 increment 方法。这种运算就是根据对象进行的，因为在针对不同类型参数的时候，运算符会进行不同的计算。</p>
 <p>下面的例子中，就展示了用不同类型变量来相加的效果：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>start = Time(<span class="hljs-number">9</span>, <span class="hljs-number">45</span>)
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>start = Time(<span class="hljs-number">9</span>, <span class="hljs-number">45</span>)
 <span class="hljs-meta">&gt;&gt;&gt; </span>duration = Time(<span class="hljs-number">1</span>, <span class="hljs-number">35</span>)
 <span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">print</span>(start + duration)
 <span class="hljs-number">11</span>:<span class="hljs-number">20</span>:<span class="hljs-number">00</span>
@@ -577,11 +577,11 @@ TypeError: increment() takes <span class="hljs-number">2</span> positional argum
 <span class="hljs-number">10</span>:07:<span class="hljs-number">17</span>
 </code></pre>
 <p>然而不幸的是，这个加法运算不满足交换率。如果整数放到首位，就会得到如下所示的错误了：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">print</span>(<span class="hljs-number">1337</span> + start)
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">print</span>(<span class="hljs-number">1337</span> + start)
 TypeError: unsupported operand <span class="hljs-built_in">type</span>(s) <span class="hljs-keyword">for</span> +: <span class="hljs-string">'int'</span> <span class="hljs-keyword">and</span> <span class="hljs-string">'instance'</span>
 </code></pre>
 <p>这里的问题就在于，Python 并没有让一个 Time 对象来加一个整数，而是去调用了整形的加法去把一个 Time 对象加到整数上面去，这就用系统原本的加法，而这个加法不能处理 Time 对象。有一个很聪明的方法来解决这个问题：用一个特殊的方法 <strong>radd</strong>，这个方法的意思就是『右加』。在一个 Time 对象出现在加号运算符右侧的时候，该方法就会被调用了。下面就是这个方法的定义：</p>
-<pre><code class="lang-py"><span class="hljs-comment">#  inside class Time:</span>
+<pre><code class="lang-python"><span class="hljs-comment">#  inside class Time:</span>
 <span class="hljs-keyword">def</span> <span class="hljs-title function_">__radd__</span>(<span class="hljs-params">self, other</span>):
     <span class="hljs-keyword">return</span> <span class="hljs-variable language_">self</span>.__add__(other)
 </code></pre>
@@ -589,7 +589,7 @@ TypeError: unsupported operand <span class="hljs-built_in">type</span>(s) <span 
 <blockquote>
 <p>使用如下所示：</p>
 </blockquote>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">print</span>(<span class="hljs-number">1337</span> + start)
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">print</span>(<span class="hljs-number">1337</span> + start)
 <span class="hljs-number">10</span>:07:<span class="hljs-number">17</span>
 </code></pre>
 <p>做个练习，为 Point 类来写一个加法的方法，要求能处理 Point 对象或者一个元组：</p>
@@ -598,7 +598,7 @@ TypeError: unsupported operand <span class="hljs-built_in">type</span>(s) <span 
 <h2 id="179--多态">17.9  多态</h2>
 <p>在必要的时候，根据类型运算还是很有用的，不过（还好）并不总需要这么做。一般你都可以把函数写成能处理不同类型参数的，这样就不用这么麻烦了。</p>
 <p>我们之前为字符串写的很多函数，也都可以用到其他序列类型上面。比如在 11.2 我们用 histogram 来统计一个单词中每个字母出现的次数。</p>
-<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">histogram</span>(<span class="hljs-params">s</span>):
+<pre><code class="lang-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">histogram</span>(<span class="hljs-params">s</span>):
     d = <span class="hljs-built_in">dict</span>()
     <span class="hljs-keyword">for</span> c <span class="hljs-keyword">in</span> s:
         <span class="hljs-keyword">if</span> c <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> d:
@@ -608,13 +608,13 @@ TypeError: unsupported operand <span class="hljs-built_in">type</span>(s) <span 
     <span class="hljs-keyword">return</span> d
 </code></pre>
 <p>这个函数也可以用于列表、元组，甚至字典，只要 s 的元素是散列的，就能用做 d 当中的键。</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>t = [<span class="hljs-string">'spam'</span>, <span class="hljs-string">'egg'</span>, <span class="hljs-string">'spam'</span>, <span class="hljs-string">'spam'</span>, <span class="hljs-string">'bacon'</span>, <span class="hljs-string">'spam'</span>]
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>t = [<span class="hljs-string">'spam'</span>, <span class="hljs-string">'egg'</span>, <span class="hljs-string">'spam'</span>, <span class="hljs-string">'spam'</span>, <span class="hljs-string">'bacon'</span>, <span class="hljs-string">'spam'</span>]
 <span class="hljs-meta">&gt;&gt;&gt; </span>histogram(t)
 {<span class="hljs-string">'bacon'</span>: <span class="hljs-number">1</span>, <span class="hljs-string">'egg'</span>: <span class="hljs-number">1</span>, <span class="hljs-string">'spam'</span>: <span class="hljs-number">4</span>}
 </code></pre>
 <p>针对不同类型都可以运行的函数，就是多态的了。多态能够有利于代码复用。比如内置的函数 sum，是用来把一个序列中所有的元素加起来，就可以适用于所有能够相加的序列元素。</p>
 <p>Time 对象有了自己的加法方法，就可以与 sum 函数来配合使用了：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>t1 = Time(<span class="hljs-number">7</span>, <span class="hljs-number">43</span>)
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>t1 = Time(<span class="hljs-number">7</span>, <span class="hljs-number">43</span>)
 <span class="hljs-meta">&gt;&gt;&gt; </span>t2 = Time(<span class="hljs-number">7</span>, <span class="hljs-number">41</span>)
 <span class="hljs-meta">&gt;&gt;&gt; </span>t3 = Time(<span class="hljs-number">7</span>, <span class="hljs-number">37</span>)
 <span class="hljs-meta">&gt;&gt;&gt; </span>total = <span class="hljs-built_in">sum</span>([t1, t2, t3])
@@ -627,12 +627,12 @@ TypeError: unsupported operand <span class="hljs-built_in">type</span>(s) <span 
 <p>在程序运行的任意时刻都可以给对象增加属性，不过如果你有多个同类对象却又不具有相同的属性，就容易出错了。所以最好在对象实例化的时候就全部用 init 方法初始化对象的全部属性。</p>
 <p>如果你不确定一个对象是否有某个特定的属性，你可以用内置的 hasattr 函数来尝试一下（参考 15.7）。</p>
 <p>另外一种读取属性的方法是用内置函数 vars，这个函数会接收一个对象，然后返回一个字典，字典中的键值对就是属性名的字符串与对应的值。</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>p = Point(<span class="hljs-number">3</span>, <span class="hljs-number">4</span>)
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>p = Point(<span class="hljs-number">3</span>, <span class="hljs-number">4</span>)
 <span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">vars</span>(p)
 {<span class="hljs-string">'y'</span>: <span class="hljs-number">4</span>, <span class="hljs-string">'x'</span>: <span class="hljs-number">3</span>}
 </code></pre>
 <p>出于调试目的，你估计也会发现下面这个函数随时用一下会带来很多便利：</p>
-<pre><code class="lang-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">print_attributes</span>(<span class="hljs-params">obj</span>):
+<pre><code class="lang-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">print_attributes</span>(<span class="hljs-params">obj</span>):
     <span class="hljs-keyword">for</span> attr <span class="hljs-keyword">in</span> <span class="hljs-built_in">vars</span>(obj):
         <span class="hljs-built_in">print</span>(attr, <span class="hljs-built_in">getattr</span>(obj, attr))
 </code></pre>
@@ -750,7 +750,7 @@ The principle that the interface provided by an object should not depend on its 
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第十七章 类和方法","level":"1.18","depth":1,"next":{"title":"第十八章 继承","level":"1.19","depth":1,"path":"chapter18.md","ref":"chapter18.md","articles":[]},"previous":{"title":"第十六章 类和函数","level":"1.17","depth":1,"path":"chapter16.md","ref":"chapter16.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter17.md","mtime":"2024-08-23T09:01:53.768Z","type":"markdown"},"gitbook":{"version":"5.1.4","time":"2024-08-23T09:11:00.343Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第十七章 类和方法","level":"1.18","depth":1,"next":{"title":"第十八章 继承","level":"1.19","depth":1,"path":"chapter18.md","ref":"chapter18.md","articles":[]},"previous":{"title":"第十六章 类和函数","level":"1.17","depth":1,"path":"chapter16.md","ref":"chapter16.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter17.md","mtime":"2025-01-05T18:02:47.623Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-01-05T18:03:10.535Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
@@ -820,7 +820,7 @@ The principle that the interface provided by an object should not depend on its 
         
     
         
-        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        <script src="gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
         
     
 

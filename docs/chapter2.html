@@ -6,7 +6,7 @@
         <title>第二章 变量，表达式，语句 · HonKit</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="HonKit 5.1.4">
+        <meta name="generator" content="HonKit 6.0.2">
         
         
         
@@ -24,7 +24,7 @@
                 
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-fontsettings/website.css">
                 
             
         
@@ -49,7 +49,7 @@
     
     
     <meta name="HandheldFriendly" content="true"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
@@ -397,7 +397,7 @@
 <p>编程语言最强大的功能就是操作变量。变量就是一个有值的代号。</p>
 <h2 id="21--赋值语句">2.1  赋值语句</h2>
 <p>赋值语句的作用是创建一个新的变量，并且赋值给这个变量：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>message = <span class="hljs-string">'And now for something completely different'</span>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>message = <span class="hljs-string">'And now for something completely different'</span>
 <span class="hljs-meta">&gt;&gt;&gt; </span>n = <span class="hljs-number">17</span> 
 <span class="hljs-meta">&gt;&gt;&gt; </span>pi = <span class="hljs-number">3.141592653589793</span>
 </code></pre>
@@ -412,7 +412,7 @@ Figure 2.1: State diagram.</p>
 <p>变量名称你随便起多长都可以的。包含字母或者数字都行，但是不能用数字来开头。大写字母也能用，不过还是建议都用小写字母来给变量命名，这个比较传统哈。</p>
 <p>变量名里面可以有下划线 _，一般在多个单词组成的变量名里面往往用到下划线，比如 your_name 等等。</p>
 <p>你要是给变量起名不合规则，就会出现语法错误提示了：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>76trombones = <span class="hljs-string">'big parade'</span> 
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>76trombones = <span class="hljs-string">'big parade'</span> 
 SyntaxError: invalid syntax 
 <span class="hljs-meta">&gt;&gt;&gt; </span>more@ = <span class="hljs-number">1000000</span> 
 SyntaxError: invalid syntax 
@@ -434,7 +434,7 @@ SyntaxError: invalid syntax
 <p>你不用去记忆这些哈。因为一般大多数的开发环境里面，关键词都会有区别于普通代码的颜色提示你，你要是用他们做变量名了，一看就会知道的。</p>
 <h2 id="23--表达式和语句">2.3  表达式和语句</h2>
 <p>表达式是数值,变量和操作符的组合。单个值本身也被当作一个表达式，变量也是如此，下面这些例子都是一些正确表达式：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">42</span> 
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">42</span> 
 <span class="hljs-number">42</span> 
 <span class="hljs-meta">&gt;&gt;&gt; </span>n 
 <span class="hljs-number">17</span> 
@@ -443,7 +443,7 @@ SyntaxError: invalid syntax
 </code></pre>
 <p>当你在提示符后面敲出一个表达式，解释器就判断一下，他会找到这个表达式的值。在本节的例子中，n 的值是 17，所以 n+25 就是 42 了。</p>
 <p>语句是一组具有某些效果的代码，比如创建变量，或者显示值。</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>n = <span class="hljs-number">17</span> 
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>n = <span class="hljs-number">17</span> 
 <span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">print</span>(n)
 </code></pre>
 <p>上面第一个就是赋值语句，给 n 赋值。第二行是显示 n 的值。</p>
@@ -454,29 +454,29 @@ SyntaxError: invalid syntax
 <p>如果你知道怎么创建和运行脚本，那就尽管在自己电脑上尝试好了。否则我就建议你还是用 PythonAnywhere。关于脚本模式的介绍我放到网上了，打开<a href="http://tinyurl.com/thinkpython2e" target="_blank">这个链接</a>去看下哈。</p>
 <p>Python 两种模式都支持，所以你可以先用交互模式做点测试，然后再写成脚本。但是两种模式之间有些区别的，所以可能也挺麻烦。</p>
 <p>举个例子哈，比如咱们把 Python 当计算器用，你输入以下内容：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>miles = <span class="hljs-number">26.2</span> 
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>miles = <span class="hljs-number">26.2</span> 
 <span class="hljs-meta">&gt;&gt;&gt; </span>miles * <span class="hljs-number">1.61</span> 
 <span class="hljs-number">42.182</span>
 </code></pre>
 <p>第一行给 miles 这个变量赋初值（译者注：26.2 英里是马拉松比赛全程长度），但是看着没啥效果。第二行是一个表达式，解释器会计算这个表达式，然后把结果输出。结果就是把马拉松全程长度从英里换算成公里，答案是 42 公里哈。</p>
 <p>不过你要是直接把这些代码存成脚本然后运行，是啥都看不到的，没有输出。在脚本模式表达式是没有明显效果的。Python 确实会计算这些表达式，但不显示结果，想看到结果你就得告诉他输出一下：</p>
-<pre><code class="lang-py">miles = <span class="hljs-number">26.2</span> 
+<pre><code class="lang-python">miles = <span class="hljs-number">26.2</span> 
 <span class="hljs-built_in">print</span>(miles * <span class="hljs-number">1.61</span>)
 </code></pre>
 <p>这种情况开始还挺让人混乱的。</p>
 <p>脚本一般都是包含了一系列的语句。如果语句超过一条，每个语句执行的时候都会显示结果。比如下面这个：</p>
-<pre><code class="lang-py"><span class="hljs-built_in">print</span>(<span class="hljs-number">1</span>) 
+<pre><code class="lang-python"><span class="hljs-built_in">print</span>(<span class="hljs-number">1</span>) 
 x = <span class="hljs-number">2</span> 
 <span class="hljs-built_in">print</span>(x)
 </code></pre>
 <p>produces the output</p>
 <p>输出的结果如下</p>
-<pre><code class="lang-py"><span class="hljs-number">1</span> 
+<pre><code class="lang-python"><span class="hljs-number">1</span> 
 <span class="hljs-number">2</span>
 </code></pre>
 <p>赋值语句是不会有任何输出的。
 检查下你理解了没哈，把下面这些语句输入到 Python 解释器，看看会发生什么：</p>
-<pre><code class="lang-py"><span class="hljs-number">5</span> x = <span class="hljs-number">5</span> x + <span class="hljs-number">1</span>
+<pre><code class="lang-python"><span class="hljs-number">5</span> x = <span class="hljs-number">5</span> x + <span class="hljs-number">1</span>
 </code></pre>
 <p>现在再把同样的语句输入到脚本中，然后用 Python 来运行一下。看看输出是啥样的？把脚本中的表达式修改一下，每一个都加一个打印语句再试试。</p>
 <h2 id="25--运算符优先级">2.5  运算符优先级</h2>
@@ -494,13 +494,13 @@ x = <span class="hljs-number">2</span>
 <p>我不会花很大力气来记忆这些运算符的优先级。如果我怕记不住弄错了，就用括号来让优先级明确一下就好。</p>
 <h2 id="26--字符串操作">2.6  字符串操作</h2>
 <p>一般情况下，咱们不能对字符串进行数学运算的，即使字符串看上去像是数字也不行，所以以下这些都是非法操作：</p>
-<pre><code class="lang-py"><span class="hljs-string">'2'</span>-<span class="hljs-string">'1'</span>
+<pre><code class="lang-python"><span class="hljs-string">'2'</span>-<span class="hljs-string">'1'</span>
 <span class="hljs-string">'eggs'</span>/<span class="hljs-string">'easy'</span>
 <span class="hljs-string">'third'</span>*<span class="hljs-string">'a charm'</span>
 </code></pre>
 <p>不过+和*可以用在字符串上面。</p>
 <p>+加号的意思就是字符串拼接了，会把两个字符串拼到一起，如下所示：</p>
-<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>first = <span class="hljs-string">'throat'</span>  
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>first = <span class="hljs-string">'throat'</span>  
 <span class="hljs-meta">&gt;&gt;&gt; </span>second = <span class="hljs-string">'warbler'</span> 
 <span class="hljs-meta">&gt;&gt;&gt; </span>first + second 
 throatwarbler
@@ -511,18 +511,18 @@ throatwarbler
 <h2 id="27--注释">2.7  注释</h2>
 <p>程序会越来越庞大，也越复杂了，读起来就会更难了。公式语言很密集，靠阅读来理解代码，总是很困难的。</p>
 <p>为了解决阅读的困难，咱们就可以添加一些笔记到代码中，把程序的功能用自然语言来解释一下。这种笔记就叫注释了，使用井号#来开头的：</p>
-<pre><code class="lang-py"><span class="hljs-comment">#  compute the percentage of the hour that has elapsed percentage = (minute * 100) / 60</span>
+<pre><code class="lang-python"><span class="hljs-comment">#  compute the percentage of the hour that has elapsed percentage = (minute * 100) / 60</span>
 </code></pre>
 <p>注释可以另起一行，也可以放到行末尾：</p>
-<pre><code class="lang-py">percentage = (minute * <span class="hljs-number">100</span>) / <span class="hljs-number">60</span>     <span class="hljs-comment"># percentage of an hour</span>
+<pre><code class="lang-python">percentage = (minute * <span class="hljs-number">100</span>) / <span class="hljs-number">60</span>     <span class="hljs-comment"># percentage of an hour</span>
 </code></pre>
 <p>井号#后面的内容都会被忽略，因此不会影响程序的运行结果。</p>
 <p>一般注释都是用来解释代码的一些不明显的特性。一般情况下读代码的人应该能理解代码的功能是什么，所以用注释多是要解释这样做的目的是什么。</p>
 <p>下面这个注释就显然是多余的，根本没必要：</p>
-<pre><code class="lang-py">v = <span class="hljs-number">5</span>     <span class="hljs-comment"># assign 5 to v</span>
+<pre><code class="lang-python">v = <span class="hljs-number">5</span>     <span class="hljs-comment"># assign 5 to v</span>
 </code></pre>
 <p>下面这种注释包含了重要信息，就很重要了：</p>
-<pre><code class="lang-py">v = <span class="hljs-number">5</span>     <span class="hljs-comment"># velocity in meters/second.</span>
+<pre><code class="lang-python">v = <span class="hljs-number">5</span>     <span class="hljs-comment"># velocity in meters/second.</span>
 </code></pre>
 <p>变量命名得当的话，就没必要用太多注释了，不过名字要是太长了，表达式读起来也挺麻烦，所以就得权衡着来了。</p>
 <h2 id="28--调试">2.8  调试</h2>
@@ -700,7 +700,7 @@ An error in a program that makes it do something other than what the programmer 
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第二章 变量，表达式，语句","level":"1.3","depth":1,"next":{"title":"第三章 函数","level":"1.4","depth":1,"path":"chapter3.md","ref":"chapter3.md","articles":[]},"previous":{"title":"第一章 编程之路","level":"1.2","depth":1,"path":"chapter1.md","ref":"chapter1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter2.md","mtime":"2024-08-23T09:01:53.769Z","type":"markdown"},"gitbook":{"version":"5.1.4","time":"2024-08-23T09:11:00.343Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第二章 变量，表达式，语句","level":"1.3","depth":1,"next":{"title":"第三章 函数","level":"1.4","depth":1,"path":"chapter3.md","ref":"chapter3.md","articles":[]},"previous":{"title":"第一章 编程之路","level":"1.2","depth":1,"path":"chapter1.md","ref":"chapter1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter2.md","mtime":"2025-01-05T18:02:47.633Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-01-05T18:03:10.535Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
@@ -770,7 +770,7 @@ An error in a program that makes it do something other than what the programmer 
         
     
         
-        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        <script src="gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
         
     
 

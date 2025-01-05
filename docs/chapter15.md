@@ -27,7 +27,7 @@
 
 用户自定义的类型也被叫做一个类。一个类的定义大概是如下所示的样子：
 
-```py
+```python
 class Point:
 """Represents a point in 2-D space."""
 ```
@@ -37,7 +37,7 @@ class Point:
 
 声明一个名为 Point 的类，就可以创建该类的一个对象。
 
-```py
+```python
 >>> Point
 <class '__main__.Point'>
 ```
@@ -45,7 +45,7 @@ class Point:
 
 类的对象就像是一个创建对象的工厂。要创建一个 Point，就可以像调用函数一样调用 Point。
 
-```py
+```python
 >>> blank = Point()
 >>> blank
 <__main__.Point object at 0xb7e9d3ac>
@@ -62,7 +62,7 @@ class Point:
 
 用点号可以给实例进行赋值：
 
-```py
+```python
 >>> blank.x = 3.0
 >>> blank.y = 4.0
 ```
@@ -82,7 +82,7 @@ ________________________________________
 
 读取属性值可以用如下这样的语法：
 
-```py
+```python
 >>> blank.y
 4.0
 >>> x = blank.x
@@ -93,7 +93,7 @@ ________________________________________
 
 点号可以随意在任意表达式中使用。比如下面这个例子：
 
-```py
+```python
 >>> '(%g, %g)' % (blank.x, blank.y)
 '(3.0, 4.0)'
 >>> distance = math.sqrt(blank.x**2 + blank.y**2)
@@ -103,14 +103,14 @@ ________________________________________
 
 你还可以把实例作为一个参数来使用。比如下面这样：
 
-```py
+```python
 def print_point(p):
 	print('(%g, %g)' % (p.x, p.y))
 ```
 
 print_point 这个函数就接收了一个点作为参数，然后显示点的数值位置。你可以把刚刚那个 blank 作为参数传过去来试试：
 
-```py
+```python
 >>> print_point(blank)
 (3.0, 4.0)
 ```
@@ -134,7 +134,7 @@ print_point 这个函数就接收了一个点作为参数，然后显示点的�
 
 下面就是类的定义：
 
-```py
+```python
 class Rectangle:
 """Represents a rectangle.
 attributes: width, height, corner.
@@ -144,7 +144,7 @@ attributes: width, height, corner.
 
 要表示一个矩形，必须初始化一个矩形对象，然后对其属性进行赋值：
 
-```py
+```python
 box = Rectangle()
 box.width = 100.0
 box.height = 200.0
@@ -166,7 +166,7 @@ ________________________________________
 
 函数返回实例。比如 find_center 就接收一个 Rectangle （矩阵）对象作为参数，然后以一个 Point（点）对象的形式返回矩形中心位置的坐标所在点：
 
-```py
+```python
 def find_center(rect):
 	p = Point()
 	p.x = rect.corner.x + rect.width/2
@@ -176,7 +176,7 @@ def find_center(rect):
 
 下面这个例子中，box 作为一个参数传递给了 find_center 函数，然后结果赋值给了点 center：
 
-```py
+```python
 >>> center = find_center(box)
 >>> print_point(center)
 (50, 100)
@@ -184,14 +184,14 @@ def find_center(rect):
 ## 15.5  对象可以修改
 通过对一个对象的属性进行赋值就可以修改该对象的状态了。比如，要改变一个举行的大小而不改变位置，就可以只修改宽度和高度，如下所示：
 
-```py
+```python
 box.width = box.width + 50
 box.height = box.height + 100
 ```
 
 你还可以写专门的函数来修改对象。比如 grow_rectangle 这个函数就接收一个矩形对象和 dwidth 与 dheight 两个数值，然后把这两个数值加到矩形的宽度和高度值上。
 
-```py
+```python
 def grow_rectangle(rect, dwidth, dheight):
 	rect.width += dwidth
 	rect.height += dheight
@@ -199,7 +199,7 @@ def grow_rectangle(rect, dwidth, dheight):
 
 下面的例子展示了具体的效果：
 
-```py
+```python
 >>> box.width, box.height
 (150.0, 300.0)
 >>> grow_rectangle(box, 50, 100)
@@ -217,7 +217,7 @@ def grow_rectangle(rect, dwidth, dheight):
 
 所以就可以不用别名，而用复制对象的方法。copy 模块包含了一个名叫 copy 的函数，可以复制任意对象：
 
-```py
+```python
 >>> p1 = Point()
 >>> p1.x = 3.0
 >>> p1.y = 4.0
@@ -227,7 +227,7 @@ def grow_rectangle(rect, dwidth, dheight):
 
 p1 和 p2 包含的数据是相同的，但并不是同一个点对象。
 
-```py
+```python
 >>> print_point(p1)
 (3, 4)
 >>> print_point(p2)
@@ -243,7 +243,7 @@ is 运算符表明 p1 和 p2 不是同一个对象，这就是我们所预料的
 
 如果你用 copy.copy 复制了一个矩形，你会发现该函数复制了矩形对象，但没有复制内嵌的点对象。
 
-```py
+```python
 >>> box2 = copy.copy(box)
 >>> box2 is box
 False
@@ -260,7 +260,7 @@ ________________________________________
 
 所幸的是 copy 模块还提供了一个名为 deepcopy （深复制）的方法，这样就能把内嵌的对象也复制了。你肯定不会奇怪了，这种运算就叫深复制了。
 
-```py
+```python
 >>> box3 = copy.deepcopy(box)
 >>> box3 is box
 False
@@ -274,7 +274,7 @@ box3 和 box 就是完全隔绝开，没有公用内嵌对象，彻底不会相�
 ## 15.7  调试
 当你开始使用对象的时候，你就容易遇到一些新的异常。如果你试图读取一个不存在的属性，就会得到一个属性错误 AttributeError：
 
-```py
+```python
 >>> p = Point()
 >>> p.x = 3
 >>> p.y = 4
@@ -284,19 +284,19 @@ AttributeError: Point instance has no attribute 'z'
 
 如果不确定一个对象是什么类型，可以『问』一下：
 
-```py
+```python
 >>> type(p)
 <class '__main__.Point'>
 ```
 还可以用 isinstance 函数来检查一下一个对象是否为某一个类的实例：
 
-```py
+```python
 >>> isinstance(p, Point)
 True
 ```
 如果不确定某一对象是否有一个特定的属性，可以用内置函数 hasattr：
 
-```py
+```python
 >>> hasattr(p, 'x')
 True
 >>> hasattr(p, 'z')
@@ -306,7 +306,7 @@ hasattr 的第一个参数可以是任意一个对象；第二个参数是一个
 
 用 try 语句也可以试验一个对象是否有你需要的属性：
 
-```py
+```python
 try:
 	x = p.x
 except AttributeError:

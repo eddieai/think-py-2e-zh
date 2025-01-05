@@ -9,14 +9,14 @@
 
 类的定义是如下这样：
 
-```py
+```python
 class Time:
 """Represents the time of day.
 attributes: hour, minute, second     """
 ```
 我们可以建立一个新的 Time 对象，然后对时分秒分别进行赋值：
 
-```py
+```python
 time = Time()
 time.hour = 11
 time.minute = 59
@@ -42,7 +42,7 @@ ________________________________________
 
 下面这段代码就是 add_time 函数的一个原型：
 
-```py
+```python
 def add_time(t1, t2):
 	sum = Time()
 	sum.hour = t1.hour + t2.hour
@@ -55,7 +55,7 @@ def add_time(t1, t2):
 
 下面就来测试一下这个函数，我将建立两个 Time 对象，start 包含了一个电影的开始时间，比如《巨蟒与圣杯》（译者注：1975 年喜剧电影。Python 的创造者 Guido van Rossum 特别喜欢这个喜剧团体：巨蟒飞行马戏团（Monty Python’s Flying Circus ），所以命名为 Python。），然后 duration（汉译就是持续时间）包含了该电影的时长，《巨蟒与圣杯》这部电影是一小时三十五分钟。add_time 函数就会算出电影结束的时间。
 
-```py
+```python
 >>> start = Time()
 >>> start.hour = 9
 >>> start.minute = 45
@@ -75,7 +75,7 @@ def add_time(t1, t2):
 
 下面这个是改进版本：
 
-```py
+```python
 def add_time(t1, t2):
 	sum = Time()
 	sum.hour = t1.hour + t2.hour
@@ -99,7 +99,7 @@ increment 函数，增加给定的秒数到一个 Time 对象，就可以被改�
 
 下面是个简单的版本：
 
-```py
+```python
 def increment(time, seconds):
 	time.second += seconds
 	if time.second >= 60:
@@ -143,7 +143,7 @@ def increment(time, seconds):
 
 下面这个函数就把 Times 转换成了整数：
 
-```py
+```python
 def time_to_int(time):
 	minutes = time.hour * 60 + time.minute
 	seconds = minutes * 60 + time.second
@@ -151,7 +151,7 @@ def time_to_int(time):
 ```
 然后下面这个函数是反过来的，把整数转换成 Time（还记得 divmod 么，使用第一个数除以第二个数，返回的是除数和余数组成的元组。）
 
-```py
+```python
 def int_to_time(seconds):
 	time = Time()
 	minutes, time.second = divmod(seconds, 60)
@@ -162,7 +162,7 @@ def int_to_time(seconds):
 
 一旦你确定这些函数都没问题，就可以用它们来重写一下 add_time 这个函数了：
 
-```py
+```python
 def add_time(t1, t2):
 	seconds = time_to_int(t1) + time_to_int(t2)
 	return int_to_time(seconds)
@@ -190,7 +190,7 @@ def add_time(t1, t2):
 
 写一些检测约束条件的代码，能够帮助找出这些错误，并且找到导致错误的原因。例如，你亏写一个名字未 calid_time 的函数，接收一个 Time 对象，然后如果该对象不满足约束条件就返回 False：
 
-```py
+```python
 def valid_time(time):
 	if time.hour < 0 or time.minute < 0 or time.second < 0:
 		return False
@@ -201,7 +201,7 @@ def valid_time(time):
 
 然后在每个自定义函数的开头部位，你就可以检测一下参数，来确保这些参数没有错误：
 
-```py
+```python
 def add_time(t1, t2):
 	if not valid_time(t1) or not valid_time(t2):
 		raise ValueError('invalid Time object in add_time')
@@ -211,7 +211,7 @@ def add_time(t1, t2):
 
 或者你也可以用一个 assert 语句，这个语句也是检测给定的约束条件的，如果出现错误就会抛出一个异常：
 
-```py
+```python
 def add_time(t1, t2):
 	assert valid_time(t1) and valid_time(t2)
 	seconds = time_to_int(t1) + time_to_int(t2)

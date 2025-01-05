@@ -22,7 +22,7 @@
 
 要写入一个文件，就必须要在打开它的时候用『w』作为第二个参数（译者注：w 就是 wirte 的意思了）：
 
-```py
+```python
 >>> fout = open('output.txt', 'w')
 ```
 
@@ -30,7 +30,7 @@
 
 open 函数会返回一个文件对象，文件对象会提供各种方法来处理文件。write 这个方法就把数据写入到文件中了。
 
-```py
+```python
 >>> line1 = "This here's the wattle,\n"
 >>> fout.write(line1)
 24
@@ -38,7 +38,7 @@ open 函数会返回一个文件对象，文件对象会提供各种方法来处
 
 返回值是已写入字符的数量。文件对象会记录所在位置，所以如果你再次调用 write 方法，会从文件结尾的地方继续添加新的内容。
 
-```py
+```python
 >>> line2 = "the emblem of our land.\n"
 >>> fout.write(line2)
 24
@@ -46,7 +46,7 @@ open 函数会返回一个文件对象，文件对象会提供各种方法来处
 
 写完文件之后，你需要用 close 方法来关闭文件。
 
-```py
+```python
 >>> fout.close()
 ```
 如果不 close 这个文件，就要等你的程序运行结束退出的时候，它自己才关闭了。
@@ -55,7 +55,7 @@ open 函数会返回一个文件对象，文件对象会提供各种方法来处
 
 write 方法必须用字符串来做参数，所以如果要把其他类型的值写入文件，就得先转换成字符串才行。最简单的方法就是用 str 函数：
 
-```py
+```python
 >>> x = 52
 >>> fout.write(str(x))
 ```
@@ -68,7 +68,7 @@ write 方法必须用字符串来做参数，所以如果要把其他类型的�
 
 例如，'%d'这个格式序列的意思就是第二个运算对象要被格式化成为一个十进制的整数：
 
-```py
+```python
 >>> camels = 42
 >>> '%d' % camels
 '42'
@@ -77,7 +77,7 @@ write 方法必须用字符串来做参数，所以如果要把其他类型的�
 
 这种格式化序列可以放到一个字符串的任何一个位置，这样就可以在一句话里面嵌入一个值了：
 
-```py
+```python
 >>> 'I have spotted %d camels.' % camels
 'I have spotted 42 camels.'
 ```
@@ -86,13 +86,13 @@ write 方法必须用字符串来做参数，所以如果要把其他类型的�
 
 下面的例子中，用了'%d'来格式化输出整型值，用'%g'来格式化浮点数，'%s'就是给字符串用的了。
 
-```py
+```python
 >>> 'In %d years I have spotted %g %s.' % (3, 0.1, 'camels')
 'In 3 years I have spotted 0.1 camels.'
 ```
 这就要注意力，如果字符串中格式化序列有多个，那个数一定要和后面的元组中元素数量相等才行。另外格式化序列与元组中元素的类型也必须一样：
 
-```py
+```python
 >>> '%d %d %d' % (1, 2)
 TypeError: not enough arguments for format string
 >>> '%d' % 'dollars'
@@ -109,7 +109,7 @@ TypeError: %d format: a number is required, not str
 
 提供函数来处理文件和目录的是 os 模块（os 就是 operating system 即操作系统的缩写）。
 
-```py
+```python
 >>> import os
 >>> cwd = os.getcwd()
 >>> cwd
@@ -123,20 +123,20 @@ cwd 代表的是『current working directory』（即当前工作目录）的缩
 
 用右斜杠/开头的路径不依赖当前目录；这就叫做绝对路径。要找到一个文件的绝对路径，可以用 os.path.abspath：
 
-```py
+```python
 >>> os.path.abspath('memo.txt')
  '/home/dinsdale/memo.txt'
 ```
 os.path 提供了其他一些函数，可以处理文件名和路径。比如 os.path.exists 会检查一个文件或者目录是否存在：
 
-```py
+```python
 >>> os.path.exists('memo.txt')
 True
 ```
 
 如果存在，os.path.isdir 可以来检查一下对象是不是一个目录：
 
-```py
+```python
 >>> os.path.isdir('memo.txt')
 False
 >>> os.path.isdir('/home/dinsdale')
@@ -147,14 +147,14 @@ True
 
 os.listdir 会返回指定目录内的文件（以及次级目录）列表。
 
-```py
+```python
 >>> os.listdir(cwd)
 ['music', 'photos', 'memo.txt']
 ```
 
 为了展示一下这些函数的用法，下面这个例子中，walks 这个函数就遍历了一个目录，然后输出了所有该目录下的文件的名字，并且在该目录下的所有子目录中递归调用自身。
 
-```py
+```python
 def walk(dirname):
 	for name in os.listdir(dirname):
 		path = os.path.join(dirname, name)
@@ -173,21 +173,21 @@ os 模块还提供了一个叫 walk 的函数，与上面这个函数很像，�
 
 读写文件的时候有很多容易出错的地方。如果你要打开的文件不存在，就会得到一个 IOerror：
 
-```py
+```python
 >>> fin = open('bad_file')
 IOError: [Errno 2] No such file or directory: 'bad_file'
 ```
 
 如果你要读取一个文件却没有权限，就得到一个权限错误 permissionError：
 
-```py
+```python
 >>> fout = open('/etc/passwd', 'w')
 PermissionError: [Errno 13] Permission denied: '/etc/passwd'
 ```
 
 如果你把一个目录错当做文件来打开，就会得到下面这种 IsADirectoryError 错误了：
 
-```py
+```python
 >>> fin = open('/home')
 IsADirectoryError: [Errno 21] Is a directory: '/home'
 ```
@@ -197,7 +197,7 @@ IsADirectoryError: [Errno 21] Is a directory: '/home'
 
 所以更好的办法是提前检查，用 try 语句，这种语句就是用来处理异常情况的。其语法形式就跟 if...else 语句是差不多的：
 
-```py
+```python
 try:
 	fin = open('bad_file')
 except:
@@ -220,7 +220,7 @@ dbm 模块提供了一个创建和更新数据库文件的交互接口。下面�
 
 打开数据库文件就跟打开其他文件差不多：
 
-```py
+```python
 >>> import dbm
 >>> db = dbm.open('captions', 'c')
 ```
@@ -229,13 +229,13 @@ dbm 模块提供了一个创建和更新数据库文件的交互接口。下面�
 
 创建一个新的项的时候，dbm 就会对数据库文件进行更新了。
 
-```py
+```python
 >>> db['cleese.png'] = 'Photo of John Cleese.'
 ```
 
 读取里面的某一项的时候，dbm 就读取数据库文件：
 
-```py
+```python
 >>>db['cleese.png']
 b'Photo of John Cleese.'
 ```
@@ -245,7 +245,7 @@ b'Photo of John Cleese.'
 
 如果对一个已经存在值的键进行赋值，dbm 就会把旧的值替换成新的值：
 
-```py
+```python
 >>> db['cleese.png'] = 'Photo of John Cleese doing a silly walk.'
 >>> db['cleese.png']
 b'Photo of John Cleese doing a silly walk.'
@@ -253,14 +253,14 @@ b'Photo of John Cleese doing a silly walk.'
 
 字典的一些方法，比如 keys 和 items，是不能用于数据库对象的。但用一个 for 循环来迭代是可以的：
 
-```py
+```python
 for key in db:
 	print(key, db[key])
 ```
 
 然后就同其他文件一样，用完了之后你得用 close 方法关闭数据库：
 
-```py
+```python
 >>> db.close()
 ```
 ## 14.7  Pickle 模块
@@ -273,7 +273,7 @@ dbm 的局限就在于键和键值必须是字符串或者二进制。如果用�
 
 pickle.dumps 接收一个对象做参数，然后返回一个字符串形式的内容翻译（dumps 就是『dump string』的缩写）：
 
-```py
+```python
 >>> import pickle
 >>> t = [1, 2, 3]
 >>> pickle.dumps(t)
@@ -281,7 +281,7 @@ b'\x80\x03]q\x00(K\x01K\x02K\x03e.'
 ```
 这种格式让人读起来挺复杂；这种设计能让 pickle 模块解译起来比较容易。pickle.lods("load string")就又会把原来的对象解译出来：
 
-```py
+```python
 >>> t1 = [1, 2, 3]
 >>> s = pickle.dumps(t1)
 >>> t2 = pickle.loads(s)
@@ -291,7 +291,7 @@ b'\x80\x03]q\x00(K\x01K\x02K\x03e.'
 
 这里要注意了，新的对象与旧的有一样的值，但（通常）并不是同一个对象：
 
-```py
+```python
 >>> t1 == t2
 True
 >>> t1 is t2
@@ -309,7 +309,7 @@ False
 
 举个例子吧，Unix 的 ls -l 命令通常会用长文件名格式来显示当前目录的内容。在 Python 中就可以用 os.open 来启动它：
 
-```py
+```python
 >>> cmd = 'ls -l'
 >>> fp = os.popen(cmd)
 ```
@@ -318,12 +318,12 @@ False
 
 可以读取 ls 进程的输出，用 readline 的话每次读取一行，用 read 的话就一次性全部读取：
 
-```py
+```python
 >>> res = fp.read()
 ```
 用完之后要关闭，这点也跟文件一样：
 
-```py
+```python
 >>> stat = fp.close()
 >>> print(stat)
 None
@@ -336,7 +336,7 @@ None
 
 你就可以用一个 pipe 来从 Python 启动运行 md5sum，然后获取结果：
 
-```py
+```python
 >>> filename = 'book.tex'
 >>> cmd = 'md5sum ' + filename
 >>> fp = os.popen(cmd)
@@ -351,7 +351,7 @@ None
 
 任何包含 Python 代码的文件都可以作为模块被导入使用。举个例子，假设你有一个名字叫 wc.py 的文件，里面代码如下：
 
-```py
+```python
 def linecount(filename):
 	count = 0
 	for line in open(filename):
@@ -362,21 +362,21 @@ print(linecount('wc.py'))
 
 如果运行这个程序，程序就会读取自己本身，然后输出文件中的行数，也就是 7 行了。你还可以导入这个模块，如下所示：
 
-```py
+```python
 >>> import wc
 7
 ```
 
 现在你就有一个模块对象 wc 了：
 
-```py
+```python
 >>> wc
 <module 'wc' from 'wc.py'>
 ```
 
 该模块提供了数行数的函数 linecount：
 
-```py
+```python
 >>> wc.linecount('wc.py')
 7
 ```
@@ -389,7 +389,7 @@ print(linecount('wc.py'))
 
 以模块方式导入使用的程序一般用下面这样的惯用形式：
 
-```py
+```python
 if __name__ == '__main__':
 	print(linecount('wc.py'))
 ```
@@ -406,7 +406,7 @@ __name__ 是一个内置变量，当程序开始运行的时候被设置。如�
 
 读写文件的时候，你可能会碰到空格导致的问题。这些问题很难解决，因为空格、跳表以及换行，平常就难以用眼睛看出来：
 
-```py
+```python
 >>> s = '1 2\t 3\n 4'
 >>> print(s)
 1 2  3
@@ -414,7 +414,7 @@ __name__ 是一个内置变量，当程序开始运行的时候被设置。如�
 ```
 这时候就可以用内置函数 repr 来帮忙。它接收任意对象作为参数，然后返回一个该对象的字符串表示。对于字符串，该函数可以把空格字符转成反斜杠序列：
 
-```py
+```python
 >>> print(repr(s))
 '1 2\t 3\n 4'
 ```
